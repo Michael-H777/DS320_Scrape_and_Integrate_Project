@@ -3,3 +3,6 @@ chromedriver/*
 tomato_credentials.txt
 debug.log
 .*ipynb.*
+__pycache__/*
+Proposal.docx
+.*ipynb
