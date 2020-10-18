@@ -5,4 +5,4 @@ debug.log
 .*ipynb.*
 __pycache__/*
 Proposal.docx
-.*ipynb
+*ipynb
