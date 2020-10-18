@@ -90,13 +90,13 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
     meta_data_str = movie_json_queue.get(block=True)
 
     # record df
-    scrape_columns = ['title', 'year', 'genre', 'rating', 'rating_count', 'box gross', 
+    scrape_columns = ['rank', 'title', 'year', 'genre', 'rating', 'rating_count', 'box gross', 
                         'review_word_1', 'review_word_2', 'review_word_3', 'review_word_4', 'review_word_5']
     master_result = pd.DataFrame(columns=scrape_columns)
     
     while meta_data_str != 'exit':
         meta_data = json.loads(meta_data_str)
-        title, year = meta_data.values() 
+        rank, title, year = meta_data.values() 
         # we need ot use google search, rottentomatoes have shadow-root
         # things within can't be accessed with scraper, bsoup or selenium 
         search_url = search_templet.format('+'.join([*title.split(), year]))
@@ -127,17 +127,17 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
                 gross_usa_str = info_block.find_element_by_class_name('meta-value').text
                 gross_usa = clean_gross_string(gross_usa_str)
 
-        msg_queue.put(f'{msg_head}completed basic info of {title} ({year}), working on user_review')
+        msg_queue.put(f'{msg_head}completed basic info of {rank}. {title}, working on user_review')
         # user_review 
         user_review_url = driver.find_element_by_class_name('mop-audience-reviews__view-all--link').get_attribute('href')
-        current_msg_head = f'{msg_head} working on {title}'
+        current_msg_head = f'{msg_head}working on {rank}. {title}'
         user_review_counter = count_user_review(user_review_url, current_msg_head, msg_queue, driver, stop_words)
         word_count = list(user_review_counter.items())
         word_count.sort(key=lambda item: item[1], reverse=True)
         top_words = [item[0] for item in word_count[:5]]
 
         # record scrape result
-        result_list = [title, year, genre, rating_value, rating_count, gross_usa, *top_words]
+        result_list = [rank, title, year, genre, rating_value, rating_count, gross_usa, *top_words]
         current_result = {key:value for key, value in zip(scrape_columns, result_list)}
         master_result = master_result.append(current_result, ignore_index=True)
 

@@ -17,7 +17,7 @@ from multiprocessing import Process, Queue, Manager
 
 def download_driver():
 
-    master_url = 'https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_'
+    master_url = 'https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_'
     if 'Linux' in platform.platform():
         url = f'{master_url}linux64.zip'
     elif 'Windows' in platform.platform():
@@ -38,7 +38,6 @@ def download_driver():
 
 
 def scrape_imdb_rank(imdb_url_queue, tomato_json_queue, msg_queue):
-    name_year_regex = re.compile('[^a-zA-Z]{1,10}([a-zA-Z ]*).*\((\d{4})\)', re.DOTALL)
     master_url = 'https://www.imdb.com/search/title/?groups=top_1000&sort=user_rating,desc&count=100&start={}&ref_=adv_nxt'
 
     # get 10 pages of 1000 items 
@@ -47,17 +46,20 @@ def scrape_imdb_rank(imdb_url_queue, tomato_json_queue, msg_queue):
         page_soup = bsoup(requests.get(master_url.format(start_count)).text, 'html.parser')
         for block in page_soup.find_all(class_='lister-item mode-advanced'): 
             header_block = block.find('h3')
-            title, year = name_year_regex.search(header_block.text).groups()
+            rank, title, year = list(filter(lambda item: len(item), header_block.text.split('\n')))
+            rank = ''.join(list(filter(lambda item: item.isdigit(), rank)))
+            year = ''.join(list(filter(lambda item: item.isdigit(), year)))
             title = title.strip() 
             partial_url = header_block.find('a').attrs['href']
             movie_imdb_url = f'https://www.imdb.com{partial_url}'
 
             msg_queue.put(f'IMDB rank scraper on page {page_num}, title: {title} ({year})')
             # feed imdb url and title/year into Queue
-            imdb_url_queue.put(movie_imdb_url)
-            tomato_json_queue.put(json.dumps({'title': title, 'year': year}))
+            imdb_url_queue.put(json.dumps({'rank': rank, 'url': movie_imdb_url}))
+            tomato_json_queue.put(json.dumps({'rank': rank, 'title': title, 'year': year}))
     # signal scraper to exit
     [(imdb_url_queue.put('exit'), tomato_json_queue.put('exit')) for _ in range(10)]
+    msg_queue.put(f'IMDB rank scraper job completed, terminate signal sent')
     return None
 
 
@@ -66,7 +68,7 @@ def main():
     driver_path = download_driver()
 
     imdb_workers = 0
-    tomato_workers = 2
+    tomato_workers = 10
     process_list = []
     message_q_list = []
 
