@@ -5,8 +5,12 @@ import pandas as pd
 
 import requests 
 from bs4 import BeautifulSoup as bsoup 
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 
+from itertools import count
 from collections import Counter
+
 
 def process_info_block(block_text):
     year = ''
@@ -20,12 +24,40 @@ def process_info_block(block_text):
     return year, genre 
 
 
-def scrape_imdb_review(movie_url, msg_queue):
-    review_start_soup = requ
+def scrape_imdb_review(review_url, msg_queue, driver):
+    expand_icon_regex = re.compile('expander-icon-wrapper.*')
+    review_block_regex = re.compile('lister-item mode-detail imdb-user-review.*')
+
+    result = ''
+
+    driver.get(review_url)
+
+    for _ in range(100):
+        try:
+            driver.find_element_by_class_name('ipl-load-more__button').click()
+        except NoSuchElementException:
+            continue
+
+    for block in driver.find_elements_by_class_name(review_block_refex):
+        try:
+            expand_icon = block.find_element_by_class_name(expand_icon_regex)
+            expand_icon.click() 
+        except NoSuchElementException: 
+            pass 
+        review_text = block.find_element_by_class_name('content').text
+        filtered_text = ''.join(list(filter(lambda item: item.isalpha(), review_text)))
+        result += f'{filtered_text} '
+
+    driver.close()
+    return result 
 
 
+def scrape_imdb_movie(movie_url_queue, msg_queue, worker_id, return_dict, driver_path):
+    # IMDB reviews have spoiler and show_more control, need clicking 
+    options = webdriver.ChromeOptions()
+    #options.add_argument('--headless)
+    driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
-def scrape_imdb_movie(movie_url_queue, msg_queue, worker_id, return_dict):
     # regexs 
     title_regex = re.compile(u'^(.*)\xa0')
     gross_usa_regex = re.compile('Gross USA.*\$(.*)')
@@ -64,7 +96,7 @@ def scrape_imdb_movie(movie_url_queue, msg_queue, worker_id, return_dict):
         # retrieve review link and user reviews
         review_partial_url = movie_soup.find('a', attrs={'href': review_link_regex}).attrs['href']
         review_url = f'https://www.imdb.com{review_partial_url}'
-        user_reviews = scrape_imdb_review(review_url)
+        user_reviews = scrape_imdb_review(review_url, msg_queue, driver)
         word_count = list(Counter(user_reviews.split()).items())
         word_count.sort(key=lambda item: item[1], reverse=True)
         top_words = [item[0] for item in word_count[:5]]
@@ -78,8 +110,8 @@ def scrape_imdb_movie(movie_url_queue, msg_queue, worker_id, return_dict):
         # get next url 
         movie_url = movie_url_queue.get(block=True)
 
-    return_dict[worker_id] = master_result
+    driver.quit()
+    return_dict[f'imdb_{worker_id}'] = master_result
     msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
-
     return None 
 
