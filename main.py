@@ -1,5 +1,8 @@
 from packages import *
 
+from scrape_imbd import scrape_imdb_movie
+from scrape_tomato import scrape_tomato_movie
+
 
 def download_driver():
 
@@ -55,7 +58,7 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
 
-    imdb_workers = 1
+    imdb_workers = 0
     tomato_workers = 1
     process_list = []
     message_q_list = []
@@ -91,14 +94,14 @@ def main():
 
     report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], check_alive=True, sleep_time=100)
 
-    with open('temp_file_storage', 'wb') as fileout:
+    with open('scraper_result_dump', 'wb') as fileout:
         pickle.dump(return_dict, fileout)
 
 
 if __name__ == '__main__':
 
     if 'Windows' in platform.platform():
-        print('Warning, you are running this on Windows platform.')
+        print('\nWarning, you are running this on Windows platform.')
         print('The script will still run, but curses is not supported by Windows')
         print('You lose the ability to monitor scraping progress.\n')
         
@@ -107,7 +110,7 @@ if __name__ == '__main__':
 
     else:
         print('I\'m glad you\'re not on windows, everything should work fine.')
-        print('As long as you have Chrome versoin 85 or 86. Earlier version supportis not gaurenteed')
+        print('As long as you have Chrome versoin 85. Earlier version supportis not gaurenteed')
         import curses 
         from report_progress import report_progress
 

@@ -58,16 +58,13 @@ def count_user_review(review_url, msg_head, msg_queue, driver, stop_words):
 def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, driver_path):
     # tomato things need to be searched, need clicking and redirecting
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     driver = webdriver.Chrome(executable_path=driver_path, options=options)
     search_templet = 'https://www.google.com/search?q=rottentomatoes.com%3A+{}'
-    
-    with open('tomato_credentials.txt', 'r') as filein: 
-        user_name = filein.readline().strip().partition(':')[-1]
-        password = filein.readline().strip().partition(':')[-1]
+
     stop_words = set(stopwords.words('english'))
     # report progress
-    msg_head = f'scraper {worker_id} for rotten tomato '
+    msg_head = f'scraper {worker_id:>2} for rotten tomato '
     msg_queue.put(f'{msg_head}started, waiting for url')
     meta_data_str = movie_json_queue.get(block=True)
 
@@ -84,7 +81,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
         title_cleaned = re.sub('[^\s\w]', '', title)
         search_url = search_templet.format('+'.join([*title_cleaned.split(), year]))
         driver.get(search_url)
-        sleep(1)
+        sleep(2)
         for block, citation in zip(driver.find_elements_by_tag_name('h3'), driver.find_elements_by_tag_name('cite')):
             
             title_texts = title_cleaned.split() 
@@ -99,13 +96,16 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
             master_result = master_result.append(current_result, ignore_index=True)
             continue 
         
-        sleep(2)
-        with open('temp.txt', 'w') as fileout:
-            fileout.write(driver.current_url)
+        sleep(5)
+
+        #movie_soup = bsoup(requests.get(driver.current_url).text, 'html.parser')
+        #rating_str = movie_soup.find(class_='mop-ratings-wrap__percentage').text.strip()
+        #rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')[2].text
+
         # get rating
         rating_str = driver.find_element_by_class_name('mop-ratings-wrap__percentage').text.strip()
-        rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
         rating_count_str = driver.find_elements_by_class_name('mop-ratings-wrap__text--small')[2].text
+        rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
         rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
 
         # get genre and gross USA

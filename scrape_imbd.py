@@ -54,7 +54,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, return_dict, drive
     stop_words = set(stopwords.words('english'))
 
     # report progress
-    msg_head = f'scraper {worker_id} for IMDB '
+    msg_head = f'scraper {worker_id:>2} for IMDB '
     msg_queue.put(f'{msg_head}started, waiting for url')
     movie_json_str = movie_json_queue.get(block=True)
 
@@ -90,7 +90,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, return_dict, drive
         # retrieve review link and user reviews
         review_partial_url = movie_soup.find('a', attrs={'href': review_link_regex}).attrs['href']
         review_url = f'https://www.imdb.com{review_partial_url}'
-        current_msg_head = f'{msg_head} working on {title}'
+        current_msg_head = f'{msg_head} working on {rank}. {title}'
         user_review_counter = scrape_imdb_review(review_url, current_msg_head, msg_queue, driver, stop_words)
         word_count = list(user_review_counter.items())
         word_count.sort(key=lambda item: item[1], reverse=True)
