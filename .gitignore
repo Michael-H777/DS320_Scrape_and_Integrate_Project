@@ -1,3 +1,5 @@
 chromedriver.*
 chromedriver/*
 tomato_credentials.txt
+debug.log
+.*ipynb.*
