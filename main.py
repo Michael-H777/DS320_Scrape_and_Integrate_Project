@@ -6,7 +6,7 @@ from scrape_tomato import scrape_tomato_movie
 
 def check_platform():
     platform_info = platform.platform() 
-    if 'Linux' in paltform_info: 
+    if 'Linux' in platform_info: 
         return 'linux'
     elif 'Windows' in platform_info:
         return 'windows'
@@ -106,7 +106,7 @@ def main():
 if __name__ == '__main__':
 
     current_platform = check_platform()
-    
+
     if current_platform == 'linux':
         print('\nI\'m glad you\'re on Linux, the script is developed on it and is tested extensivly.')
         print('Everything will run as long as you have Chrome versoin 85. Earlier version support is not gaurenteed')
