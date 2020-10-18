@@ -58,7 +58,7 @@ def count_user_review(review_url, msg_head, msg_queue, driver, stop_words):
 def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, driver_path):
     # tomato things need to be searched, need clicking and redirecting
     options = webdriver.ChromeOptions()
-    #options.add_argument('--headless')
+    #options.add_argument('--headless'), headless mode will not run on any platform
     driver = webdriver.Chrome(executable_path=driver_path, options=options)
     search_templet = 'https://www.google.com/search?q=rottentomatoes.com%3A+{}'
 

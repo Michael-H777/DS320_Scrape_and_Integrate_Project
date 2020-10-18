@@ -4,17 +4,22 @@ from scrape_imbd import scrape_imdb_movie
 from scrape_tomato import scrape_tomato_movie
 
 
+def check_platform():
+    platform_info = platform.platform() 
+    if 'Linux' in paltform_info: 
+        return 'linux'
+    elif 'Windows' in platform_info:
+        return 'windows'
+    else:
+        return 'mac'
+
+
 def download_driver():
 
     v85 = '85.0.4183.87'
     v86 = '86.0.4240.22'
-    master_url = f'https://chromedriver.storage.googleapis.com/{v85}/chromedriver_'
-    if 'Linux' in platform.platform():
-        url = f'{master_url}linux64.zip'
-    elif 'Windows' in platform.platform():
-        url = f'{master_url}win32.zip'
-    else:
-        url = f'{master_url}mac64.zip'
+    file_ending = {'linux': 'linux64.zip', 'windows': 'win32.zip', 'mac': 'mac64.zip'}
+    url = f'https://chromedriver.storage.googleapis.com/{v85}/chromedriver_{file_ending[check_platform()]}'
 
     driver_file = requests.get(url).content
 
@@ -100,19 +105,27 @@ def main():
 
 if __name__ == '__main__':
 
-    if 'Windows' in platform.platform():
+    current_platform = check_platform()
+    
+    if current_platform == 'linux':
+        print('\nI\'m glad you\'re on Linux, the script is developed on it and is tested extensivly.')
+        print('Everything will run as long as you have Chrome versoin 85. Earlier version support is not gaurenteed')
+        import curses 
+        from report_progress import report_progress
+
+    elif current_platform == 'windows':
         print('\nWarning, you are running this on Windows platform.')
-        print('The script will still run, but curses is not supported by Windows')
+        print('The script will still run, but curses is not supported nativly by Windows')
         print('You lose the ability to monitor scraping progress.\n')
         
         def report_progress(*kargs, **kwargs):
             pass
-
     else:
-        print('I\'m glad you\'re not on windows, everything should work fine.')
-        print('As long as you have Chrome versoin 85. Earlier version supportis not gaurenteed')
-        import curses 
-        from report_progress import report_progress
+        print('\nMac is tricky, some functions in multiprocess.Queue is not implemented and there\'s nothing I can do about that')
+        print('Script is not gaurenteed to run even with modification, please switch to linux or windows')
+
+        def report_progress(*kargs, **kwargs):
+            pass
 
     try:
         main()
