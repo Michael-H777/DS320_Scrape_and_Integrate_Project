@@ -1,12 +1,15 @@
 import re 
 import os
-
 import pandas as pd
+from time import sleep
 
 import requests 
 from bs4 import BeautifulSoup as bsoup 
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize 
 
 from itertools import count
 from collections import Counter
@@ -14,48 +17,48 @@ from collections import Counter
 
 def process_info_block(block_text):
     year = ''
-    genre = ''
+    genre = []
     for text in block_text:
         if text.isdigit():
             year = int(text)
         elif text.isalpha():
-            genre += f'{", " if len(genre) else ""}{text}'
+            genre.append(text)
 
-    return year, genre 
+    genre.sort()
+    return year, ', '.join(genre) 
 
 
-def scrape_imdb_review(review_url, msg_queue, driver):
+def scrape_imdb_review(review_url, msg_head, msg_queue, driver, stop_words):
     expand_icon_regex = re.compile('expander-icon-wrapper.*')
     review_block_regex = re.compile('lister-item mode-detail imdb-user-review.*')
 
-    result = ''
+    result_counter = Counter()
 
     driver.get(review_url)
 
+    msg_queue.put(f'{msg_head}clicking on show more')
+    # 25 reviews per click
     for _ in range(100):
+        sleep(1)
         try:
             driver.find_element_by_class_name('ipl-load-more__button').click()
-        except NoSuchElementException:
+        except:
             continue
 
-    for block in driver.find_elements_by_class_name(review_block_refex):
-        try:
-            expand_icon = block.find_element_by_class_name(expand_icon_regex)
-            expand_icon.click() 
-        except NoSuchElementException: 
-            pass 
+    msg_queue.put(f'{msg_head}collecting user reviews')
+    for block in driver.find_elements_by_class_name('lister-list'):
         review_text = block.find_element_by_class_name('content').text
-        filtered_text = ''.join(list(filter(lambda item: item.isalpha(), review_text)))
-        result += f'{filtered_text} '
+        review_text_cleaned = [word for word in word_tokenize(review_text) if word not in stop_words]
+        result_counter += Counter(review_text_cleaned)
 
-    driver.close()
-    return result 
+    driver.close() if len(driver.window_handles)>1 else None
+    return result_counter 
 
 
 def scrape_imdb_movie(movie_url_queue, msg_queue, worker_id, return_dict, driver_path):
-    # IMDB reviews have spoiler and show_more control, need clicking 
+    # IMDB reviews have spoiler and show_more control, needs clicking 
     options = webdriver.ChromeOptions()
-    #options.add_argument('--headless)
+    options.add_argument('--headless')
     driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
     # regexs 
@@ -92,18 +95,19 @@ def scrape_imdb_movie(movie_url_queue, msg_queue, worker_id, return_dict, driver
         gross_usa_str = gross_usa_regex.search(gross_block.text).group(1)
         gross_usa = int(''.join([item if item.isdigit() else '' for item in gross_usa_str]))
 
-        msg_queue.put(f'{msg_head}finished basic info on {title} of {year}, working on user_review')
+        msg_queue.put(f'{msg_head}finished basic info on {title} ({year}), working on user_review')
         # retrieve review link and user reviews
         review_partial_url = movie_soup.find('a', attrs={'href': review_link_regex}).attrs['href']
         review_url = f'https://www.imdb.com{review_partial_url}'
-        user_reviews = scrape_imdb_review(review_url, msg_queue, driver)
-        word_count = list(Counter(user_reviews.split()).items())
+        current_msg_head = f'{msg_head} working on {title}'
+        user_review_counter = scrape_imdb_review(review_url, current_msg_head, msg_queue, driver)
+        word_count = list(user_review_counter.items())
         word_count.sort(key=lambda item: item[1], reverse=True)
         top_words = [item[0] for item in word_count[:5]]
         
         # record scrape result
         result_list = [title, year, genre, rating_value, rating_count, gross_usa, *top_words]
-        current_result = [key:value for key, value in zip(scrape_columns, result_list)]
+        current_result = {key:value for key, value in zip(scrape_columns, result_list)}
         master_result = master_result.append(current_result, ignore_index=True)
 
         msg_queue.put(f'{msg_head}finished scraping {title} of {year}, waiting for next url')
