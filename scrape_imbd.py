@@ -1,19 +1,4 @@
-import re 
-import os
-import json
-import pandas as pd
-from time import sleep
-
-import requests 
-from bs4 import BeautifulSoup as bsoup 
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-
-from nltk.corpus import stopwords 
-from nltk.tokenize import word_tokenize 
-
-from itertools import count
-from collections import Counter
+from packages import *
 
 
 def process_info_block(block_text):

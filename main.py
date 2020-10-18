@@ -1,23 +1,11 @@
-import re 
-import os
-import json
-import pickle
-import zipfile 
-import platform 
-from time import time
-
-import requests 
-from bs4 import BeautifulSoup as bsoup 
-
-from scrape_imbd import scrape_imdb_movie
-from scrape_tomato import scrape_tomato_movie
-
-from multiprocessing import Process, Queue, Manager
+from packages import *
 
 
 def download_driver():
 
-    master_url = 'https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_'
+    v85 = '85.0.4183.87'
+    v86 = '86.0.4240.22'
+    master_url = f'https://chromedriver.storage.googleapis.com/{v85}/chromedriver_'
     if 'Linux' in platform.platform():
         url = f'{master_url}linux64.zip'
     elif 'Windows' in platform.platform():
@@ -67,8 +55,8 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
 
-    imdb_workers = 0
-    tomato_workers = 10
+    imdb_workers = 1
+    tomato_workers = 1
     process_list = []
     message_q_list = []
 
@@ -114,11 +102,11 @@ if __name__ == '__main__':
         print('The script will still run, but curses is not supported by Windows')
         print('You lose the ability to monitor scraping progress.\n')
         
-        def report_progress(*kwargs):
+        def report_progress(*kargs, **kwargs):
             pass
 
     else:
-        print('I\'m glad you\'re not on windows, everything will work fine.')
+        print('I\'m glad you\'re not on windows, everything should work fine.')
         print('As long as you have Chrome versoin 85 or 86. Earlier version supportis not gaurenteed')
         import curses 
         from report_progress import report_progress

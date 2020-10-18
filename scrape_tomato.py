@@ -1,21 +1,4 @@
-import re 
-import os
-import json
-import pandas as pd
-from time import sleep
-from random import randint 
-
-import requests 
-from bs4 import BeautifulSoup as bsoup 
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
-
-from nltk.corpus import stopwords 
-from nltk.tokenize import word_tokenize 
-
-from itertools import count
-from collections import Counter
+from packages import *
 
 
 def clean_gross_string(input_string):
@@ -77,7 +60,6 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     driver = webdriver.Chrome(executable_path=driver_path, options=options)
-    sleep(5)
     search_templet = 'https://www.google.com/search?q=rottentomatoes.com%3A+{}'
     
     with open('tomato_credentials.txt', 'r') as filein: 
@@ -99,18 +81,27 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
         rank, title, year = meta_data.values() 
         # we need ot use google search, rottentomatoes have shadow-root
         # things within can't be accessed with scraper, bsoup or selenium 
-        search_url = search_templet.format('+'.join([*title.split(), year]))
+        title_cleaned = re.sub('[^\s\w]', '', title)
+        search_url = search_templet.format('+'.join([*title_cleaned.split(), year]))
         driver.get(search_url)
-
-        for block in driver.find_elements_by_tag_name('h3'):
-            if title in block.text and year in block.text: 
+        sleep(1)
+        for block, citation in zip(driver.find_elements_by_tag_name('h3'), driver.find_elements_by_tag_name('cite')):
+            
+            title_texts = title_cleaned.split() 
+            block_texts = re.sub('[^\s\w]', '', block.text).split() 
+            if  all(item in block_texts for item in title_texts) and year in block_texts and 'www.rottentomatoes.com' in citation.text: 
                 block.find_element_by_tag_name('span').click()
                 break
         else:
             meta_data_str = movie_json_queue.get(block=True)
+            result_list = [rank, title, year, '', '', '', '', '', '', '', '', '']
+            current_result = {key:value for key, value in zip(scrape_columns, result_list)}
+            master_result = master_result.append(current_result, ignore_index=True)
             continue 
         
-        sleep(5)
+        sleep(2)
+        with open('temp.txt', 'w') as fileout:
+            fileout.write(driver.current_url)
         # get rating
         rating_str = driver.find_element_by_class_name('mop-ratings-wrap__percentage').text.strip()
         rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
