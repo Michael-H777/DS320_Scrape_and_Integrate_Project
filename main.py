@@ -1,5 +1,6 @@
 import re 
 import os
+import json
 import zipfile 
 import platform 
 from time import time
@@ -7,8 +8,8 @@ from time import time
 import requests 
 from bs4 import BeautifulSoup as bsoup 
 
-from multiprocessing import Process, Queue
 from report_progress import report_progress
+from multiprocessing import Process, Queue, Manager
 
 
 def download_driver(url):
@@ -56,7 +57,7 @@ def scrape_imdb_rank(imdb_url_queue, tomato_json_queue, msg_queue):
             imdb_url_queue.put(movie_imdb_url)
             tomato_json_queue.put(json.dumps({'title': title, 'year': year}))
     # signal scraper to exit
-    [(imdb_url_queue.put('exit'), tomato_json_queue.put('exit')) for _ in range(20)]
+    [(imdb_url_queue.put('exit'), tomato_json_queue.put('exit')) for _ in range(10)]
     return None
 
 
@@ -68,6 +69,9 @@ def main():
     tomato_workers = 5 
     process_list = []
     message_q_list = []
+
+    result_manager = Manager()
+    return_dict = result_manager.dict()
 
     imdb_url_queue = Queue()
     tomato_json_queue = Queue()
