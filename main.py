@@ -1,7 +1,7 @@
-from packages import *
+from utils.packages import *
 
-from scrape_imbd import scrape_imdb_movie
-from scrape_tomato import scrape_tomato_movie
+from scrapers.scrape_imbd import scrape_imdb_movie
+from scrapers.scrape_tomato import scrape_tomato_movie
 
 
 def check_platform():
@@ -107,7 +107,7 @@ if __name__ == '__main__':
         print('\nI\'m glad you\'re on Linux, the script is developed on it and is tested extensivly.')
         print('Everything will run as long as you have Chrome versoin 85. Earlier version support is not gaurenteed')
         import curses 
-        from report_progress import report_progress
+        from utils.report_progress import report_progress
 
     elif current_platform == 'windows':
         print('\nWarning, you are running this on Windows platform.')

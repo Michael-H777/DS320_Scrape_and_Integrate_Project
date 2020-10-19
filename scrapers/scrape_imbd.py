@@ -1,4 +1,4 @@
-from packages import *
+from utils.packages import *
 
 
 def process_info_block(block_text):

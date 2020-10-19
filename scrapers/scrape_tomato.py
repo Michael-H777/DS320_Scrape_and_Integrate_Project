@@ -1,4 +1,4 @@
-from packages import *
+from utils.packages import *
 
 
 def clean_gross_string(input_string):
@@ -87,7 +87,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             
             title_texts = title_cleaned.split() 
             block_texts = re.sub('[^\s\w]', '', block.text).split() 
-            if  all(item in block_texts for item in title_texts) and year in block_texts and 'www.rottentomatoes.com' in citation.text: 
+            if all(item in block_texts for item in title_texts) and year in block_texts and 'www.rottentomatoes.com' in citation.text: 
                 block.find_element_by_tag_name('span').click()
                 break
         else:
