@@ -55,10 +55,11 @@ def count_user_review(review_url, msg_head, msg_queue, driver, stop_words):
     return result_counter
 
 
-def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, driver_path):
+def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     # tomato things need to be searched, need clicking and redirecting
     options = webdriver.ChromeOptions()
-    #options.add_argument('--headless'), headless mode will not run on any platform
+    # headless mode will not run on any platform
+    #options.add_argument('--headless')
     driver = webdriver.Chrome(executable_path=driver_path, options=options)
     search_templet = 'https://www.google.com/search?q=rottentomatoes.com%3A+{}'
 
@@ -98,29 +99,27 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
         
         sleep(5)
 
-        #movie_soup = bsoup(requests.get(driver.current_url).text, 'html.parser')
-        #rating_str = movie_soup.find(class_='mop-ratings-wrap__percentage').text.strip()
-        #rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')[2].text
-
-        # get rating
-        rating_str = driver.find_element_by_class_name('mop-ratings-wrap__percentage').text.strip()
-        rating_count_str = driver.find_elements_by_class_name('mop-ratings-wrap__text--small')[2].text
+        # rotten tomato is the single most difficult website to deal with 
+        movie_soup = bsoup(driver.page_source, 'html.parser')
+        rating_str = movie_soup.find(class_='mop-ratings-wrap__percentage').text.strip()
+        rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')[2].text
         rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
         rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
 
-        # get genre and gross USA
-        genre = gross_usa = ''
-        for info_block in driver.find_elements_by_class_name('meta-row clearfix'):
+        # genre and gross 
+        genre = gross_usa = '' 
+        for info_block in movie_soup.find_all(class_='meta-row clearfix'):
             if 'Genre' in info_block.text: 
-                genre_dirty = info_block.find_element_by_class_name('meta-value genre').text
+                genre_dirty = info_block.find(class_='meta-value genre').text
                 genre = clean_genre_string(genre_dirty)
             elif 'Gross USA' in info_block.text: 
-                gross_usa_str = info_block.find_element_by_class_name('meta-value').text
-                gross_usa = clean_gross_string(gross_usa_str)
+                gross_usa_dirty = info_block.find(class_='meta-value').text
+                gross_usa = clean_gross_string(gross_usa_dirty)
 
         msg_queue.put(f'{msg_head}completed basic info of {rank}. {title}, working on user_review')
         # user_review 
-        user_review_url = driver.find_element_by_class_name('mop-audience-reviews__view-all--link').get_attribute('href')
+        user_review_url = f'{driver.current_url}'
+        user_review_url += f'{"" if user_review_url.endswith("/") else "/"}reviews?type=user'
         current_msg_head = f'{msg_head}working on {rank}. {title}'
         user_review_counter = count_user_review(user_review_url, current_msg_head, msg_queue, driver, stop_words)
         word_count = list(user_review_counter.items())
@@ -136,7 +135,8 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, return_dict, dri
         meta_data_str = movie_json_queue.get(block=True)
 
     driver.quit()
-    return_dict[f'tomato_{worker_id}'] = master_result
+    # windows does not support Manager().dict() to return value from child-process to main-process
+    master_result.to_csv(f'tomatoes/tomatoes_{worker_id}.csv', index=False)
     msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
 
     return None 

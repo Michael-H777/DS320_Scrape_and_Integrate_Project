@@ -63,13 +63,10 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
 
-    imdb_workers = 0
-    tomato_workers = 1
+    imdb_workers = 10
+    tomato_workers = 0
     process_list = []
     message_q_list = []
-
-    result_manager = Manager()
-    return_dict = result_manager.dict()
 
     imdb_url_queue = Queue()
     tomato_json_queue = Queue()
@@ -84,7 +81,7 @@ def main():
     for worker_id in range(imdb_workers):
         current_queue = Queue() 
         current_process = Process(target=scrape_imdb_movie, 
-                                    args=(imdb_url_queue, current_queue, worker_id+1, return_dict, driver_path))
+                                    args=(imdb_url_queue, current_queue, worker_id+1, driver_path))
         current_process.start()
         process_list.append(current_process)
         message_q_list.append(current_queue)
@@ -92,15 +89,14 @@ def main():
     for worker_id in range(tomato_workers):
         current_queue = Queue() 
         current_process = Process(target=scrape_tomato_movie, 
-                                    args=(tomato_json_queue, current_queue, worker_id+1, return_dict, driver_path))
+                                    args=(tomato_json_queue, current_queue, worker_id+1, driver_path))
         current_process.start()
         process_list.append(current_process)
         message_q_list.append(current_queue)
 
     report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], check_alive=True, sleep_time=100)
 
-    with open('scraper_result_dump', 'wb') as fileout:
-        pickle.dump(return_dict, fileout)
+    ## IMPLEMENT RESULT INTEGRATION
 
 
 if __name__ == '__main__':
@@ -115,18 +111,25 @@ if __name__ == '__main__':
 
     elif current_platform == 'windows':
         print('\nWarning, you are running this on Windows platform.')
-        print('The script will still run, but curses is not supported nativly by Windows')
+        print('The script will still run, but curses is not supported natively by Windows')
         print('You lose the ability to monitor scraping progress.\n')
-        
-        def report_progress(*kargs, **kwargs):
-            pass
+
+        def report_progress(process_list, *args, **kwargs):
+            [item.join for item in process_list]
+            return None
     else:
         print('\nMac is tricky, some functions in multiprocess.Queue is not implemented and there\'s nothing I can do about that')
         print('Script is not gaurenteed to run even with modification, please switch to linux or windows')
+        
+        def report_progress(process_list, *args, **kwargs):
+            [item.join for item in process_list]
+            return None
 
-        def report_progress(*kargs, **kwargs):
-            pass
-
+    if not os.path.exists('IMDB'):
+        os.mkdir('IMDB/')
+    if not os.path.exists('tomatoes'):
+        os.mkdir('tomatoes/')
+    
     try:
         main()
     except KeyboardInterrupt:

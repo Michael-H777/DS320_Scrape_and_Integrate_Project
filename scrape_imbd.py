@@ -24,7 +24,7 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver, stop_words):
 
     msg_queue.put(f'{msg_head}clicking on show more')
     # 25 reviews per click
-    for _ in range(100):
+    for _ in range(10):
         sleep(1)
         try:
             driver.find_element_by_class_name('ipl-load-more__button').click()
@@ -41,10 +41,10 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver, stop_words):
     return result_counter 
 
 
-def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, return_dict, driver_path):
+def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     # IMDB reviews have spoiler and show_more control, needs clicking 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
     # regexs 
@@ -69,7 +69,11 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, return_dict, drive
 
         # collect title, year, genre 
         info_block = movie_soup.find(class_='title_wrapper')
-        title = title_regex.search(info_block.find('h1').text).group(1)
+        try:
+            title = title_regex.search(info_block.find('h1').text).group(1)
+        except:
+            with open(f'imdb{worker_id}.txt', 'w') as fileout:
+                fileout.write(movie_url)
         block_text = [item.text for item in info_block.find_all('a')]
         year, genre = process_info_block(block_text)
 
@@ -106,7 +110,8 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, return_dict, drive
         movie_json_str = movie_json_queue.get(block=True)
 
     driver.quit()
-    return_dict[f'imdb_{worker_id}'] = master_result
+    # windows does not support Manager().dict() to return value from child-process to main-process
+    master_result.to_csv(f'IMDB/IMDB_{worker_id}.csv', index=False)
     msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
     return None 
 

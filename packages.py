@@ -19,4 +19,4 @@ from selenium.common.exceptions import NoSuchElementException
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize
 
-from multiprocessing import Process, Queue, Manager
+from multiprocessing import Process, Queue

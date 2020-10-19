@@ -1,6 +1,8 @@
+__pycache__/*
 chromedriver/*
+IMDB/*
 tomato_credentials.txt
 debug.log
-__pycache__/*
 Proposal.docx
 *ipynb
+tomato_gross_text
