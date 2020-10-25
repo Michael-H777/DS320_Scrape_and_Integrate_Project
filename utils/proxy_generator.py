@@ -40,9 +40,11 @@ class driver_object:
             options = webdriver.ChromeOptions()
             options.add_argument('--headless')
             options.add_argument("--disable-dev-shm-usage")
-                
-            yield  webdriver.Chrome(executable_path=self.driver_path, chrome_options=options , desired_capabilities=capabilities)
-        
+            
+            driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options , desired_capabilities=capabilities)
+            driver.set_page_load_timeout(60)
+            yield driver
+
     @property
     def valida_response(self):
         return False if any(item in self.driver.page_source for item in driver_object.blocks) else True

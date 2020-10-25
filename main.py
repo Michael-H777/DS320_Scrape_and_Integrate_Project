@@ -15,9 +15,6 @@ def check_platform():
 
 
 def download_driver():
-
-    return 'chromedriver/chromedriver'
-
     v85 = '85.0.4183.87'
     v86 = '86.0.4240.22'
     file_ending = {'linux': 'linux64.zip', 'windows': 'win32.zip', 'mac': 'mac64.zip'}

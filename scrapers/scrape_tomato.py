@@ -107,6 +107,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         
         if driver is False:
             retry = next(retry_counter)
+            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
             msg_queue.put(f'{msg_head}triggered anti-scrape, switching IP, retry: {retry}')
             continue
         
@@ -122,6 +123,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             driver.quit()
             retry = next(retry_counter)
             meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
+            msg_queue.put(f'{msg_head}google search failed, switching IP, retry: {retry}')
             continue 
 
         sleep(10)
@@ -129,7 +131,8 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             sleep(1)
             driver.quit() 
             retry = next(retry_counter)
-            msg_queue.put(f'{msg_head}triggered anti-scrape, switching IP, retry: {retry}')
+            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
+            msg_queue.put(f'{msg_head}tomato failed to load, switching IP, retry: {retry}')
             continue 
 
         # basic info 
@@ -141,6 +144,9 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
         except:
             driver.quit()
+            retry = next(retry_counter)
+            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
+            msg_queue.put(f'{msg_head}tomato failed to load, switching IP, retry: {retry}')
             continue 
         
         # genre and gross 
