@@ -30,6 +30,7 @@ def report_progress(process_list, message_q_list, worker_counts, result_dir=None
     curses.cbreak()
     # report progress 
     while any([item.is_alive() for item in process_list]):
+        sleep(0.2)
         # restart if needed 
         if restart and any([(not item1.is_alive() and 'completed' not in item2) 
                         for item1, item2 in zip(process_list, message_list)]):

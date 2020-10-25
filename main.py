@@ -16,10 +16,12 @@ def check_platform():
 
 def download_driver():
 
+    return 'chromedriver/chromedriver'
+
     v85 = '85.0.4183.87'
     v86 = '86.0.4240.22'
     file_ending = {'linux': 'linux64.zip', 'windows': 'win32.zip', 'mac': 'mac64.zip'}
-    url = f'https://chromedriver.storage.googleapis.com/{v85}/chromedriver_{file_ending[check_platform()]}'
+    url = f'https://chromedriver.storage.googleapis.com/{v86}/chromedriver_{file_ending[check_platform()]}'
 
     driver_file = requests.get(url).content
 
@@ -33,7 +35,7 @@ def download_driver():
     return f'chromedriver/{file_name}'  
 
 
-def scrape_imdb_rank(imdb_url_queue, tomato_json_queue, msg_queue):
+def scrape_imdb_rank(imdb_json_queue, tomato_json_queue, msg_queue):
     master_url = 'https://www.imdb.com/search/title/?groups=top_1000&sort=user_rating,desc&count=100&start={}&ref_=adv_nxt'
 
     # get 10 pages of 1000 items 
@@ -41,20 +43,22 @@ def scrape_imdb_rank(imdb_url_queue, tomato_json_queue, msg_queue):
         page_num = start_count//100 + 1
         page_soup = bsoup(requests.get(master_url.format(start_count)).text, 'html.parser')
         for block in page_soup.find_all(class_='lister-item mode-advanced'): 
+            # get basic info 
             header_block = block.find('h3')
             rank, title, year = list(filter(lambda item: len(item), header_block.text.split('\n')))
             rank = ''.join(list(filter(lambda item: item.isdigit(), rank)))
             year = ''.join(list(filter(lambda item: item.isdigit(), year)))
             title = title.strip() 
+            # partial imdb url for  imdb scraper 
             partial_url = header_block.find('a').attrs['href']
             movie_imdb_url = f'https://www.imdb.com{partial_url}'
 
             msg_queue.put(f'IMDB rank scraper on page {page_num}, title: {title} ({year})')
             # feed imdb url and title/year into Queue
-            imdb_url_queue.put(json.dumps({'rank': rank, 'url': movie_imdb_url}))
+            imdb_json_queue.put(json.dumps({'rank': rank, 'title':title, 'url': movie_imdb_url}))
             tomato_json_queue.put(json.dumps({'rank': rank, 'title': title, 'year': year}))
     # signal scraper to exit
-    [(imdb_url_queue.put('exit'), tomato_json_queue.put('exit')) for _ in range(10)]
+    [(imdb_json_queue.put('exit'), tomato_json_queue.put('exit')) for _ in range(100)]
     msg_queue.put(f'IMDB rank scraper job completed, terminate signal sent')
     return None
 
@@ -62,18 +66,18 @@ def scrape_imdb_rank(imdb_url_queue, tomato_json_queue, msg_queue):
 def main(): 
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
-
-    imdb_workers = 10
-    tomato_workers = 0
+    
+    imdb_workers = 0
+    tomato_workers = 1
     process_list = []
     message_q_list = []
 
-    imdb_url_queue = Queue()
+    imdb_json_queue = Queue()
     tomato_json_queue = Queue()
     # start rank scraper 
     current_queue = Queue() 
     current_process = Process(target=scrape_imdb_rank, 
-                                args=(imdb_url_queue, tomato_json_queue, current_queue))
+                                args=(imdb_json_queue, tomato_json_queue, current_queue))
     current_process.start()
     process_list.append(current_process)
     message_q_list.append(current_queue)
@@ -81,7 +85,7 @@ def main():
     for worker_id in range(imdb_workers):
         current_queue = Queue() 
         current_process = Process(target=scrape_imdb_movie, 
-                                    args=(imdb_url_queue, current_queue, worker_id+1, driver_path))
+                                    args=(imdb_json_queue, current_queue, worker_id+1, driver_path))
         current_process.start()
         process_list.append(current_process)
         message_q_list.append(current_queue)
@@ -94,7 +98,7 @@ def main():
         process_list.append(current_process)
         message_q_list.append(current_queue)
 
-    report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], check_alive=True, sleep_time=100)
+    report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], result_dir='results', check_alive=True, sleep_time=1000)
 
     ## IMPLEMENT RESULT INTEGRATION
 
@@ -125,11 +129,9 @@ if __name__ == '__main__':
             [item.join for item in process_list]
             return None
 
-    if not os.path.exists('IMDB'):
-        os.mkdir('IMDB/')
-    if not os.path.exists('tomatoes'):
-        os.mkdir('tomatoes/')
-    
+    if not os.path.exists('results'):
+        os.mkdir('results/')
+        
     try:
         main()
     except KeyboardInterrupt:
