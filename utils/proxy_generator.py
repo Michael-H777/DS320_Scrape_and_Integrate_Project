@@ -42,7 +42,7 @@ class driver_object:
             current_proxy.add_to_capabilities(capabilities)
 
             options = webdriver.ChromeOptions()
-            #options.add_argument('--headless')
+            options.add_argument('--headless')
             options.add_argument("--disable-dev-shm-usage")
                 
             yield  webdriver.Chrome(executable_path=self.driver_path, chrome_options=options , desired_capabilities=capabilities)

@@ -134,7 +134,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         # get next url 
         movie_json_str = movie_json_queue.get(block=True)
 
-    # windows does not support Manager().dict() to return value from child-process to main-process
     msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
+
     return None 
 

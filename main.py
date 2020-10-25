@@ -67,8 +67,8 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
     
-    imdb_workers = 0
-    tomato_workers = 1
+    imdb_workers = 10
+    tomato_workers = 30
     process_list = []
     message_q_list = []
 
@@ -109,7 +109,7 @@ if __name__ == '__main__':
 
     if current_platform == 'linux':
         print('\nI\'m glad you\'re on Linux, the script is developed on it and is tested extensivly.')
-        print('Everything will run as long as you have Chrome versoin 85. Earlier version support is not gaurenteed')
+        print('Everything will run as long as you have Chrome versoin 85 or 86. Earlier version support is not gaurenteed')
         import curses 
         from utils.report_progress import report_progress
 

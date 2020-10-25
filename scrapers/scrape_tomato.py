@@ -43,7 +43,8 @@ def log_in(driver):
 def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_words):
     
     retry_counter = count(1)
-    
+    place_holder = ['1', '2', '3', '4', '5']
+    result_counter = Counter(place_holder)
     while True: 
         
         driver = driver_generator.get(review_url)
@@ -53,7 +54,6 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
             msg_queue.put(f'{msg_head}triggered anti-scrape when scraping review, switching IP, retry: {retry}')
             continue 
         
-        result_counter = Counter()
         # 10 reviews per page 
         total_pages = 10
         for page_num in range(total_pages):
@@ -62,11 +62,12 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
             # collect all reviews 
             for review_block in driver.find_elements_by_class_name('audience-reviews__item'): 
                 current_review = review_block.find_element_by_tag_name('p').text 
-                current_review_cleaned = [word for word in word_tokenize(current_review) if word not in stop_words and len(word)>3]
+                current_review_raw = [clean_word(word) for word in word_tokenize(current_review)]
+                current_review_cleaned = [word for word in current_review_raw if word not in stop_words and len(word)>3]
                 result_counter += Counter(current_review_cleaned)
             
             msg_queue.put(f'{msg_head}, page {page_num+1}/{total_pages}')
-            
+
             # find next buttons 
             next_button = driver.find_elements_by_class_name('prev-next-paging__button-text')
             next_button = list(filter(lambda item: item.text=='NEXT', next_button))
@@ -124,13 +125,11 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         # if did not find suitable result, continue while loop 
         else:
             driver.quit()
-            meta_data_str = movie_json_queue.get(block=True)
-            result_list = [rank, title, year, '', '', '', '', '', '', '', '', '']
-            movie_result = pd.DataFrame(columns=scrape_columns, data=result_list)
-            movie_result.to_csv(f'results/tomato_{rank}.csv', index=False)
+            retry = next(retry_counter)
+            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
             continue 
-        sleep(3)
 
+        sleep(10)
         if not driver_generator.valida_response: 
             sleep(1)
             driver.quit() 
@@ -139,12 +138,16 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             continue 
 
         # basic info 
-        movie_soup = bsoup(driver.page_source, 'html.parser')
-        rating_str = movie_soup.find(class_='mop-ratings-wrap__percentage').text.strip()
-        rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')[2].text
-        rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
-        rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
-
+        try:
+            movie_soup = bsoup(driver.page_source, 'html.parser')
+            rating_str = movie_soup.find(class_='mop-ratings-wrap__percentage').text.strip()
+            rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')[2].text
+            rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
+            rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
+        except:
+            driver.quit()
+            continue 
+        
         # genre and gross 
         genre = gross_usa = '' 
         for info_block in movie_soup.find_all(class_='meta-row clearfix'):
@@ -176,8 +179,6 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         retry_counter = count(1)
 
     driver.quit()
-    # windows does not support Manager().dict() to return value from child-process to main-process
-    master_result.to_csv(f'tomatoes/tomatoes_{worker_id}.csv', index=False)
     msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
 
     return None 
