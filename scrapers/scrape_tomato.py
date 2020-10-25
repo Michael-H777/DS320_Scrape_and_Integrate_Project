@@ -4,29 +4,10 @@ from utils.proxy_generator import driver_object
 
 def clean_genre_string(input_string):
     input_list = input_string.split() 
-    cleaned_list = list(filter(lambda item: len(item)>1, input_list))
+    cleaned_list = list(filter(lambda item: len(item)>2 and item!='and', input_list))
+    cleaned_list = [''.join(list(filter(lambda char: char.isalpha(), item))) for item in cleaned_list]
     cleaned_list.sort()
     return ', '.join(cleaned_list)
-
-
-def log_in(driver):
-    log_in_hidden = driver.find_elements_by_class_name('modal fade')
-    log_in_hidden = any(item.get_attribute('id')=='login' and 
-                        item.get_attribute('style')=='display: none;' for item in log_in_hidden)
-
-    # if prompted to log in 
-    if not log_in_hidden:
-        input_blocks = driver.find_elements_by_tag_name('input')
-        uname_block = list(filter(lambda item: item.get_attribute('id')=='login_username', input_blocks))[0]
-        pswd_block = list(filter(lambda item: item.get_attribute('id')=='login_password', input_blocks))[0]
-        uname_block.click() 
-        uname_block.send_keys(user_name)
-        pswd_block.click() 
-        pswd_block.send_keys(password)
-        buttons = driver.find_elements_by_tag_name('button')
-        list(filter(lambda item: item.get_attribute('type')=='submit', buttons))[0].click()
-        
-    return None 
 
 
 def clean_word(word):
@@ -42,7 +23,6 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
     while len(result_counter)==0 and retry<200: 
         
         driver = driver_generator.get(review_url)
-        
         if driver is False: 
             retry = next(retry_counter)
             msg_queue.put(f'{msg_head}triggered anti-scrape when scraping review, switching IP, retry: {retry}')
@@ -51,7 +31,7 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
         # 10 reviews per page 
         total_pages = 10
         for page_num in range(total_pages):
-            sleep(randint(30, 70)/10)
+            sleep(10)
 
             # collect all reviews 
             for review_block in driver.find_elements_by_class_name('audience-reviews__item'): 
@@ -61,7 +41,6 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
                 result_counter += Counter(current_review_cleaned)
             
             msg_queue.put(f'{msg_head}, page {page_num+1}/{total_pages}')
-
             # find next buttons 
             next_button = driver.find_elements_by_class_name('prev-next-paging__button-text')
             next_button = list(filter(lambda item: item.text=='NEXT', next_button))
@@ -82,11 +61,14 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     # google search templet
     search_templet = 'https://www.google.com/search?q=rottentomatoes.com%3A+{}'
 
+    # stop words for review cleaning 
     stop_words = set(stopwords.words('english'))
     stop_words.update(custom_stop_words)
+    
     # report progress
     msg_head = f'scraper {worker_id:>2} for rotten tomato '
     meta_data_str = movie_json_queue.get(block=True)
+    msg_queue.put(f'{msg_head}started, waiting for response')
 
     # record df
     scrape_columns = ['rank', 'title', 'year', 'genre', 'rating', 'rating_count', 'box gross', 
@@ -94,23 +76,36 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     
     retry_counter = count(1)
     
+    # sometimes we want to use local driver for google search 
+    use_local = False 
     while meta_data_str != 'exit':
 
         meta_data = json.loads(meta_data_str)
-        rank, title, year = meta_data.values()         
-        msg_queue.put(f'{msg_head}url of movie no.{rank:>2} retrieved, waiting for response')
-        # we need ot use google search, rottentomatoes have shadow-root
+        rank, title, year = meta_data.values()
+        
+        file_name = f'tomato_{rank}.csv'
+        if file_name in os.listdir('results/'):
+            retry_counter = count(1)
+            meta_data_str = movie_json_queue.get(block=True)
+            continue 
+
+        # we need to use google search, rottentomatoes have shadow-root
         # things within can't be accessed with scraper, bsoup or selenium 
         title_cleaned = re.sub('[^\s\w]', '', title)
         search_url = search_templet.format('+'.join([*title_cleaned.split(), year]))
-        driver = driver_generator.get(search_url)
+        if use_local:
+            driver = driver_generator.get_local_driver()
+            driver.get(search_url) 
+        else:
+            driver = driver_generator.get(search_url)
         
         if driver is False:
+            use_local = False
             retry = next(retry_counter)
             meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
             msg_queue.put(f'{msg_head}triggered anti-scrape, switching IP, retry: {retry}')
             continue
-        
+
         for block, citation in zip(driver.find_elements_by_tag_name('h3'), driver.find_elements_by_tag_name('cite')):
             # get title text and website source for clicking 
             title_texts = title_cleaned.split() 
@@ -127,9 +122,11 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             continue 
 
         sleep(10)
+        # page did not load properly 
         if not driver_generator.valida_response: 
             sleep(1)
             driver.quit() 
+            use_local = False
             retry = next(retry_counter)
             meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
             msg_queue.put(f'{msg_head}tomato failed to load, switching IP, retry: {retry}')
@@ -144,6 +141,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
         except:
             driver.quit()
+            use_local = False
             retry = next(retry_counter)
             meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
             msg_queue.put(f'{msg_head}tomato failed to load, switching IP, retry: {retry}')
@@ -175,10 +173,11 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
 
         # go to next movie 
         driver.quit()
+        use_local = True
         meta_data_str = movie_json_queue.get(block=True)
         retry_counter = count(1)
 
     driver.quit()
-    msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
+    msg_queue.put(f'{msg_head}job completed, process terminated')
 
     return None 

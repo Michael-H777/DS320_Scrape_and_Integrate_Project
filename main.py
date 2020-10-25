@@ -1,5 +1,6 @@
 from utils.packages import *
 
+from utils.report_progress import EmergencyRestart
 from scrapers.scrape_imbd import scrape_imdb_movie
 from scrapers.scrape_tomato import scrape_tomato_movie
 
@@ -15,6 +16,8 @@ def check_platform():
 
 
 def download_driver():
+    return 'chromedriver/chromedriver'
+    
     v85 = '85.0.4183.87'
     v86 = '86.0.4240.22'
     file_ending = {'linux': 'linux64.zip', 'windows': 'win32.zip', 'mac': 'mac64.zip'}
@@ -50,7 +53,7 @@ def scrape_imdb_rank(imdb_json_queue, tomato_json_queue, msg_queue):
             partial_url = header_block.find('a').attrs['href']
             movie_imdb_url = f'https://www.imdb.com{partial_url}'
 
-            msg_queue.put(f'IMDB rank scraper on page {page_num}, title: {title} ({year})')
+            msg_queue.put(f'IMDB rank scraper on page {page_num}, rank: {rank}, title: {title} ({year})')
             # feed imdb url and title/year into Queue
             imdb_json_queue.put(json.dumps({'rank': rank, 'title':title, 'url': movie_imdb_url}))
             tomato_json_queue.put(json.dumps({'rank': rank, 'title': title, 'year': year}))
@@ -64,8 +67,8 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
     
-    imdb_workers = 10
-    tomato_workers = 35
+    imdb_workers = 5
+    tomato_workers = 40
     process_list = []
     message_q_list = []
 
@@ -96,7 +99,6 @@ def main():
         message_q_list.append(current_queue)
 
     report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], result_dir='results', check_alive=True, sleep_time=1000)
-
     ## IMPLEMENT RESULT INTEGRATION
 
 
@@ -128,11 +130,18 @@ if __name__ == '__main__':
 
     if not os.path.exists('results'):
         os.mkdir('results/')
-        
-    try:
-        main()
-    except KeyboardInterrupt:
-        curses.echo()
-        curses.nocbreak()
-        curses.endwin()
+    
+    while True:
+        try:
+            main()
+        except EmergencyRestart:
+            curses.echo()
+            curses.nocbreak()
+            curses.endwin()
+            continue 
+        except KeyboardInterrupt:
+            curses.echo()
+            curses.nocbreak()
+            curses.endwin()
+        break
     

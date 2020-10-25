@@ -28,7 +28,7 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver_generator, stop_w
 
     # force retry to scrape review, proxies are horrible
     while len(result_counter)==0 and retry<200:
-        
+
         driver = driver_generator.get(review_url)
         # driver_generator will force driver to be False when page invalid
         if driver is False: 
@@ -42,9 +42,11 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver_generator, stop_w
             sleep(1)
             try:
                 driver.find_element_by_class_name('ipl-load-more__button').click()
+            # page might stillbe loading 
             except NoSuchElementException:
                 sleep(5)
                 continue
+            # there is no next button 
             except ElementNotInteractableException: 
                 break                
         
@@ -87,9 +89,17 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         rank, title, movie_url = json.loads(movie_json_str).values()
         proxy_param = {'http': proxy_address, 'https':proxy_address}
         
+        file_name = f'IMDB_{rank}.csv'
+        if file_name in os.listdir('results/'):
+            movie_json_str = movie_json_queue.get()
+            retry_counter = count(1)
+            msg_queue.put(f'{msg_head}already scraped movie no.{rank:>2} moving on')
+            continue 
+        
+        # proxies are very difficult to use, they frequently timeout 
         msg_queue.put(f'{msg_head}url of movie no.{rank:>2} retrieved, waiting for response')
         try:
-            movie_soup = bsoup(requests.get(movie_url, proxies=proxy_param, timeout=10).text, 'html.parser')
+            movie_soup = bsoup(requests.get(movie_url, proxies=proxy_param, timeout=60).text, 'html.parser')
         except: 
             retry = next(retry_counter)
             msg_queue.put(f'{msg_head}proxy error on movie no.{rank}, switching IP, attempt {retry}')
@@ -137,7 +147,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         # get next url 
         movie_json_str = movie_json_queue.get(block=True)
 
-    msg_queue.put(f'{msg_head}job completed, result returned, process terminated')
+    msg_queue.put(f'{msg_head}job completed, process terminated')
 
     return None 
 

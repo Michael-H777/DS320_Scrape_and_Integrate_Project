@@ -3,7 +3,8 @@ from utils.packages import *
 
 class driver_object:
     
-    blocks = ['This site can’t be reached', 'No internet', 'Access Denied', 'Error 503', 'Our systems have detected unusual traffic from your computer network']
+    blocks = ['This site can’t be reached', 'This page isn’t working', 'No internet', 'Access Denied', 
+                'Error 503', 'Our systems have detected unusual traffic from your computer network']
     
     def __init__(self, driver_path):
         
@@ -23,9 +24,14 @@ class driver_object:
             for address in proxies: 
                 yield address 
 
-
+    def get_local_driver(self):
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        self.driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options)
+        return self.driver
+    
     def get_proxy_drivers(self):
-                
+        
         while True: 
             address = next(self.generate_proxy)
             
@@ -40,19 +46,27 @@ class driver_object:
             options = webdriver.ChromeOptions()
             options.add_argument('--headless')
             options.add_argument("--disable-dev-shm-usage")
-            
+
             driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options , desired_capabilities=capabilities)
-            driver.set_page_load_timeout(60)
+            driver.set_page_load_timeout(120)
             yield driver
 
     @property
     def valida_response(self):
-        return False if any(item in self.driver.page_source for item in driver_object.blocks) else True
+        # text indicating that proxy is blocked 
+        if any(item in self.driver.page_source for item in driver_object.blocks):
+            return False 
+        # reload button from chrome where site not loaded
+        elif bsoup(self.driver.page_source, 'html.parser').find(id='reload-button'):
+            return False 
+        else:
+            return True
         
     def get(self, url): 
         
         self.driver = next(self.generate_proxy_driver)
         
+        # error when getting the webpage 
         try:
             self.driver.get(url)
         except:
@@ -61,6 +75,7 @@ class driver_object:
         
         sleep(10)
         
+        # successfully retrieved webpage, but content blocked 
         if self.valida_response:
             return self.driver
         else:
