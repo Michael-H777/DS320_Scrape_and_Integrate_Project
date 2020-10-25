@@ -43,9 +43,10 @@ def log_in(driver):
 def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_words):
     
     retry_counter = count(1)
-    place_holder = ['1', '2', '3', '4', '5']
-    result_counter = Counter(place_holder)
-    while True: 
+    retry = next(retry_counter)
+    result_counter = Counter()
+    
+    while len(result_counter)==0 and retry<500: 
         
         driver = driver_generator.get(review_url)
         
@@ -77,8 +78,8 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
             else:
                 break 
 
-        driver.quit()
-        return result_counter
+    driver.quit()
+    return result_counter
 
 
 def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):

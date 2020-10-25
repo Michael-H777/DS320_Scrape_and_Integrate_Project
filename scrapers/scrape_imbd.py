@@ -23,10 +23,10 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver_generator, stop_w
     review_block_regex = re.compile('lister-item mode-detail imdb-user-review.*')
 
     retry_counter = count(1)
-    place_holder = ['1', '2', '3', '4', '5']
-    result_counter = Counter(place_holder)
+    retry = next(retry_counter)
+    result_counter = Counter()
 
-    while True:
+    while len(result_counter)==0 and retry<500:
         
         driver = driver_generator.get(review_url)
         
@@ -54,8 +54,8 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver_generator, stop_w
             review_text_cleaned = [word for word in review_text_raw if word not in stop_words and len(word)>3]
             result_counter += Counter(review_text_cleaned)
 
-        driver.quit()
-        return result_counter 
+    driver.quit()
+    return result_counter 
 
 
 def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
