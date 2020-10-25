@@ -23,4 +23,5 @@ from nltk.tokenize import word_tokenize
 from multiprocessing import Process, Queue
 
 
-custom_stop_words = set(['movie', 'movies', 'the', 'film', 'audience', 'really'])
+custom_stop_words = set(['movie', 'movies', 'the', 'film', 'audience', 'really', 'still', 
+                         'want', 'many'])

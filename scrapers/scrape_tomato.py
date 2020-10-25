@@ -31,7 +31,6 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
         # 10 reviews per page 
         total_pages = 10
         for page_num in range(total_pages):
-            sleep(10)
 
             # collect all reviews 
             for review_block in driver.find_elements_by_class_name('audience-reviews__item'): 
@@ -47,6 +46,7 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
             if next_button: 
                 # click on next page
                 next_button[0].click()
+                sleep(15)
             else:
                 break 
 
@@ -173,8 +173,9 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
 
         # go to next movie 
         driver.quit()
-        use_local = True
+        #use_local = True
         meta_data_str = movie_json_queue.get(block=True)
+        msg_queue.put(f'{msg_head}retrieved new movie {rank}. {title},  waiting for response')
         retry_counter = count(1)
 
     driver.quit()

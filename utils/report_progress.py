@@ -12,7 +12,7 @@ class EmergencyRestart(Exception):
     pass 
 
 
-def report_progress(process_list, message_q_list, worker_counts, result_dir=None, restart=False, sleep_time=0, check_alive=False, refresh=0.5):
+def report_progress(process_list, message_q_list, worker_counts, result_dir=None, restart=False, sleep_time=0, clear_screen=False, check_alive=False, refresh=0.5):
 
     start_time = time()
     # lists to store messages 
@@ -31,17 +31,26 @@ def report_progress(process_list, message_q_list, worker_counts, result_dir=None
     # report progress 
     while any([item.is_alive() for item in process_list]):
         sleep(0.2)
-        report_progress.erase()
-        # restart if needed 
-        if restart and any([(not item1.is_alive() and 'complete' not in item2) 
-                        for item1, item2 in zip(process_list, message_list)]):
-            [item.terminate() for item in process_list]
-            raise EmergencyRestart
+        # if abnormal process exit 
+        abnormal_exit = sum([(not item1.is_alive() and 'complete' not in item2) 
+                for item1, item2 in zip(process_list, message_list)])
+        if abnormal_exit:
+            # clear bug
+            if clear_screen:
+                report_progress.clear()
+            # restart 
+            if restart: 
+                # restart can be integer indicating numeric value of dead process for cut off 
+                # or float, indigating percentage of all process for cut off 
+                cut_off = restart if isinstance(restart, int) else int(len(process_list)*restart)
+                if cut_off >= abnormal_exit:
+                    [item.terminate() for item in process_list]
+                    raise EmergencyRestart
 
         sleep(refresh)
         report_progress.addstr(0, 0, 'progress report: ')
         str_line = count(2)
-        for index in range(len(message_list)):
+        for index in range(min([45, len(message_q_list)])):
             current_q = message_q_list[index]
             current_p = process_list[index]
             # we only care about the latest message 
@@ -67,8 +76,7 @@ def report_progress(process_list, message_q_list, worker_counts, result_dir=None
         # seperator
         next(str_line)
         # calcualte time elapsed
-        time_used = round(time() - start_time)
-        
+        time_used = round(time() - start_time)            
         time_str = f'{time_used//3600}:{str((time_used%3600)//60):0>2}:{str(time_used%60):0>2}'
         if result_dir:
             total_scraped = len(os.listdir(result_dir)) - already_scraped

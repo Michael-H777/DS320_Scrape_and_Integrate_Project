@@ -7,20 +7,17 @@ class driver_object:
                 'Error 503', 'Our systems have detected unusual traffic from your computer network']
     
     def __init__(self, driver_path):
-        
         self.driver_path = driver_path 
         self.generate_proxy = self.get_proxy() 
         self.generate_proxy_driver = self.get_proxy_drivers()
 
 
     def get_proxy(self): 
-        
-        with open('proxies.txt', 'r') as filein: 
-            proxies = filein.read().split('\n')
-        # shuffle is in-place
-        shuffle(proxies)
-        
         while True: 
+            with open('proxies.txt', 'r') as filein: 
+                proxies = filein.read().split('\n')
+            # shuffle is in-place
+            shuffle(proxies)
             for address in proxies: 
                 yield address 
 
@@ -31,7 +28,6 @@ class driver_object:
         return self.driver
     
     def get_proxy_drivers(self):
-        
         while True: 
             address = next(self.generate_proxy)
             
@@ -63,7 +59,6 @@ class driver_object:
             return True
         
     def get(self, url): 
-        
         self.driver = next(self.generate_proxy_driver)
         
         # error when getting the webpage 
@@ -74,7 +69,6 @@ class driver_object:
             return False 
         
         sleep(10)
-        
         # successfully retrieved webpage, but content blocked 
         if self.valida_response:
             return self.driver
