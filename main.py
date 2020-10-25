@@ -68,7 +68,7 @@ def main():
     driver_path = download_driver()
     
     imdb_workers = 10
-    tomato_workers = 30
+    tomato_workers = 35
     process_list = []
     message_q_list = []
 

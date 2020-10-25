@@ -2,21 +2,10 @@ from utils.packages import *
 from utils.proxy_generator import driver_object
 
 
-def clean_gross_string(input_string):
-    with open('tomato_gross_text', 'a') as fileout: 
-        fileout.write(f'{input_string}\n') if 'M' not in input_string else None
-    
-    return input_string
-
-    result = ''
-    if 'M' in input_string:
-        result = ''.join(list(filter(lambda item: item.isdigit() or item=='.', input_string)))
-    return result 
-
-
 def clean_genre_string(input_string):
     input_list = input_string.split() 
     cleaned_list = list(filter(lambda item: len(item)>1, input_list))
+    cleaned_list.sort()
     return ', '.join(cleaned_list)
 
 
@@ -40,13 +29,17 @@ def log_in(driver):
     return None 
 
 
+def clean_word(word):
+    return ''.join([char for char in word if char.isalpha()]).lower()
+
+
 def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_words):
     
     retry_counter = count(1)
     retry = next(retry_counter)
     result_counter = Counter()
     
-    while len(result_counter)==0 and retry<500: 
+    while len(result_counter)==0 and retry<200: 
         
         driver = driver_generator.get(review_url)
         
@@ -90,6 +83,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     search_templet = 'https://www.google.com/search?q=rottentomatoes.com%3A+{}'
 
     stop_words = set(stopwords.words('english'))
+    stop_words.update(custom_stop_words)
     # report progress
     msg_head = f'scraper {worker_id:>2} for rotten tomato '
     meta_data_str = movie_json_queue.get(block=True)
@@ -156,8 +150,7 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
                 genre_dirty = info_block.find(class_='meta-value genre').text
                 genre = clean_genre_string(genre_dirty)
             elif 'Gross USA' in info_block.text: 
-                gross_usa_dirty = info_block.find(class_='meta-value').text
-                gross_usa = clean_gross_string(gross_usa_dirty)
+                gross_usa = info_block.find(class_='meta-value').text
 
         msg_queue.put(f'{msg_head}completed basic info of {rank}. {title}, working on user_review')
         # user_review 

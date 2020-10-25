@@ -16,15 +16,12 @@ class driver_object:
         
         with open('proxies.txt', 'r') as filein: 
             proxies = filein.read().split('\n')
-            
-        proxies.pop() 
+        # shuffle is in-place
         shuffle(proxies)
         
         while True: 
             for address in proxies: 
-                #print(address)
                 yield address 
-            proxies = shuffle(proxies)
 
 
     def get_proxy_drivers(self):
@@ -37,10 +34,9 @@ class driver_object:
             current_proxy.proxy_type = ProxyType.MANUAL 
             current_proxy.http_proxy = address 
             current_proxy.ssl_proxy = address
-            
             capabilities = webdriver.DesiredCapabilities.CHROME
             current_proxy.add_to_capabilities(capabilities)
-
+            # headless setting for selenium 
             options = webdriver.ChromeOptions()
             options.add_argument('--headless')
             options.add_argument("--disable-dev-shm-usage")

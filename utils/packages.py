@@ -21,3 +21,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 from multiprocessing import Process, Queue
+
+
+custom_stop_words = set(['movie', 'movies', 'the', 'film', 'audience', 'really'])

@@ -9,13 +9,13 @@ def process_info_block(block_text):
             year = int(text)
         elif text.isalpha():
             genre.append(text)
-
+    # sort genre for consistent representation 
     genre.sort()
     return year, ', '.join(genre) 
 
 
 def clean_word(word):
-    return ''.join([char for char in word if char.isalpha()])
+    return ''.join([char for char in word if char.isalpha()]).lower()
 
 
 def scrape_imdb_review(review_url, msg_head, msg_queue, driver_generator, stop_words):
@@ -26,10 +26,11 @@ def scrape_imdb_review(review_url, msg_head, msg_queue, driver_generator, stop_w
     retry = next(retry_counter)
     result_counter = Counter()
 
-    while len(result_counter)==0 and retry<500:
+    # force retry to scrape review, proxies are horrible
+    while len(result_counter)==0 and retry<200:
         
         driver = driver_generator.get(review_url)
-        
+        # driver_generator will force driver to be False when page invalid
         if driver is False: 
             retry = next(retry_counter)
             msg_queue.put(f'{msg_head}triggered anti-scrape when scraping review, switching IP, attempt {retry}')
@@ -67,6 +68,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     gross_usa_regex = re.compile('Gross USA.*\$(.*)')
     review_link_regex = re.compile('.*reviews')
     stop_words = set(stopwords.words('english'))
+    stop_words.update(custom_stop_words)
 
     # report progress
     msg_head = f'scraper {worker_id:>2} for IMDB '
@@ -78,6 +80,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     
     retry_counter = count(1)
     while movie_json_str != 'exit':
+        # movie result will be dumped as soon as iteration finish
         movie_result = pd.DataFrame(columns=scrape_columns)
         proxy_address = next(driver_generator.generate_proxy)
         
@@ -92,7 +95,7 @@ def scrape_imdb_movie(movie_json_queue, msg_queue, worker_id, driver_path):
             msg_queue.put(f'{msg_head}proxy error on movie no.{rank}, switching IP, attempt {retry}')
             continue 
 
-        if 'access denied' in movie_soup.text:
+        if 'access denied' in movie_soup.text.lower():
             continue 
         
         # collect title, year, genre 
