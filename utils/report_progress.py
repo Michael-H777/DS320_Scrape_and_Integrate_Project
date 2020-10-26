@@ -12,11 +12,14 @@ class EmergencyRestart(Exception):
     pass 
 
 
-def report_progress(process_list, message_q_list, worker_counts, result_dir=None, restart=False, sleep_time=0, clear_screen=False, check_alive=False, refresh=0.5):
+def report_progress(process_list, message_q_list, worker_counts, refresh=0.5, sleep_time=0, 
+                            result_dir=None, restart=False, clear_screen=False, check_alive=False):
 
     start_time = time()
     # lists to store messages 
     message_list = [''] * len(process_list)
+    # cut off to restart 
+    cut_off = restart if isinstance(restart, int) else int(len(process_list)*restart)
 
     for index in range(1, len(worker_counts)):
         worker_counts[index] += worker_counts[index - 1]
@@ -33,19 +36,12 @@ def report_progress(process_list, message_q_list, worker_counts, result_dir=None
         sleep(0.2)
         # if abnormal process exit 
         abnormal_exit = sum([(not item1.is_alive() and 'complete' not in item2) 
-                for item1, item2 in zip(process_list, message_list)])
-        if abnormal_exit:
-            # clear bug
-            if clear_screen:
-                report_progress.clear()
-            # restart 
-            if restart: 
-                # restart can be integer indicating numeric value of dead process for cut off 
-                # or float, indigating percentage of all process for cut off 
-                cut_off = restart if isinstance(restart, int) else int(len(process_list)*restart)
-                if cut_off >= abnormal_exit:
-                    [item.terminate() for item in process_list]
-                    raise EmergencyRestart
+                                for item1, item2 in zip(process_list, message_list)])
+        # restart can be integer indicating numeric value of dead process for cut off 
+        # or float, indigating percentage of all process for cut off 
+        if restart and abnormal_exit>=cut_off:
+            [item.terminate() for item in process_list]
+            raise EmergencyRestart
 
         sleep(refresh)
         report_progress.addstr(0, 0, 'progress report: ')
@@ -78,6 +74,10 @@ def report_progress(process_list, message_q_list, worker_counts, result_dir=None
         # calcualte time elapsed
         time_used = round(time() - start_time)            
         time_str = f'{time_used//3600}:{str((time_used%3600)//60):0>2}:{str(time_used%60):0>2}'
+        
+        if time_used%120 == 0:
+            report_progress.clear()
+        
         if result_dir:
             total_scraped = len(os.listdir(result_dir)) - already_scraped
             report_progress.addstr(next(str_line), 0, f'acquired {total_scraped} entities, time elapsed {time_str} {" "*20}')

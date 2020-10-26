@@ -67,7 +67,7 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
     
-    imdb_workers = 10
+    imdb_workers = 1
     tomato_workers = 100
     process_list = []
     message_q_list = []
@@ -98,8 +98,8 @@ def main():
         process_list.append(current_process)
         message_q_list.append(current_queue)
 
-    report_progress(process_list, message_q_list, [1, 10, 35], result_dir='results', 
-                        clear_screen=True, check_alive=True, restart=0.2, sleep_time=100)
+    report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], result_dir='results', 
+                        clear_screen=True, check_alive=True, restart=10, sleep_time=100)
     ## IMPLEMENT RESULT INTEGRATION
 
 
@@ -137,6 +137,7 @@ if __name__ == '__main__':
         try:
             main()
         except EmergencyRestart:
+            os.system('killall chrome*')
             curses.echo()
             curses.nocbreak()
             curses.endwin()

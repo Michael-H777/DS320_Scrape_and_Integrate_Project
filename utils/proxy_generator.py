@@ -11,7 +11,6 @@ class driver_object:
         self.generate_proxy = self.get_proxy() 
         self.generate_proxy_driver = self.get_proxy_drivers()
 
-
     def get_proxy(self): 
         while True: 
             with open('proxies.txt', 'r') as filein: 
@@ -67,7 +66,6 @@ class driver_object:
         except:
             self.driver.quit()
             return False 
-        
         sleep(10)
         # successfully retrieved webpage, but content blocked 
         if self.valida_response:

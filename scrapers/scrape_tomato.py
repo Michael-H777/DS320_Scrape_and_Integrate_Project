@@ -31,7 +31,7 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
         # 10 reviews per page 
         total_pages = 10
         for page_num in range(total_pages):
-
+            sleep(15)
             # collect all reviews 
             for review_block in driver.find_elements_by_class_name('audience-reviews__item'): 
                 current_review = review_block.find_element_by_tag_name('p').text 
@@ -46,7 +46,6 @@ def count_user_review(review_url, msg_head, msg_queue, driver_generator, stop_wo
             if next_button: 
                 # click on next page
                 next_button[0].click()
-                sleep(15)
             else:
                 break 
 

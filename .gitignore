@@ -1,11 +1,9 @@
-*/__pycache__/*
-__pycache__/*
 chromedriver/*
 results/*
 .ipynb_checkpoints/*
+*pyc
+*docx
+*ipynb
 tomato_credentials.txt
 debug.log
-Proposal.docx
-*ipynb
 tomato_gross_text
-proxies*.txt
