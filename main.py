@@ -67,8 +67,8 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
     
-    imdb_workers = 1
-    tomato_workers = 100
+    imdb_workers = 0
+    tomato_workers = 1
     process_list = []
     message_q_list = []
 
@@ -89,6 +89,7 @@ def main():
         current_process.start()
         process_list.append(current_process)
         message_q_list.append(current_queue)
+
     # tomato scrapers
     for worker_id in range(tomato_workers):
         current_queue = Queue() 
@@ -109,7 +110,8 @@ if __name__ == '__main__':
 
     if current_platform == 'linux':
         print('\nI\'m glad you\'re on Linux, the script is developed on it and is tested extensivly.')
-        print('Everything will run as long as you have Chrome versoin 85 or 86. Earlier version support is not gaurenteed')
+        print('Everything will run as long as you have Chrome versoin 86.')
+        print('Selenium driver download path for Chrome 85 is included, modify function download_driver for 85.')
         import curses 
         from utils.report_progress import report_progress
         
@@ -138,6 +140,7 @@ if __name__ == '__main__':
             main()
         except EmergencyRestart:
             os.system('killall chrome*')
+            sleep(180)
             curses.echo()
             curses.nocbreak()
             curses.endwin()

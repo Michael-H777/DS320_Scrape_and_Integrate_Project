@@ -76,7 +76,6 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
     retry_counter = count(1)
     
     # sometimes we want to use local driver for google search 
-    use_local = False 
     while meta_data_str != 'exit':
 
         meta_data = json.loads(meta_data_str)
@@ -92,32 +91,31 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         # things within can't be accessed with scraper, bsoup or selenium 
         title_cleaned = re.sub('[^\s\w]', '', title)
         search_url = search_templet.format('+'.join([*title_cleaned.split(), year]))
-        if use_local:
-            driver = driver_generator.get_local_driver()
-            driver.get(search_url) 
-        else:
-            driver = driver_generator.get(search_url)
+        driver = driver_generator.get(search_url)
         
         if driver is False:
-            use_local = False
             retry = next(retry_counter)
-            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
+            meta_data_str = movie_json_queue.get(block=True) if retry > 20 else meta_data_str
             msg_queue.put(f'{msg_head}triggered anti-scrape, switching IP, retry: {retry}')
             continue
 
         for block, citation in zip(driver.find_elements_by_tag_name('h3'), driver.find_elements_by_tag_name('cite')):
             # get title text and website source for clicking 
-            title_texts = title_cleaned.split() 
-            block_texts = re.sub('[^\s\w]', '', block.text).split() 
-            if all(item in block_texts for item in title_texts) and year in block_texts and 'www.rottentomatoes.com' in citation.text: 
+            title_texts = [item.lower() for item in title_cleaned.split()]
+            block_texts = block.text.lower()
+            year = int(year)
+            year_grace = [str(item) for item in [year-1, year, year+1]]
+            if ('www.rottentomatoes.com' in citation.text.lower()) and \
+                    all(item in block_texts for item in title_texts) and \
+                            any(item in block_texts for item in year_grace): 
                 block.find_element_by_tag_name('span').click()
                 break
         # if did not find suitable result, continue while loop 
         else:
             driver.quit()
-            retry = next(retry_counter)
-            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
-            msg_queue.put(f'{msg_head}google search failed, switching IP, retry: {retry}')
+            retry_counter = count(1)
+            meta_data_str = movie_json_queue.get(block=True)
+            msg_queue.put(f'{msg_head}google search did not find movie {title}, going next')
             continue 
 
         sleep(10)
@@ -125,27 +123,24 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
         if not driver_generator.valida_response: 
             sleep(1)
             driver.quit() 
-            use_local = False
             retry = next(retry_counter)
-            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
+            meta_data_str = movie_json_queue.get(block=True) if retry > 20 else meta_data_str
             msg_queue.put(f'{msg_head}tomato failed to load, switching IP, retry: {retry}')
             continue 
 
         # basic info 
-        try:
-            movie_soup = bsoup(driver.page_source, 'html.parser')
-            rating_str = movie_soup.find(class_='mop-ratings-wrap__percentage').text.strip()
-            rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')[2].text
-            rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str)))) / 100
-            rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str))))
-        except:
-            driver.quit()
-            use_local = False
-            retry = next(retry_counter)
-            meta_data_str = movie_json_queue.get(block=True) if retry > 500 else meta_data_str
-            msg_queue.put(f'{msg_head}tomato failed to load, switching IP, retry: {retry}')
-            continue 
+        rating_value = rating_count = ''
+        movie_soup = bsoup(driver.page_source, 'html.parser')
+        rating_str = movie_soup.find_all(class_='mop-ratings-wrap__percentage')
+        if rating_str: 
+            rating_value = int(''.join(list(filter(lambda item: item.isdigit(), rating_str[0].text.strip())))) / 100
         
+        rating_count_str = movie_soup.find_all(class_='mop-ratings-wrap__text--small')
+        if rating_count_str: 
+            rating_count_str = [item.text.strip() for item in rating_count_str]
+            rating_count_str = [item for item in rating_count_str if 'user ratings' in item.lower()]
+            rating_count = int(''.join(list(filter(lambda item: item.isdigit(), rating_count_str[0])))) if rating_count_str else ''
+    
         # genre and gross 
         genre = gross_usa = '' 
         for info_block in movie_soup.find_all(class_='meta-row clearfix'):
@@ -172,7 +167,6 @@ def scrape_tomato_movie(movie_json_queue, msg_queue, worker_id, driver_path):
 
         # go to next movie 
         driver.quit()
-        #use_local = True
         meta_data_str = movie_json_queue.get(block=True)
         msg_queue.put(f'{msg_head}retrieved new movie {rank}. {title},  waiting for response')
         retry_counter = count(1)

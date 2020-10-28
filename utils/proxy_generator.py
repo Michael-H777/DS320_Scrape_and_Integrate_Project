@@ -20,13 +20,18 @@ class driver_object:
             for address in proxies: 
                 yield address 
 
-    def get_local_driver(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        self.driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options)
-        return self.driver
-    
     def get_proxy_drivers(self):
+        
+        while True:
+            sleep(2)
+            options = webdriver.ChromeOptions()
+            #options.add_argument('--headless')
+            options.add_argument("--disable-dev-shm-usage")
+
+            driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options)
+            driver.set_page_load_timeout(120)
+            yield driver
+        
         while True: 
             address = next(self.generate_proxy)
             
@@ -42,18 +47,17 @@ class driver_object:
             options.add_argument('--headless')
             options.add_argument("--disable-dev-shm-usage")
 
-            driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options , desired_capabilities=capabilities)
+            driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options, desired_capabilities=capabilities)
             driver.set_page_load_timeout(120)
             yield driver
 
     @property
     def valida_response(self):
         # text indicating that proxy is blocked 
-        if any(item in self.driver.page_source for item in driver_object.blocks):
+        page_soup = bsoup(self.driver.page_source, 'html.parser')
+        if any(item in page_soup.text for item in driver_object.blocks):
             return False 
         # reload button from chrome where site not loaded
-        elif bsoup(self.driver.page_source, 'html.parser').find(id='reload-button'):
-            return False 
         else:
             return True
         
@@ -64,6 +68,7 @@ class driver_object:
         try:
             self.driver.get(url)
         except:
+            sleep(2)
             self.driver.quit()
             return False 
         sleep(10)
@@ -73,4 +78,3 @@ class driver_object:
         else:
             self.driver.quit()
             return False
-                
