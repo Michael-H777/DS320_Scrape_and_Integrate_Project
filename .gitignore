@@ -1,5 +1,6 @@
 chromedriver/*
 results/*
+scrape_results/*
 .ipynb_checkpoints/*
 *pyc
 *docx
