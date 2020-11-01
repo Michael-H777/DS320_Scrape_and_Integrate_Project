@@ -15,7 +15,7 @@
 ## Data Source Description: 
 
     For this project, we are interested in how movie information is recorded on different website. We 
-    aquired a movie rank list on IMDB that contains the most populat 1000 movies base on user review. 
+    acquired a movie rank list on IMDB that contains the most popular 1000 movies base on user review. 
     
     The list contains movie's title, year and a link to its IMDB webpage. We navigate into the IMDB 
     webpage to collect more detail information such as genre, rating, number of reviews and box gross. 
