@@ -67,11 +67,11 @@
     Then (in linux only) it hands the job over to utils.report_progress, which you can monitor the 
     progress of each process. 
 
-    scrapers.scrape_imdb.py collects each movie's imdb_url from its Queue and use bs4 to scrape basic information.
-    It then use selenium to collect the top 100 movie reviews, clean it and count the top 5 words to record. 
-    All movie's information will be dumped into individual files as soon as the scraping process completes.
-    Note that the use of selenium is absolutely neccessary because the movie review page seems to be load 
-    dynamically by JS while its url remains unchanged. 
+    scrapers.scrape_imdb.py collects each movie's imdb_url from its Queue and use bs4 to scrape basic 
+    information.It then use selenium to collect the top 100 movie reviews, clean it and count the top 
+    5 words to record. All movie's information will be dumped into individual files as soon as the 
+    scraping process completes. Note that the use of selenium is absolutely neccessary because 
+    the movie review page seems to be load dynamically by JS while its url remains unchanged. 
 
     scrapers.scrape_tomato.py collects each movie's year and title from its Queue then use selenium and google 
     to search for movie of said year and name on www.rottentomato.com. We then filter the search result 
@@ -86,7 +86,8 @@
     because bugs will overwrite the messages. It also has a restart feature, when the amount of process that 
     exists abnormally exceeds a certain limit, the script will terminate all process and signal the main process
     to restart the script. This feature, however is only supported on Linux. the package curses is not nativly 
-    supported on windows, and Mac also cannot use this script because multiprocessing.Queue have not implemented methods. 
+    supported on windows, and Mac also cannot use this script because multiprocessing.Queue have not 
+    implemented methods. 
 
     utils.generate_ptoxy.py is responsible to generate selenium driver with proxy and proxy address for bs4. The 
     proxies used are free and collected from the internet. 
