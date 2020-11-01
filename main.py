@@ -16,7 +16,6 @@ def check_platform():
 
 
 def download_driver():
-    return 'chromedriver/chromedriver'
     
     v85 = '85.0.4183.87'
     v86 = '86.0.4240.22'
@@ -67,8 +66,6 @@ def main():
     print('script started, asserting selenium driver.')
     driver_path = download_driver()
     
-    imdb_workers = 0
-    tomato_workers = 1
     process_list = []
     message_q_list = []
 
@@ -99,9 +96,29 @@ def main():
         process_list.append(current_process)
         message_q_list.append(current_queue)
 
+    sleep(5)    
     report_progress(process_list, message_q_list, [1, imdb_workers, tomato_workers], result_dir='results', 
-                        clear_screen=True, check_alive=True, restart=10, sleep_time=100)
-    ## IMPLEMENT RESULT INTEGRATION
+                        clear_screen=True, check_alive=True, restart=0.6, sleep_time=100)
+
+    # result aggregation 
+    tomato_df = pd.DataFrame() 
+    imdb_df = pd.DataFrame() 
+    
+    for filename in os.listdir('results/'):
+        if filename.startswith('IMDB'):
+            temp_df = pd.read_csv(f'results/{filename}')
+            imdb_df = imdb_df.append(temp_df)
+        elif filename.startswith('tomato'): 
+            temp_df = pd.read_csv(f'results/{filename}')
+            tomato_df = tomato_df.append(temp_df)
+            
+    imdb_df.sort_values(by='rank', ignore_index=True, inplace=True)
+    imdb_df.to_csv('results/imdb_master.csv', index=False)
+    
+    tomato_df.sort_values(by='rank', ignore_index=True, inplace=True)
+    tomato_df.to_csv('results/tomato_master.csv', index=False)
+    
+    return None 
 
 
 if __name__ == '__main__':
@@ -139,8 +156,6 @@ if __name__ == '__main__':
         try:
             main()
         except EmergencyRestart:
-            os.system('killall chrome*')
-            sleep(180)
             curses.echo()
             curses.nocbreak()
             curses.endwin()
@@ -150,4 +165,3 @@ if __name__ == '__main__':
             curses.nocbreak()
             curses.endwin()
         break
-    

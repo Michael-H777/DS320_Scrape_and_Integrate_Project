@@ -22,40 +22,43 @@ class driver_object:
 
     def get_proxy_drivers(self):
         
-        while True:
-            sleep(2)
-            options = webdriver.ChromeOptions()
-            #options.add_argument('--headless')
-            options.add_argument("--disable-dev-shm-usage")
+        if master_use_proxy:
+            while True: 
+                address = next(self.generate_proxy)
+                
+                # proxy settings for selenium 
+                current_proxy = Proxy() 
+                current_proxy.proxy_type = ProxyType.MANUAL 
+                current_proxy.http_proxy = address 
+                current_proxy.ssl_proxy = address
+                capabilities = webdriver.DesiredCapabilities.CHROME
+                current_proxy.add_to_capabilities(capabilities)
+                # headless setting for selenium 
+                options = webdriver.ChromeOptions()
+                options.add_argument('--headless') if master_use_headless else None 
+                options.add_argument("--disable-dev-shm-usage")
 
-            driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options)
-            driver.set_page_load_timeout(120)
-            yield driver
+                driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options, desired_capabilities=capabilities)
+                driver.set_page_load_timeout(120)
+                yield driver
+        else:
+            while True:
+                sleep(randint(10, 30) / 10)
+                options = webdriver.ChromeOptions()
+                options.add_argument('--headless') if master_use_headless else None 
+                options.add_argument("--disable-dev-shm-usage")
+
+                driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options)
+                driver.set_page_load_timeout(120)
+                yield driver
         
-        while True: 
-            address = next(self.generate_proxy)
-            
-            # proxy settings for selenium 
-            current_proxy = Proxy() 
-            current_proxy.proxy_type = ProxyType.MANUAL 
-            current_proxy.http_proxy = address 
-            current_proxy.ssl_proxy = address
-            capabilities = webdriver.DesiredCapabilities.CHROME
-            current_proxy.add_to_capabilities(capabilities)
-            # headless setting for selenium 
-            options = webdriver.ChromeOptions()
-            options.add_argument('--headless')
-            options.add_argument("--disable-dev-shm-usage")
-
-            driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options, desired_capabilities=capabilities)
-            driver.set_page_load_timeout(120)
-            yield driver
 
     @property
     def valida_response(self):
         # text indicating that proxy is blocked 
-        page_soup = bsoup(self.driver.page_source, 'html.parser')
-        if any(item in page_soup.text for item in driver_object.blocks):
+        page_text = bsoup(self.driver.page_source, 'html.parser').text
+        if any(item in page_text for item in driver_object.blocks):
+            self.driver.quit()
             return False 
         # reload button from chrome where site not loaded
         else:
@@ -76,5 +79,4 @@ class driver_object:
         if self.valida_response:
             return self.driver
         else:
-            self.driver.quit()
             return False

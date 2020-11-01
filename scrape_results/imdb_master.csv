@@ -1,0 +1,1001 @@
+rank,title,year,genre,rating_score,rating_count,box gross,review_word_1,review_word_2,review_word_3,review_word_4,review_word_5
+1,The Shawshank Redemption,1994,Drama,9.3,2297303,28699976.0,shawshank,andy,prison,life,redemption
+2,The Godfather,1972,"Crime, Drama",9.2,1585716,134966411.0,godfather,ever,seen,vito,first
+3,The Dark Knight,2008,"Action, Crime, Drama",9.0,2261605,535234033.0,dark,helpful,confidently,directed,brooding
+4,The Godfather: Part II,1974,"Crime, Drama",9.0,1107765,47834595.0,michael,coppola,first,pacino,family
+5,The Lord of the Rings: The Return of the King,2003,"Action, Adventure, Drama",8.9,1615048,377845905.0,rings,still,back,best,helpful
+6,Pulp Fiction,1994,"Crime, Drama",8.9,1793781,107928762.0,anything,characters,power,pulp,fiction
+7,Schindler's List,1993,"Biography, Drama, History",8.9,1192318,96898818.0,ever,points,helpful,seen,want
+8,12 Angry Men,1957,"Crime, Drama",8.9,675100,,juror,case,jurors,jury,room
+9,Inception,2010,"Action, Adventure",8.8,2023860,292576195.0,mission,dream,inception,cobb,nolan
+10,Fight Club,1999,Drama,8.8,1821100,37030102.0,narrator,tyler,system,fight,club
+11,The Lord of the Rings: The Fellowship of the Ring,2001,"Action, Adventure, Drama",8.8,1630800,315544750.0,incredible,read,bombadil,book,well
+12,Forrest Gump,1994,"Drama, Romance",8.8,1770211,330455270.0,like,life,meaning,first,appreciate
+13,"The Good, the Bad and the Ugly",1966,Western,8.8,677423,25100000.0,good,ugly,western,leone,name
+14,Hamilton,2020,"Biography, Drama, History",8.7,44462,,helpful,mean,pretty,high,still
+15,The Lord of the Rings: The Two Towers,2002,"Action, Adventure, Drama",8.7,1459772,342551365.0,truly,ring,battle,peter,jackson
+16,The Matrix,1999,Action,8.7,1644651,171479930.0,matrix,nobody,fishburne,simply,actor
+17,Goodfellas,1990,"Biography, Crime, Drama",8.7,1000128,46836214.0,every,favorite,imdbcomlistls,together,makes
+18,Star Wars: Episode V - The Empire Strikes Back,1980,"Action, Adventure, Fantasy",8.7,1139770,292753960.0,empire,darth,vader,luke,irvin
+19,One Flew Over the Cuckoo's Nest,1975,Drama,8.7,901866,108981275.0,best,mcmurphy,institution,patients,nicholson
+20,Parasite,2019,"Comedy, Drama, Thriller",8.6,495716,53369749.0,kitaek,park,family,line,instead
+21,Vikram Vedha,2017,"Action, Crime, Thriller",8.6,25000,,vikram,vedha,killed,simon,innocent
+22,Interstellar,2014,"Adventure, Drama",8.6,1469460,188020017.0,best,helpful,ever,watched,hundreds
+23,City of God,2002,"Crime, Drama",8.6,689908,7564459.0,characters,city,life,young,another
+24,Spirited Away,2001,"Adventure, Animation, Family",8.6,634135,13750644.0,http,favorite,wwwimdbcomlistls,seen,mythical
+25,Saving Private Ryan,1998,"Drama, War",8.6,1213338,217049603.0,grandfather,ever,watching,sure,life
+26,The Green Mile,1999,"Crime, Drama, Fantasy",8.6,1122960,136801374.0,ever,mind,even,helpful,expected
+27,Life Is Beautiful,1997,"Comedy, Drama, Romance",8.6,611005,57563264.0,hope,people,life,love,much
+28,Se7en,1995,"Crime, Drama, Mystery",8.6,1414947,100125643.0,seen,films,story,well,dark
+29,The Silence of the Lambs,1991,"Crime, Drama, Thriller",8.6,1245549,130742922.0,lambs,minutes,lecter,asking,everyone
+30,Star Wars: Episode IV - A New Hope,1977,"Action, Adventure, Fantasy",8.6,1211523,460998507.0,lucas,star,wars,first,journey
+31,Harakiri,1962,"Action, Drama, Mystery",8.6,38860,,samurai,story,within,tale,flashbacks
+32,Seven Samurai,1954,"Action, Adventure, Drama",8.6,310580,318649.0,samurai,action,seven,kurosawa,also
+33,It's a Wonderful Life,1946,"Drama, Family, Fantasy",8.6,391023,,life,ever,everything,think,seen
+34,Joker,2019,"Crime, Drama, Thriller",8.5,884281,335451311.0,helpful,every,comes,truly,makes
+35,Whiplash,2014,"Drama, Music",8.5,698254,13092000.0,andrew,teacher,great,dream,maybe
+36,The Intouchables,2011,"Biography, Comedy, Drama",8.5,742849,10198820.0,films,make,hollywood,like,intimacy
+37,The Prestige,2006,"Drama, Mystery",8.5,1166060,53089891.0,great,rivalry,tesla,edison,borden
+38,The Departed,2006,"Crime, Drama, Thriller",8.5,1168281,132384315.0,best,incredibly,helpful,films,century
+39,The Pianist,2002,"Biography, Drama, Music",8.5,714321,32572577.0,best,films,like,think,pianist
+40,Gladiator,2000,"Action, Adventure, Drama",8.5,1317653,187705427.0,gladiator,crowe,never,scott,genre
+41,American History X,1998,Drama,8.5,1020465,6719864.0,masterful,could,helpful,give,edward
+42,The Usual Suspects,1995,"Crime, Mystery, Thriller",8.5,975724,23341568.0,usual,time,suspects,best,like
+43,Léon: The Professional,1994,"Action, Crime, Drama",8.5,1015864,19501238.0,original,helpful,watch,beautiful,intimate
+44,The Lion King,1994,"Adventure, Animation, Drama",8.5,924427,422783777.0,simba,scar,animated,king,still
+45,Terminator 2: Judgment Day,1991,Action,8.5,981400,205881154.0,terminator,every,sent,connor,john
+46,Cinema Paradiso,1988,Drama,8.5,225484,12397210.0,cinema,love,alfredo,salvatore,director
+47,Grave of the Fireflies,1988,"Animation, Drama, War",8.5,228571,516962.0,animated,best,watch,grave,fireflies
+48,Back to the Future,1985,"Adventure, Comedy",8.5,1036936,211406762.0,time,love,marty,travel,adventure
+49,Anand,1971,"Drama, Musical",8.5,28957,,rajesh,much,generation,decided,check
+50,Once Upon a Time in the West,1968,Western,8.5,297909,,http,favorite,wwwimdbcomlistls,better,leone
+51,Psycho,1960,"Horror, Mystery, Thriller",8.5,592903,32000000.0,hitchcock,anthony,perkins,performance,norman
+52,Casablanca,1942,"Drama, Romance, War",8.5,513832,4108411.0,watch,greatness,like,people,best
+53,Modern Times,1936,"Comedy, Drama, Family",8.5,213424,163577.0,http,part,favorite,wwwimdbcomlistls,chaplin
+54,City Lights,1931,"Comedy, Drama, Romance",8.5,164438,19181.0,tramp,find,chaplin,city,lights
+55,Capharnaüm,2018,Drama,8.4,56526,1661096.0,zain,ethiopian,message,capharnaum,hated
+56,Ayla: The Daughter of War,2017,"Biography, Drama, History",8.4,32775,,turkish,watch,thank,helpful,first
+57,Your Name.,2016,"Animation, Drama, Fantasy",8.4,183609,5017246.0,said,hollywood,remake,helpful,anime
+58,Dangal,2016,"Action, Biography, Drama",8.4,150388,12391761.0,scenes,fight,best,dialogue,performance
+59,Spider-Man: Into the Spider-Verse,2018,"Action, Adventure, Animation",8.4,345628,190241310.0,animation,character,like,marvel,spiderham
+60,Avengers: Endgame,2019,"Action, Adventure, Drama",8.4,773410,858373000.0,like,even,could,marvel,superhero
+61,Avengers: Infinity War,2018,"Action, Adventure",8.4,807708,678815482.0,helpful,portrays,villain,best,marvel
+62,Coco,2017,"Adventure, Animation, Family",8.4,359998,210460015.0,pixar,helpful,mexican,thanks,pizax
+63,Django Unchained,2012,"Drama, Western",8.4,1329514,162805434.0,design,things,tarantino,like,films
+64,The Dark Knight Rises,2012,"Action, Adventure",8.4,1492029,448139099.0,epic,helpful,christopher,nolan,trilogy
+65,3 Idiots,2009,"Comedy, Drama",8.4,335768,6532874.0,films,time,like,moments,wonderful
+66,Taare Zameen Par,2007,"Drama, Family",8.4,163960,1223869.0,thru,kids,aamir,helpful,brings
+67,WALL·E,2008,"Adventure, Animation, Family",8.4,981789,223808164.0,walle,films,pixar,stanton,story
+68,The Lives of Others,2006,"Drama, Mystery, Thriller",8.4,352507,11286112.0,stasi,dreyman,german,east,wiesler
+69,Oldboy,2003,"Action, Drama, Mystery",8.4,505354,707481.0,korean,would,like,daesoo,years
+70,Memento,2000,"Mystery, Thriller",8.4,1107843,25544867.0,story,reviews,much,afterwards,direction
+71,Princess Mononoke,1997,"Adventure, Animation, Fantasy",8.4,334885,4845631.0,japanese,miyazake,work,gods,even
+72,Once Upon a Time in America,1984,"Crime, Drama",8.4,305153,5321508.0,time,music,director,sergio,leone
+73,Raiders of the Lost Ark,1981,"Action, Adventure",8.4,870991,248159971.0,helpful,action,romance,comedy,giant
+74,The Shining,1980,"Drama, Horror",8.4,878569,45332952.0,shining,seen,frightening,levels,first
+75,Apocalypse Now,1979,"Drama, Mystery, War",8.4,595833,83471511.0,kurtz,stop,journey,evil,much
+76,Alien,1979,Horror,8.4,774988,81765459.0,alien,like,makes,great,sound
+77,High and Low,1963,"Crime, Drama, Mystery",8.4,32386,46808.0,ransom,gondo,police,kurosawa,kidnapper
+78,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,Comedy,8.4,444080,9440272.0,http,kubrick,favorite,wwwimdbcomlistls,mean
+79,Witness for the Prosecution,1957,"Crime, Drama, Mystery",8.4,106154,,films,helpful,give,marks,become
+80,Paths of Glory,1957,"Drama, War",8.4,174522,,films,kubrick,years,general,trial
+81,Rear Window,1954,"Mystery, Thriller",8.4,436270,36764313.0,character,dream,helpful,must,signs
+82,Sunset Blvd.,1950,Drama,8.4,197929,299645.0,norma,gillis,holden,never,hollywood
+83,The Great Dictator,1940,"Comedy, Drama, War",8.4,199344,,would,drama,laughing,someone,best
+84,1917,2019,"Drama, War",8.3,380495,159227644.0,watch,protagonists,mission,died,service
+85,Uri: The Surgical Strike,2018,"Action, Drama, War",8.3,41925,4186168.0,well,classic,right,everyone,helpful
+86,Tumbbad,2018,"Drama, Fantasy, Horror",8.3,25366,,like,tumbbad,watching,helpful,dont
+87,Andhadhun,2018,"Crime, Thriller",8.3,67603,1193046.0,rabbit,illusion,ayushman,duck,story
+88,Drishyam,2013,"Crime, Drama, Thriller",8.3,30020,,makes,amazing,great,jeethu,proved
+89,The Hunt,2012,Drama,8.3,272884,613308.0,hunt,danish,lucas,story,much
+90,A Separation,2011,"Drama, Thriller",8.3,215831,7099055.0,separation,much,drama,story,caught
+91,Incendies,2010,"Drama, Mystery, War",8.3,144986,2071334.0,villeneuve,incendies,nawal,viewer,great
+92,Yedinci Kogustaki Mucize,2019,Drama,8.3,30262,,amazing,helpful,heartwarming,story,actors
+93,Babam ve Oglum,2005,"Drama, Family",8.3,76976,,better,find,make,sorrow,people
+94,Toy Story 3,2010,"Adventure, Animation, Comedy",8.3,744861,415004880.0,best,first,story,high,expectations
+95,Inglourious Basterds,2009,"Adventure, Drama, War",8.3,1240363,120540719.0,first,heroes,enemy,hypocrisy,review
+96,Eternal Sunshine of the Spotless Mind,2004,"Drama, Romance",8.3,896879,34400301.0,joel,clementine,mind,memories,romantic
+97,Amélie,2001,"Comedy, Romance",8.3,694379,33225499.0,amelie,never,around,long,small
+98,Snatch,2000,"Comedy, Crime",8.3,771175,30328156.0,helpful,boxing,diamonds,gangsters,pretending
+99,Requiem for a Dream,2000,Drama,8.3,754141,3635482.0,drug,director,aronofsky,burstyn,long
+100,American Beauty,1999,Drama,8.3,1055145,130096601.0,beauty,american,like,people,look
+101,Good Will Hunting,1997,"Drama, Romance",8.3,844745,138433435.0,sure,matt,script,like,first
+102,Children of Heaven,1997,"Drama, Family, Sport",8.3,63377,933933.0,children,simple,shoes,sister,watch
+103,Toy Story,1995,"Adventure, Animation, Comedy",8.3,871124,222498679.0,buzz,woody,andy,kids,good
+104,Braveheart,1995,"Biography, Drama, History",8.3,946837,75609945.0,braveheart,helpful,academy,award,winning
+105,Reservoir Dogs,1992,"Crime, Drama, Thriller",8.3,903291,2832029.0,dogs,reservoir,tarantino,keitel,budget
+106,Full Metal Jacket,1987,"Drama, War",8.3,663552,46357676.0,vietnam,joker,recruits,camp,hartman
+107,Come and See,1985,"Drama, Thriller, War",8.3,55869,71909.0,come,even,fact,viewers,half
+108,Aliens,1986,"Action, Adventure",8.3,643807,85160248.0,love,alien,action,private,ripley
+109,Amadeus,1984,"Biography, Drama, History",8.3,363552,51973029.0,mozart,amadeus,salieri,laugh,music
+110,Scarface,1983,"Crime, Drama",8.3,727271,45408703.0,tony,montana,gangster,human,drama
+111,Star Wars: Episode VI - Return of the Jedi,1983,"Action, Adventure, Fantasy",8.3,934302,309306177.0,many,helpful,totally,least,awards
+112,Das Boot,1981,"Adventure, Drama, Thriller",8.3,228238,11487676.0,submarine,modern,submariners,professions,like
+113,Taxi Driver,1976,"Crime, Drama",8.3,709883,28262574.0,travis,character,life,american,power
+114,The Sting,1973,"Comedy, Crime, Drama",8.3,237968,156000000.0,time,certainly,second,helpful,delicious
+115,A Clockwork Orange,1971,"Crime, Drama",8.3,745673,26589355.0,glory,helpful,completely,brilliant,amazing
+116,2001: A Space Odyssey,1968,Adventure,8.3,592777,60541301.0,kubrick,space,even,time,artificial
+117,For a Few Dollars More,1965,Western,8.3,228458,15000000.0,leone,dollars,westerns,best,western
+118,Lawrence of Arabia,1962,"Adventure, Biography, Drama",8.3,263620,45306425.0,know,otoole,albert,finney,sense
+119,The Apartment,1960,"Comedy, Drama, Romance",8.3,160757,,lemmon,remarkable,apartment,wilder,well
+120,North by Northwest,1959,"Adventure, Mystery, Thriller",8.3,294351,,hitchcock,helpful,sharpest,commerce,delicious
+121,Vertigo,1958,"Mystery, Romance, Thriller",8.3,356865,7705225.0,still,throughout,years,hitchcock,psycho
+122,Singin' in the Rain,1952,"Comedy, Musical, Romance",8.3,214965,1826108.0,seen,going,many,gene,kelly
+123,Ikiru,1952,Drama,8.3,66487,60239.0,even,story,life,heart,beyond
+124,Bicycle Thieves,1948,Drama,8.3,143164,371111.0,italian,sense,father,films,bicycle
+125,Double Indemnity,1944,"Crime, Drama",8.3,140972,,walter,phyllis,insurance,wants,time
+126,Citizen Kane,1941,"Drama, Mystery",8.3,392543,1585634.0,citizen,kane,something,seem,like
+127,M,1931,"Crime, Mystery, Thriller",8.3,140769,35566.0,beckert,lang,elsie,germany,like
+128,Metropolis,1927,Drama,8.3,157537,1236166.0,metropolis,story,workers,lang,silent
+129,The Kid,1921,"Comedy, Drama, Family",8.3,110588,,chaplin,story,coogan,good,makes
+130,Chhichhore,2019,"Comedy, Drama",8.2,30765,2004400.0,suicide,sushanth,fighter,helpful,watched
+131,K.G.F: Chapter 1,2018,"Action, Drama",8.2,32739,,rocky,helpful,beautiful,background,score
+132,Green Book,2018,"Biography, Comedy, Drama",8.2,350650,85080171.0,mortensen,magnetic,characters,helpful,journey
+133,"Three Billboards Outside Ebbing, Missouri",2017,"Comedy, Crime, Drama",8.2,417701,54513740.0,character,well,also,great,screen
+134,Talvar,2015,"Crime, Drama, Mystery",8.2,30350,342370.0,watch,talvar,irrfan,khan,must
+135,Baahubali 2: The Conclusion,2017,"Action, Drama",8.2,73275,20186659.0,conclusion,good,helpful,baahubali,quite
+136,Klaus,2019,"Adventure, Animation, Comedy",8.2,77438,,parts,made,review,helpful,first
+137,Drishyam,2015,"Crime, Drama, Mystery",8.2,67308,,hero,bollywood,japanese,lost,even
+138,Queen,2013,"Adventure, Comedy, Drama",8.2,59885,,rani,bahl,queen,give,kangana
+139,Tangerines,2013,"Drama, War",8.2,38324,144501.0,characters,films,enemy,story,moral
+140,Bhaag Milkha Bhaag,2013,"Biography, Drama, Sport",8.2,59998,1636731.0,critics,milkha,done,rediff,good
+141,Gangs of Wasseypur,2012,"Action, Crime, Drama",8.2,79669,,best,acting,everything,helpful,screening
+142,Udaan,2010,Drama,8.2,41813,7461.0,rohan,father,udaan,life,dreams
+143,Paan Singh Tomar,2012,"Action, Biography, Crime",8.2,32662,40311.0,paan,army,compliments,dacoit,soldier
+144,The Secret in Their Eyes,2009,"Drama, Mystery, Romance",8.2,189533,6391436.0,campanella,strength,shot,moments,intense
+145,Warrior,2011,"Action, Drama, Sport",8.2,430163,13657115.0,point,tommy,rage,brother,father
+146,Shutter Island,2010,"Mystery, Thriller",8.2,1106212,128012934.0,water,fire,happened,live,wife
+147,Up,2009,"Adventure, Animation, Comedy",8.2,918370,293004164.0,even,films,funny,perfect,best
+148,The Wolf of Wall Street,2013,"Biography, Crime, Drama",8.2,1153637,116900694.0,helpful,every,definition,word,impeccable
+149,Chak De! India,2007,"Drama, Family, Sport",8.2,72806,1120404.0,love,heart,team,would,sport
+150,There Will Be Blood,2007,Drama,8.2,507316,40222514.0,people,daniel,like,gave,even
+151,Pan's Labyrinth,2006,"Drama, Fantasy, War",8.2,610618,37634615.0,vidal,fantasy,interpretation,toro,reality
+152,V for Vendetta,2005,"Action, Drama",8.2,1016309,70511035.0,helpful,watch,every,november,without
+153,Rang De Basanti,2006,"Comedy, Drama",8.2,109917,2197694.0,director,think,rang,today,part
+154,Black,2005,Drama,8.2,33022,754819.0,awesome,best,ever,cinematography,helpful
+155,Batman Begins,2005,"Action, Adventure",8.2,1287885,206852432.0,batman,superhero,thought,good,great
+156,Swades,2004,Drama,8.2,81865,1223240.0,lagaan,cinema,swades,shahrukh,feel
+157,Downfall,2004,"Biography, Drama, History",8.2,326810,5509040.0,hitler,german,evil,children,college
+158,Howl's Moving Castle,2004,"Adventure, Animation, Family",8.2,323901,5576743.0,howl,heart,sophie,probably,story
+159,A Beautiful Mind,2001,"Biography, Drama",8.2,833934,170742341.0,crowe,nash,role,actors,beautiful
+160,Hera Pheri,2000,"Action, Comedy, Crime",8.2,55612,,helpful,believe,True,seen,times
+161,"Lock, Stock and Two Smoking Barrels",1998,"Action, Comedy, Crime",8.2,527873,3753929.0,think,would,seen,serious,characters
+162,L.A. Confidential,1997,"Crime, Drama, Mystery",8.2,524727,64616940.0,best,confidential,quite,great,story
+163,The Bandit,1996,"Crime, Drama, Thriller",8.2,62633,,great,difficult,scenes,helpful,cinematography
+164,Heat,1995,"Crime, Drama, Thriller",8.2,566756,67436818.0,heat,time,take,others,moments
+165,Casino,1995,"Crime, Drama",8.2,457179,42512375.0,story,found,goodfellas,guys,helpful
+166,Andaz Apna Apna,1994,"Comedy, Romance",8.2,48627,,aamir,salman,raveena,comedy,films
+167,Unforgiven,1992,"Drama, Western",8.2,370084,101157447.0,munny,eastwood,unforgiven,little,bill
+168,Indiana Jones and the Last Crusade,1989,"Action, Adventure",8.2,681398,197171806.0,jones,indiana,last,crusade,indy
+169,My Neighbor Totoro,1988,"Animation, Family, Fantasy",8.2,282563,2250213.0,miyazaki,humour,well,could,points
+170,Die Hard,1988,"Action, Thriller",8.2,772434,83519093.0,action,love,mcclane,great,terrorists
+171,Ran,1985,"Action, Drama, War",8.2,110129,4135750.0,kurosawa,akira,lord,sons,shakespeare
+172,Raging Bull,1980,"Biography, Drama, Sport",8.2,316407,23383987.0,niro,raging,bull,scorsese,time
+173,Stalker,1979,Drama,8.2,113638,292049.0,stalker,tarkovsky,thoughts,andrei,films
+174,The Message,1976,"Biography, Drama, History",8.2,43208,,islam,religions,helpful,beginning,orthodox
+175,Sholay,1975,"Action, Adventure, Comedy",8.2,50546,,hindi,awesome,remember,character,seven
+176,Monty Python and the Holy Grail,1975,"Adventure, Comedy, Fantasy",8.2,494620,1827696.0,time,made,first,best,opening
+177,The Great Escape,1963,"Adventure, Drama, History",8.2,221265,,german,british,created,would,american
+178,To Kill a Mockingbird,1962,"Crime, Drama",8.2,290496,592237.0,kill,mockingbird,screen,scout,never
+179,Yojimbo,1961,"Action, Drama, Thriller",8.2,108889,46808.0,samurai,kurosawa,mifune,action,handful
+180,Judgment at Nuremberg,1961,"Drama, War",8.2,68104,,subject,matter,judgement,neuremberg,oscar
+181,Some Like It Hot,1959,"Comedy, Music, Romance",8.2,239923,,tony,curtis,jack,lemmon,world
+182,Wild Strawberries,1957,"Drama, Romance",8.2,93976,,bergman,watched,wild,strawberries,away
+183,The Seventh Seal,1957,"Drama, Fantasy",8.2,161097,,death,antonius,blok,plague,little
+184,Rififi,1955,"Crime, Drama, Thriller",8.2,27307,517975.0,rififi,heist,sequence,films,dassin
+185,Dial M for Murder,1954,"Crime, Thriller",8.2,155006,12562.0,grace,kelly,filmed,helpful,forgotten
+186,Tokyo Story,1953,Drama,8.2,51345,,tomi,shukishi,children,lives,kyoko
+187,Rashômon,1950,"Crime, Drama, Mystery",8.2,149686,46808.0,samurai,woodcutter,conclusion,truth,work
+188,All About Eve,1950,Drama,8.2,118681,63463.0,like,davis,bette,margo,mankiewicz
+189,The Treasure of the Sierra Madre,1948,"Adventure, Drama, Western",8.2,112446,215295.0,bogart,three,gold,huston,dobbs
+190,To Be or Not to Be,1942,"Comedy, War",8.2,28378,3270000.0,http,time,films,ever,seen
+191,The Gold Rush,1925,"Adventure, Comedy, Drama",8.2,98731,,scene,rush,chaplin,also,gold
+192,Sherlock Jr.,1924,"Action, Comedy, Romance",8.2,40447,977375.0,buster,keaton,tricks,dream,camera
+193,Portrait of a Lady on Fire,2019,"Drama, Romance",8.1,54151,3759854.0,done,crying,cinema,images,picture
+194,Pink,2016,"Drama, Thriller",8.1,38143,,show,pink,shows,amitabh,helpful
+195,A Silent Voice: The Movie,2016,"Animation, Drama, Family",8.1,42924,644391.0,characters,silent,voice,feel,beautiful
+196,The Invisible Guest,2016,"Crime, Drama, Mystery",8.1,131267,,elements,story,music,helpful,past
+197,The Handmaiden,2016,"Drama, Romance, Thriller",8.1,107312,2006788.0,park,perfect,even,something,never
+198,Mommy,2014,Drama,8.1,49314,3494070.0,mommy,feelings,dolan,time,idea
+199,Haider,2014,"Action, Crime, Drama",8.1,49719,1048143.0,times,helpful,haider,mustwatch,phenomenal
+200,Logan,2017,"Action, Drama",8.1,633571,226277068.0,helpful,words,explain,epicness,greatness
+201,Room,2015,"Drama, Thriller",8.1,361907,14677654.0,emotions,performance,helpful,marvelous,captivating
+202,Wild Tales,2014,"Comedy, Drama, Thriller",8.1,172603,3106530.0,tale,makes,theater,tales,humor
+203,Winter Sleep,2014,Drama,8.1,44454,,aydın,life,talk,local,uykusu
+204,Baahubali: The Beginning,2015,"Action, Drama",8.1,100891,6738000.0,good,would,baahubali,rajamouli,indian
+205,Gully Boy,2019,"Drama, Music",8.1,30354,5566534.0,mile,watch,gully,copied,need
+206,PK,2014,"Comedy, Drama, Musical",8.1,158808,10616104.0,watch,helpful,make,short,quick
+207,OMG: Oh My God!,2012,"Comedy, Drama, Fantasy",8.1,50318,,akshay,best,perfect,paresh,awesome
+208,The Grand Budapest Hotel,2014,"Adventure, Comedy, Crime",8.1,693054,59301324.0,time,hotel,anderson,gustave,important
+209,Gone Girl,2014,"Drama, Mystery, Thriller",8.1,841035,167767189.0,helpful,like,keep,guessing,gone
+210,Wolf Children,2012,"Animation, Drama, Family",8.1,37712,,real,fantasy,love,feels,human
+211,Hacksaw Ridge,2016,"Biography, Drama, History",8.1,423502,67209615.0,battle,desmond,others,also,helpful
+212,Inside Out,2015,"Adventure, Animation, Comedy",8.1,598637,356921711.0,riley,depression,pixar,well,character
+213,Barfi!,2012,"Comedy, Drama, Romance",8.1,74546,2804874.0,barfi,without,love,every,expressions
+214,12 Years a Slave,2013,"Biography, Drama, History",8.1,629280,56671993.0,slave,slavery,years,character,solomon
+215,Rush,2013,"Action, Biography, Drama",8.1,425935,26947624.0,like,hunt,actual,cars,battle
+216,Ford v Ferrari,2019,"Action, Biography, Drama",8.1,267275,117624357.0,cinema,hours,helpful,supposed,amazing
+217,Spotlight,2015,"Biography, Crime, Drama",8.1,410780,45055776.0,hope,people,could,knew,happen
+218,Song of the Sea,2014,"Adventure, Animation, Drama",8.1,49805,857522.0,story,song,seen,well,studio
+219,Kahaani,2012,"Mystery, Thriller",8.1,56865,,would,story,city,watch,kahaani
+220,Zindagi Na Milegi Dobara,2011,"Comedy, Drama",8.1,66303,3108485.0,hrithik,take,farhan,excellent,holiday
+221,Prisoners,2013,"Crime, Drama, Mystery",8.1,587217,61002302.0,characters,performances,crime,drama,thriller
+222,Mad Max: Fury Road,2015,"Action, Adventure",8.1,863994,154058340.0,action,films,miller,george,greatest
+223,A Wednesday,2008,"Action, Crime, Drama",8.1,73005,,wednesday,reason,story,events,anupam
+224,Gran Torino,2008,Drama,8.1,711428,148095302.0,eastwood,gran,torino,films,kowalski
+225,Harry Potter and the Deathly Hallows: Part 2,2011,"Adventure, Drama, Fantasy",8.1,749295,381409310.0,amazing,series,something,everyone,part
+226,Departures,2008,"Drama, Music",8.1,47953,1498210.0,dead,daigo,grows,wife,father
+227,Hachi: A Dog's Tale,2009,"Drama, Family",8.1,248036,,seen,know,probably,years,would
+228,Mary and Max,2009,"Animation, Comedy, Drama",8.1,162159,,films,people,constant,feels,real
+229,How to Train Your Dragon,2010,"Action, Adventure, Animation",8.1,655998,217581231.0,shrek,train,dragon,times,actually
+230,Elite Squad,2007,"Action, Crime, Drama",8.1,97035,8744.0,find,elite,amazingly,good,compare
+231,Into the Wild,2007,"Adventure, Biography, Drama",8.1,564168,18354356.0,lashing,people,selfish,kind,hurtful
+232,No Country for Old Men,2007,"Crime, Drama, Thriller",8.1,839081,74283625.0,around,lead,things,reviews,read
+233,Lage Raho Munna Bhai,2006,"Comedy, Drama, Romance",8.1,42283,2217562.0,munnabhai,great,watch,sanjay,dutt
+234,Million Dollar Baby,2004,"Drama, Sport",8.1,627187,100492203.0,passion,story,frankie,time,scrap
+235,Hotel Rwanda,2004,"Biography, Drama, History",8.1,330810,23530892.0,review,rwanda,hotel,conflict,shame
+236,Tae Guk Gi: The Brotherhood of War,2004,"Action, Drama, War",8.1,37498,1111061.0,korean,since,helpful,hour,long
+237,Before Sunset,2004,"Drama, Romance",8.1,231071,5820649.0,hawke,first,eyes,delpy,ferry
+238,Munna Bhai M.B.B.S.,2003,"Comedy, Drama, Musical",8.1,72558,48772.0,dutt,strict,munna,bhai,sanjay
+239,Memories of Murder,2003,"Action, Crime, Drama",8.1,131629,15357.0,memories,murder,first,helpful,people
+240,Dil Chahta Hai,2001,"Comedy, Drama, Romance",8.1,65848,,bollywood,films,like,good,yaadein
+241,Kill Bill: Vol. 1,2003,"Action, Crime, Thriller",8.1,984418,70099045.0,seen,tarantino,kill,bill,http
+242,Finding Nemo,2003,"Adventure, Animation, Comedy",8.1,934255,380843261.0,fish,like,story,nemo,animals
+243,Catch Me If You Can,2002,"Biography, Crime, Drama",8.1,809311,164615351.0,spielberg,dicaprio,moment,perfect,fill
+244,Amores Perros,2000,"Drama, Thriller",8.1,220614,5408467.0,like,amores,perros,life,family
+245,Neon Genesis Evangelion: The End of Evangelion,1997,"Action, Animation, Drama",8.1,37191,,episodes,last,watch,series,ever
+246,Lagaan: Once Upon a Time in India,2001,"Adventure, Drama, Musical",8.1,103299,909043.0,britons,lagaan,village,india,cricket
+247,The Sixth Sense,1999,"Drama, Mystery, Thriller",8.1,899720,293506292.0,sixth,sense,exactly,obvious,read
+248,The Legend of 1900,1998,"Drama, Music, Romance",8.1,57956,167435.0,anyone,roth,wonderful,dream,seen
+249,The Truman Show,1998,"Comedy, Drama",8.1,919328,125618201.0,truman,show,superb,strong,original
+250,"Crna macka, beli macor",1998,"Comedy, Crime, Romance",8.1,50135,351447.0,time,helpful,extremely,quirky,riddled
+251,The Big Lebowski,1998,"Comedy, Crime, Sport",8.1,719935,18034458.0,kind,dude,comedy,bowling,http
+252,In the Mood for Love,2000,"Drama, Romance",8.1,120688,2738980.0,love,mood,romantic,best,leung
+253,Trainspotting,1996,Drama,8.1,626746,16491080.0,swearing,things,never,point,look
+254,Fargo,1996,"Crime, Drama, Thriller",8.1,605901,24611975.0,jerry,playing,fargo,gaear,buscemi
+255,Underground,1995,"Comedy, Drama, War",8.1,54499,171082.0,people,underground,blacky,years,yugoslavia
+256,La Haine,1995,"Crime, Drama",8.1,146355,280859.0,http,french,favorite,wwwimdbcomlistls,much
+257,Dilwale Dulhania Le Jayenge,1995,"Drama, Romance",8.1,62405,,simply,indian,completely,totally,found
+258,Before Sunrise,1995,"Drama, Romance",8.1,265702,5535405.0,never,every,loved,dialogue,sunrise
+259,Three Colors: Red,1994,"Drama, Mystery, Romance",8.1,88764,3581969.0,life,valentine,judge,auguste,could
+260,Chungking Express,1994,"Comedy, Crime, Drama",8.1,60897,600200.0,people,love,counter,story,characters
+261,Jurassic Park,1993,"Action, Adventure",8.1,852889,404214720.0,park,dinosaurs,wonderful,love,awesome
+262,In the Name of the Father,1993,"Biography, Drama",8.1,154107,25096862.0,father,story,also,conlons,gerry
+263,Raise the Red Lantern,1991,"Drama, History, Romance",8.1,29031,2603061.0,setting,haunting,ever,without,beauty
+264,Dead Poets Society,1989,"Comedy, Drama",8.1,415096,95860116.0,back,change,watch,make,world
+265,The Princess Bride,1987,"Adventure, Family, Fantasy",8.1,388299,30857814.0,princess,love,course,bride,story
+266,Stand by Me,1986,"Adventure, Drama",8.1,358194,52287414.0,remember,like,friends,river,chris
+267,Platoon,1986,"Drama, War",8.1,375578,138530565.0,vietnam,platoon,life,best,enemy
+268,"Paris, Texas",1984,Drama,8.1,87944,2181987.0,texas,travis,paris,place,wife
+269,Nausicaä of the Valley of the Wind,1984,"Adventure, Animation, Fantasy",8.1,146952,495770.0,nausicaä,miyazaki,even,tragedy,nature
+270,The Thing,1982,"Horror, Mystery",8.1,363936,19629760.0,thing,horror,love,carpenter,classic
+271,Pink Floyd: The Wall,1982,"Drama, Fantasy, Music",8.1,75178,22244207.0,time,first,seen,times,every
+272,Fitzcarraldo,1982,"Adventure, Drama",8.1,30867,,fitzcarraldo,opera,herzog,kinski,amazonia
+273,Fanny and Alexander,1982,Drama,8.1,56663,6783304.0,think,bergman,alexander,every,scared
+274,Blade Runner,1982,"Action, Thriller",8.1,683029,32868943.0,helpful,personal,opinion,everything,perfect
+275,The Elephant Man,1980,"Biography, Drama",8.1,216323,26010864.0,merrick,lynch,elephant,asks,character
+276,Monty Python's Life of Brian,1979,Comedy,8.1,361898,20206622.0,http,favorite,wwwimdbcomlistls,makes,personally
+277,The Deer Hunter,1978,"Drama, War",8.1,306561,48979328.0,vietnam,much,army,country,served
+278,Rocky,1976,"Drama, Sport",8.1,509633,117235147.0,like,never,rocky,goes,stallone
+279,Network,1976,Drama,8.1,142906,23689877.0,finch,holden,things,changed,chayefsky
+280,Barry Lyndon,1975,"Adventure, Drama, History",8.1,146694,,barry,lyndon,time,films,made
+281,The Mirror,1975,"Biography, Drama",8.1,38712,22168.0,zerkalo,tarkovsky,first,mirror,asked
+282,Chinatown,1974,"Drama, Mystery, Thriller",8.1,289314,29200000.0,like,perfect,everything,chinatown,dark
+283,Paper Moon,1973,"Comedy, Crime, Drama",8.1,41569,,paper,moon,look,moze,black
+284,Cries & Whispers,1972,Drama,8.1,29465,,sisters,karin,agnes,maria,powerful
+285,Solaris,1972,"Drama, Mystery",8.1,79138,22168.0,respect,scifi,american,knew,starting
+286,Le Samouraï,1967,"Crime, Drama, Mystery",8.1,44422,39481.0,melville,samourai,cinema,death,police
+287,Cool Hand Luke,1967,"Crime, Drama",8.1,159388,,http,favorite,wwwimdbcomlistls,even,story
+288,Persona,1966,"Drama, Thriller",8.1,100266,,alma,elizabeth,persona,images,bergman
+289,Andrei Rublev,1966,"Biography, Drama, History",8.1,45500,124189.0,tarkovsky,rublev,andrei,russia,created
+290,The Battle of Algiers,1966,"Drama, War",8.1,51765,879794.0,french,battle,algiers,mathieu,like
+291,The Exterminating Angel,1962,"Drama, Fantasy",8.1,29104,,buñuel,evening,spanish,leave,time
+292,What Ever Happened to Baby Jane?,1962,"Drama, Horror, Thriller",8.1,49220,,joan,baby,jane,series,feud
+293,Sanjuro,1962,"Action, Comedy, Crime",8.1,32023,46808.0,sanjuro,tsubaki,yojinbo,japan,japanese
+294,The Man Who Shot Liberty Valance,1962,"Drama, Western",8.1,67704,,tale,shot,liberty,valance,west
+295,Ivan's Childhood,1962,"Drama, War",8.1,30706,22168.0,ivan,life,childhood,everything,mother
+296,The Virgin Spring,1960,Drama,8.1,26224,,viewer,bergman,birgitta,characters,viewers
+297,Inherit the Wind,1960,"Biography, Drama, History",8.1,26885,,blessed,acting,time,helpful,wonderful
+298,The 400 Blows,1959,"Crime, Drama",8.1,102970,509.0,antoine,truffaut,camera,cinema,found
+299,Ben-Hur,1959,"Adventure, Drama, History",8.1,216227,74422622.0,films,seen,story,time,favorite
+300,The Hidden Fortress,1958,"Adventure, Drama",8.1,33793,46808.0,kurosawa,great,films,whole,best
+301,Sweet Smell of Success,1957,Drama,8.1,27511,,like,writing,never,lancaster,words
+302,Nights of Cabiria,1957,Drama,8.1,42178,752045.0,cabiria,face,hope,films,never
+303,Throne of Blood,1957,"Drama, History",8.1,45623,46808.0,washizu,kurosawa,asaji,forest,fortress
+304,The Bridge on the River Kwai,1957,"Adventure, Drama, War",8.1,200324,27200000.0,bridge,nicholson,british,saito,films
+305,On the Waterfront,1954,"Crime, Drama, Thriller",8.1,139752,,terry,brando,union,waterfront,docks
+306,The Wages of Fear,1953,"Adventure, Drama, Thriller",8.1,53470,,four,company,desperate,care,clouzot
+307,Ace in the Hole,1951,Drama,8.1,30874,,cave,became,collins,event,real
+308,White Heat,1949,"Action, Crime, Drama",8.1,29226,,cagney,like,well,tough,jarrett
+309,The Third Man,1949,"Mystery, Thriller",8.1,156449,1067364.0,story,city,plays,fantastic,http
+310,The Red Shoes,1948,"Drama, Music, Romance",8.1,30245,,boris,shoes,vicky,ballet,julian
+311,The Shop Around the Corner,1940,"Comedy, Drama, Romance",8.1,27055,,stewart,time,well,used,especially
+312,Rebecca,1940,"Drama, Mystery, Romance",8.1,120859,,hitchcock,rebecca,also,winter,suspicion
+313,Mr. Smith Goes to Washington,1939,"Comedy, Drama",8.1,105260,144738.0,washington,stewart,smith,capra,gets
+314,Gone with the Wind,1939,"Drama, History, Romance",8.1,285790,200852579.0,scarlet,love,lives,person,would
+315,La Grande Illusion,1937,"Drama, War",8.1,33369,,grand,illusion,characters,explain,makes
+316,It Happened One Night,1934,"Comedy, Romance",8.1,92153,,capra,gable,happened,night,colbert
+317,The Passion of Joan of Arc,1928,"Biography, Drama, History",8.1,46403,21877.0,joan,dreyer,viewer,eyes,time
+318,The Circus,1928,"Comedy, Romance",8.1,28599,,chaplin,closing,sense,helpful,circus
+319,Sunrise,1927,"Drama, Romance",8.1,46358,,sunrise,murnau,ever,made,time
+320,The General,1926,"Action, Adventure, Comedy",8.1,79524,,keaton,general,johnny,buster,action
+321,The Cabinet of Dr. Caligari,1920,"Fantasy, Horror, Mystery",8.1,56258,8811.0,cabinet,francis,young,alan,seems
+322,Shoplifters,2018,"Crime, Drama",8.0,58374,3313513.0,koreeda,family,society,shoplifters,yearold
+323,Badhaai Ho,2018,"Comedy, Drama",8.0,26811,,helpful,simple,great,message,directed
+324,Marriage Story,2019,"Comedy, Drama, Romance",8.0,233341,,love,never,found,work,made
+325,Togo,2019,"Adventure, Biography, Drama",8.0,32762,,daughter,helpful,amazing,filmstory,remarkable
+326,Airlift,2016,"Drama, History",8.0,52191,,akshay,kumar,well,airlift,baby
+327,Bajrangi Bhaijaan,2015,"Action, Adventure, Comedy",8.0,70560,8178001.0,best,salman,director,vijayendra,story
+328,Baby,2015,"Action, Thriller",8.0,52041,,would,akshay,neeraj,india,proud
+329,La La Land,2016,"Comedy, Drama, Music",8.0,492764,151101803.0,would,helpful,remember,trailers,thought
+330,Lion,2016,"Biography, Drama",8.0,208881,51738905.0,life,born,father,found,difficult
+331,The Martian,2015,"Adventure, Drama",8.0,746533,228433663.0,result,much,cast,scientific,validity
+332,Zootopia,2016,"Adventure, Animation, Comedy",8.0,424870,341268248.0,could,thought,flash,like,show
+333,The Tale of The Princess Kaguya,2013,"Adventure, Animation, Drama",8.0,37129,974913.0,princess,kaguya,animation,isao,takahata
+334,Wonder,2017,"Drama, Family",8.0,136545,132422809.0,people,bullying,meant,point,book
+335,Special 26,2013,"Crime, Drama, Thriller",8.0,50063,,script,pandey,bollywood,lets,half
+336,Short Term 12,2013,Drama,8.0,80360,1013100.0,grace,father,brie,larson,short
+337,The Raid 2,2014,"Action, Crime, Thriller",8.0,112781,2627209.0,action,raid,characters,moment,review
+338,The Imitation Game,2014,"Biography, Drama, Thriller",8.0,672954,91125683.0,turing,poles,True,first,information
+339,Guardians of the Galaxy,2014,"Action, Adventure, Comedy",8.0,1029260,333176600.0,galaxy,action,time,guardians,superhero
+340,Blade Runner 2049,2017,"Action, Drama, Mystery",8.0,447798,92054159.0,blade,runner,better,pulls,good
+341,Her,2013,"Drama, Romance",8.0,529035,25568251.0,found,helpful,another,watched,intense
+342,Bohemian Rhapsody,2018,"Biography, Drama, Music",8.0,438318,216668042.0,music,queen,helpful,must,lover
+343,The Revenant,2015,"Action, Adventure, Drama",8.0,690571,183637894.0,nature,revenant,iñarritu,like,experience
+344,The Perks of Being a Wallflower,2012,"Drama, Romance",8.0,454840,17742948.0,moving,said,helpful,went,advance
+345,Elite Squad 2: The Enemy Within,2010,"Action, Crime, Drama",8.0,78501,100119.0,action,first,helpful,thing,right
+346,The King's Speech,2010,"Biography, Drama, History",8.0,631374,138797449.0,george,story,king,made,stammering
+347,The Help,2011,Drama,8.0,422105,169708112.0,maid,back,every,remember,fiction
+348,Deadpool,2016,"Action, Adventure, Comedy",8.0,887935,363070709.0,deadpool,character,superhero,first,story
+349,Darbareye Elly,2009,"Drama, Mystery, Thriller",8.0,44338,470760.0,elly,group,farhadi,chaharshanbesoori,films
+350,Dev.D,2009,"Drama, Romance",8.0,28380,18613.0,love,wait,like,devd,even
+351,Ip Man,2008,"Action, Biography, Drama",8.0,209138,,donnie,martial,arts,mine,skills
+352,My Name Is Khan,2010,Drama,8.0,97184,4018771.0,khan,name,muslim,breakthrough,subjective
+353,Nefes: Vatan Sagolsun,2009,"Action, Drama, Thriller",8.0,31393,,even,corrupted,propaganda,morally,reviews
+354,The Trial of the Chicago 7,2020,"Drama, History, Thriller",8.0,33224,,trial,legal,courtroom,sorkin,radical
+355,Slumdog Millionaire,2008,"Drama, Romance",8.0,789785,141319928.0,story,mumbai,slum,three,actors
+356,Black Swan,2010,"Drama, Thriller",8.0,689844,106954678.0,swan,never,black,nina,aronofsky
+357,The Avengers,2012,"Action, Adventure",8.0,1246911,623357910.0,marvel,avengers,iron,loki,thor
+358,Persepolis,2007,"Animation, Biography, Drama",8.0,87534,4445756.0,woman,iran,family,government,also
+359,Dallas Buyers Club,2013,"Biography, Drama",8.0,433207,27298285.0,project,much,already,transformations,True
+360,The Pursuit of Happyness,2006,"Biography, Drama",8.0,440470,163566459.0,smith,never,blamed,deal,real
+361,Blood Diamond,2006,"Adventure, Drama, Thriller",8.0,492397,57377916.0,sierra,leone,violence,fact,country
+362,The Bourne Ultimatum,2007,"Action, Mystery, Thriller",8.0,599486,227471070.0,gripping,helpful,best,original,trilogy
+363,3-Iron,2004,"Crime, Drama, Romance",8.0,49266,241914.0,anyone,light,story,unbelievable,script
+364,Sin City,2005,"Crime, Thriller",8.0,734870,74103820.0,city,miller,life,hellboy,toro
+365,The Diving Bell and the Butterfly,2007,"Biography, Drama",8.0,102421,6003227.0,bauby,story,completely,recently,diving
+366,G.O.R.A.,2004,"Adventure, Comedy",8.0,55603,,quite,funny,jokes,pretty,turkish
+367,Ratatouille,2007,"Adventure, Animation, Comedy",8.0,629328,206445654.0,review,food,restaurant,well,helpful
+368,Casino Royale,2006,"Action, Adventure, Thriller",8.0,574080,167445960.0,bond,james,love,action,casino
+369,Kill Bill: Vol. 2,2004,"Action, Crime, Thriller",8.0,673197,66208183.0,bill,tarantino,thurman,carradine,kill
+370,The Return,2003,Drama,8.0,41697,504256.0,father,boys,vanya,return,sons
+371,"Spring, Summer, Fall, Winter... and Spring",2003,"Drama, Romance",8.0,76109,2380788.0,simplicity,however,beauty,story,perfect
+372,The Sea Inside,2004,"Biography, Drama",8.0,76684,2104923.0,life,ramon,priest,reviews,euthanasia
+373,Cinderella Man,2005,"Biography, Drama, History",8.0,174168,61649911.0,story,times,helpful,truly,inspiring
+374,Kal Ho Naa Ho,2003,"Comedy, Drama, Romance",8.0,62419,1991922.0,sensitive,made,shah,rukh,khan
+375,Infernal Affairs,2002,"Action, Crime, Drama",8.0,116863,169659.0,hong,kong,drama,said,even
+376,Pirates of the Caribbean: The Curse of the Black Pearl,2003,"Action, Adventure, Fantasy",8.0,1005281,305413918.0,children,like,never,music,depp
+377,Big Fish,2003,"Adventure, Drama, Fantasy",8.0,410691,66809693.0,father,filled,ideas,life,brilliant
+378,The Incredibles,2004,"Action, Adventure, Animation",8.0,646855,261441092.0,incredibles,good,full,characters,funny
+379,My Sassy Girl,2001,"Comedy, Drama, Romance",8.0,44920,,girl,gyeonwoo,half,hyun,parts
+380,Dogville,2003,"Crime, Drama",8.0,135891,1535286.0,like,believe,much,race,cold
+381,Vizontele,2001,"Comedy, Drama",8.0,32608,,real,first,turkish,masterpiece,fake
+382,Donnie Darko,2001,"Drama, Mystery",8.0,731697,1478493.0,donnie,frank,night,back,fact
+383,"Monsters, Inc.",2001,"Adventure, Animation, Comedy",8.0,800925,290410256.0,kids,goodman,crystal,john,great
+384,Magnolia,1999,Drama,8.0,286140,22455976.0,next,anderson,generation,citing,films
+385,Dancer in the Dark,2000,"Crime, Drama, Musical",8.0,100679,4184036.0,right,selma,björk,trier,everything
+386,Mulholland Dr.,2001,"Drama, Mystery, Thriller",8.0,315750,7220243.0,lynch,interpretation,david,author,much
+387,The Straight Story,1999,"Biography, Drama",8.0,80575,6203044.0,time,story,part,allowing,like
+388,Perfect Blue,1997,"Animation, Crime, Mystery",8.0,55420,558598.0,perfect,blue,everything,thriller,genre
+389,The Celebration,1998,Drama,8.0,76889,1656223.0,subject,occasion,family,would,happens
+390,Central Station,1998,Drama,8.0,35741,5969553.0,dora,josue,walter,fernanda,montenegro
+391,The Iron Giant,1999,"Action, Adventure, Animation",8.0,169469,23159305.0,giant,iron,years,never,young
+392,Knockin' on Heaven's Door,1997,"Action, Comedy, Crime",8.0,27244,5710.0,kohd,comedy,rudi,initially,martin
+393,Sling Blade,1996,Drama,8.0,86059,24444121.0,characters,filmmaking,thornton,fail,like
+394,Secrets & Lies,1996,"Comedy, Drama",8.0,36798,13417292.0,plot,leigh,secrets,lies,portraits
+395,12 Monkeys,1995,"Mystery, Thriller",8.0,571391,57141459.0,willis,gilliam,time,bruce,performance
+396,Ghost in the Shell,1995,"Action, Animation, Crime",8.0,126608,515905.0,ghost,shell,science,fiction,computer
+397,The Nightmare Before Christmas,1993,"Animation, Family, Fantasy",8.0,289220,76982668.0,christmas,halloween,town,jack,time
+398,Groundhog Day,1993,"Comedy, Fantasy, Romance",8.0,571876,70906973.0,phil,comedy,character,situation,groundhog
+399,"Blood In, Blood Out",1993,"Crime, Drama",8.0,28472,4496583.0,latino,story,acting,people,family
+400,Scent of a Woman,1992,Drama,8.0,256804,63095253.0,pacino,performance,acting,passion,character
+401,Aladdin,1992,"Adventure, Animation, Comedy",8.0,367803,217350219.0,aladdin,jafar,genie,cave,love
+402,JFK,1991,"Drama, History, Thriller",8.0,139712,70405498.0,every,kevin,conspiracy,helpful,assassination
+403,Beauty and the Beast,1991,"Animation, Family, Fantasy",8.0,412616,218967620.0,bell,beast,perfect,love,father
+404,Dances with Wolves,1990,"Adventure, Drama, Western",8.0,236521,184208848.0,dunbar,character,costner,sioux,better
+405,Do the Right Thing,1989,"Comedy, Drama",8.0,87299,27545445.0,right,thing,people,american,spike
+406,Rain Man,1988,Drama,8.0,467343,172825435.0,well,years,best,fine,memorable
+407,Akira,1988,"Action, Animation",8.0,161469,553171.0,helpful,love,usual,story,complex
+408,Wings of Desire,1987,"Drama, Fantasy, Romance",8.0,63497,3333969.0,part,berlin,freedom,comments,wenders
+409,Au Revoir les Enfants,1987,"Drama, War",8.0,30686,4542825.0,malle,school,jean,julien,time
+410,Castle in the Sky,1986,"Adventure, Animation, Drama",8.0,146871,523664.0,miyazaki,laputa,adventure,magical,grand
+411,The Terminator,1984,Action,8.0,789857,38371200.0,perfect,biehn,like,something,cameron
+412,Gandhi,1982,"Biography, Drama, History",8.0,215953,52767889.0,gandhi,india,attenborough,funeral,actor
+413,Kagemusha,1980,"Drama, History, War",8.0,31598,4000000.0,kagemusha,shingen,kurosawa,although,makes
+414,Being There,1979,"Comedy, Drama",8.0,64627,30177511.0,sellers,douglas,oscar,brilliant,stars
+415,Annie Hall,1977,"Comedy, Romance",8.0,249383,38251425.0,annie,allen,hall,alvy,best
+416,All the President's Men,1976,"Biography, Drama, History",8.0,100667,70600000.0,performances,redford,like,scene,time
+417,Jaws,1975,"Adventure, Thriller",8.0,538169,260758300.0,http,never,favorite,wwwimdbcomlistls,first
+418,Dog Day Afternoon,1975,"Biography, Crime, Drama",8.0,232301,50000000.0,time,watching,life,last,make
+419,Young Frankenstein,1974,Comedy,8.0,141475,86273333.0,frankenstein,brooks,young,gene,wilder
+420,Papillon,1973,"Biography, Crime, Drama",8.0,120126,53267000.0,french,henri,papillon,charriere,inmate
+421,The Exorcist,1973,Horror,8.0,357051,232906145.0,exorcist,ever,imagery,love,karras
+422,Sleuth,1972,"Mystery, Thriller",8.0,44291,4081254.0,sleuth,olivier,caine,andrew,milo
+423,The Last Picture Show,1971,"Drama, Romance",8.0,41612,29133000.0,time,life,person,people,quality
+424,Fiddler on the Roof,1971,"Drama, Family, Musical",8.0,38691,10404330.0,jewison,fiddler,tevye,roof,course
+425,The Conformist,1970,Drama,8.0,26371,58657.0,marcello,novel,bertolucci,view,conformist
+426,Butch Cassidy and the Sundance Kid,1969,"Biography, Crime, Drama",8.0,199952,102308889.0,butch,cassidy,sundance,exciting,story
+427,Rosemary's Baby,1968,"Drama, Horror",8.0,189818,,rosemary,baby,minnie,might,roman
+428,Planet of the Apes,1968,Adventure,8.0,163625,32589624.0,planet,apes,scifi,modern,films
+429,The Graduate,1967,"Comedy, Drama, Romance",8.0,251028,104945305.0,graduate,supposed,shot,sound,final
+430,Who's Afraid of Virginia Woolf?,1966,Drama,8.0,68214,28000000.0,taylor,every,martha,george,truly
+431,The Sound of Music,1965,"Biography, Drama, Family",8.0,199841,159287539.0,loved,year,found,perfect,wishes
+432,Doctor Zhivago,1965,"Drama, Romance, War",8.0,68770,111721910.0,yuri,lara,revolution,tonya,wife
+433,A Fistful of Dollars,1964,"Action, Drama, Western",8.0,194561,14500000.0,western,eastwood,love,dollars,time
+434,8½,1963,Drama,8.0,107180,98760.0,fellini,reputation,director,finds,reality
+435,Vivre Sa Vie,1962,Drama,8.0,27218,24517.0,nana,godard,much,life,vivre
+436,The Hustler,1961,"Drama, Sport",8.0,74334,,eddie,sarah,gordon,fats,hustler
+437,La Dolce Vita,1960,"Comedy, Drama",8.0,65264,,marcello,life,find,people,would
+438,Rio Bravo,1959,"Action, Drama, Western",8.0,55282,12535000.0,wayne,dude,john,back,hawks
+439,Anatomy of a Murder,1959,"Crime, Drama, Mystery",8.0,58842,11900000.0,remick,every,story,anatomy,judge
+440,Touch of Evil,1958,"Crime, Drama",8.0,97370,2247465.0,welles,evil,touch,quinlan,vargas
+441,Cat on a Hot Tin Roof,1958,Drama,8.0,44293,,newman,roof,actor,watch,greatest
+442,The Killing,1956,"Crime, Drama",8.0,80266,,killing,kubrick,made,brilliant,cast
+443,The Night of the Hunter,1955,"Crime, Drama",8.0,80730,,scene,like,children,singing,world
+444,La Strada,1954,Drama,8.0,57390,,love,zampano,story,meaning,masterpiece
+445,Diabolique,1955,"Crime, Drama, Horror",8.0,60711,,story,mystery,suspense,plot,french
+446,Stalag 17,1953,"Comedy, Drama, War",8.0,50546,,sefton,pows,comedy,stalag,characters
+447,Roman Holiday,1953,"Comedy, Romance",8.0,125511,,princess,hepburn,bradley,however,fairy
+448,A Streetcar Named Desire,1951,Drama,8.0,97775,,blanche,great,stanley,even,story
+449,In a Lonely Place,1950,"Drama, Mystery",8.0,25763,,hollywood,murder,best,bogart,actress
+450,Kind Hearts and Coronets,1949,"Comedy, Crime",8.0,33992,35948.0,humour,brilliant,dark,clever,comedy
+451,Rope,1948,"Crime, Drama, Mystery",8.0,127193,,minute,eight,takes,three,think
+452,Out of the Past,1947,"Crime, Drama",8.0,32166,,moore,jeff,great,character,plays
+453,Brief Encounter,1945,"Drama, Romance",8.0,34838,,time,films,seen,david,lean
+454,Laura,1944,"Drama, Mystery",8.0,42030,,laura,dana,andrews,hauntingly,lovely
+455,The Best Years of Our Lives,1946,"Drama, Romance, War",8.0,56581,23650000.0,homer,fred,young,scene,father
+456,Arsenic and Old Lace,1944,"Comedy, Crime, Thriller",8.0,64433,,dark,enjoy,comedy,arsenic,lace
+457,The Maltese Falcon,1941,Mystery,8.0,147375,,bogart,spade,years,difficult,picture
+458,The Grapes of Wrath,1940,"Drama, History",8.0,84908,,would,time,back,like,bill
+459,The Wizard of Oz,1939,"Adventure, Family, Fantasy",8.0,367710,24790250.0,dorothy,friends,story,characters,fine
+460,The Rules of the Game,1939,"Comedy, Drama",8.0,26298,273641.0,renoir,would,excellent,though,watching
+461,The Thin Man,1934,"Comedy, Crime, Mystery",8.0,25965,,could,thin,first,time,drink
+462,All Quiet on the Western Front,1930,"Drama, War",8.0,56665,,front,western,quiet,ayres,school
+463,Battleship Potemkin,1925,"Drama, History, Thriller",8.0,52211,51198.0,modern,well,firing,seen,films
+464,Knives Out,2019,"Comedy, Crime, Drama",7.9,405784,165363234.0,everything,helpful,nothing,typical,beautifully
+465,The Gentlemen,2019,"Action, Comedy, Crime",7.9,197008,36471795.0,helpful,writing,directing,acting,general
+466,Dil Bechara,2020,"Comedy, Drama, Romance",7.9,105411,,helpful,finest,acting,ever,seeni
+467,Call Me by Your Name,2017,"Drama, Romance",7.9,203304,18095701.0,love,call,name,best,people
+468,"I, Daniel Blake",2016,Drama,7.9,52230,260354.0,often,wait,poor,time,like
+469,Isle of Dogs,2018,"Adventure, Animation, Comedy",7.9,134748,32015231.0,cartoon,dogs,wonderful,people,films
+470,Dunkirk,2017,"Action, Drama, History",7.9,539435,189740665.0,characters,real,also,nonlinear,sequences
+471,Hunt for the Wilderpeople,2016,"Adventure, Comedy, Drama",7.9,106699,5205468.0,came,helpful,brilliant,funny,respects
+472,Captain Fantastic,2016,"Comedy, Drama",7.9,184412,5879835.0,kids,space,live,important,human
+473,Sing Street,2016,"Comedy, Drama, Music",7.9,83551,3237118.0,great,watch,characters,incredible,give
+474,Thor: Ragnarok,2017,"Action, Adventure, Comedy",7.9,571617,315058289.0,helpful,riot,laughter,wife,grandmother
+475,Nightcrawler,2014,"Crime, Drama, Thriller",7.9,454319,32381217.0,nightcrawler,gyllenhaal,told,along,standpoint
+476,Jojo Rabbit,2019,"Comedy, Drama, War",7.9,268886,33370906.0,helpful,exceptional,best,seen,year
+477,Star Wars: Episode VII - The Force Awakens,2015,"Action, Adventure",7.9,849114,936662225.0,space,girl,galaxy,deep,helpful
+478,Star Wars: Episode VII - The Force Awakens,2015,"Action, Adventure",7.9,849114,936662225.0,space,girl,galaxy,deep,helpful
+479,Before Midnight,2013,"Drama, Romance",7.9,138042,8114627.0,could,linklater,best,however,people
+480,X-Men: Days of Future Past,2014,"Action, Adventure",7.9,653153,233921534.0,first,xmen,days,future,much
+481,Once Upon a Time in Anatolia,2011,"Crime, Drama",7.9,40383,152408.0,team,body,seems,countryside,murder
+482,The Artist,2011,"Comedy, Drama, Romance",7.9,228373,44671682.0,george,silent,dujardin,artist,like
+483,Edge of Tomorrow,2014,"Action, Adventure",7.9,590159,100206256.0,trailers,would,much,cruise,http
+484,Amour,2012,"Drama, Romance",7.9,91745,6739492.0,anne,georges,haneke,amour,world
+485,The Irishman,2019,"Biography, Crime, Drama",7.9,310403,,trust,daughter,frank,door,jimmy
+486,A Prophet,2009,"Crime, Drama",7.9,92490,2087720.0,prison,prophète,excellent,story,young
+487,Moon,2009,"Drama, Mystery",7.9,331456,5010163.0,much,thought,provoking,science,fiction
+488,Let the Right One In,2008,"Crime, Drama, Fantasy",7.9,203628,2122065.0,oskar,right,like,vampire,young
+489,District 9,2009,"Action, Thriller",7.9,632774,115646235.0,district,blomkamp,piece,science,fiction
+490,The Wrestler,2008,"Drama, Sport",7.9,287253,26238243.0,wrestling,seems,wrestler,great,needs
+491,Jab We Met,2007,"Comedy, Drama, Romance",7.9,46804,,love,know,think,actress,european
+492,Boyhood,2014,Drama,7.9,332221,25352281.0,miracle,time,patricia,arquette,heart
+493,"4 Months, 3 Weeks and 2 Days",2007,Drama,7.9,55821,1198208.0,abortion,otilia,boyfriend,dinner,months
+494,Star Trek,2009,"Action, Adventure",7.9,573366,257730019.0,star,trek,space,helpful,almost
+495,In Bruges,2008,"Comedy, Crime, Drama",7.9,385852,7800824.0,great,acting,story,dialogue,going
+496,The Man from Earth,2007,"Drama, Fantasy",7.9,171758,,found,like,helpful,unusual,ever
+497,Letters from Iwo Jima,2006,"Action, Adventure, Drama",7.9,152706,13756082.0,japanese,people,wife,american,clint
+498,The Fall,2006,"Adventure, Drama, Fantasy",7.9,106309,2266905.0,indian,festival,another,like,work
+499,Life of Pi,2012,"Adventure, Drama, Fantasy",7.9,573228,124987023.0,time,incredible,first,felt,long
+500,Fantastic Mr. Fox,2009,"Adventure, Animation, Comedy",7.9,194742,21002919.0,animals,anderson,cussing,fantastic,animation
+501,C.R.A.Z.Y.,2005,"Comedy, Drama",7.9,31268,,time,gervais,world,played,father
+502,The Chorus,2004,"Drama, Music",7.9,56588,3635164.0,school,semester,chorus,students,helpful
+503,Iron Man,2008,"Action, Adventure",7.9,926071,319034126.0,rewatch,mcumovies,first,iron,couple
+504,Shaun of the Dead,2004,"Comedy, Horror",7.9,505410,13542874.0,shaun,dead,seen,time,zombies
+505,Head-On,2004,"Drama, Romance",7.9,50608,435395.0,turkish,sibel,cahit,bosphorus,first
+506,Mystic River,2003,"Crime, Drama, Mystery",7.9,413809,90135191.0,book,first,time,reading,well
+507,Harry Potter and the Prisoner of Azkaban,2004,"Adventure, Family, Fantasy",7.9,538903,249975996.0,cuarón,source,material,justice,young
+508,Ying xiong,2002,"Action, Adventure, History",7.9,172664,53710019.0,plot,money,hero,crouching,tiger
+509,Talk to Her,2002,"Drama, Mystery, Romance",7.9,103406,9357911.0,almodóvar,talk,women,scene,matador
+510,No Man's Land,2001,"Comedy, Drama, War",7.9,44159,1012153.0,best,http,favorite,wwwimdbcomlistls,well
+511,Cowboy Bebop: The Movie,2001,"Action, Animation, Crime",7.9,42281,1000045.0,like,perfect,villain,episode,bebop
+512,The Bourne Identity,2002,"Action, Mystery, Thriller",7.9,501665,121661683.0,bourne,book,rather,without,several
+513,Nine Queens,2000,"Crime, Drama, Thriller",7.9,49130,1222889.0,direction,story,without,helpful,welldone
+514,Children of Men,2006,"Adventure, Drama",7.9,459352,35552383.0,favorite,imdbcomlistls,first,children,time
+515,Almost Famous,2000,"Adventure, Comedy, Drama",7.9,249202,32534850.0,rock,journalist,music,almost,famous
+516,Toy Story 2,1999,"Adventure, Animation, Comedy",7.9,518393,245852179.0,great,must,story,quality,sequences
+517,Boogie Nights,1997,Drama,7.9,235637,26400640.0,boogie,nights,dirk,scenes,music
+518,Whisper of the Heart,1995,"Animation, Drama, Family",7.9,49897,498156.0,heart,whisper,real,love,teen
+519,Once Were Warriors,1994,"Crime, Drama",7.9,31124,1608570.0,beth,family,jake,best,oldest
+520,True Romance,1993,"Crime, Drama, Romance",7.9,203932,12281551.0,enough,cast,character,supporting,rolls
+521,Three Colors: Blue,1993,"Drama, Music, Mystery",7.9,87397,1324974.0,julie,blue,seen,life,make
+522,Ninja Scroll,1993,"Action, Adventure, Animation",7.9,34071,,great,action,time,villains,helpful
+523,Carlito's Way,1993,"Crime, Drama, Thriller",7.9,198008,36948322.0,carlito,gangster,pacino,thanks,back
+524,Edward Scissorhands,1990,"Drama, Fantasy, Romance",7.9,440396,56362352.0,people,True,tears,fairy,tale
+525,My Left Foot,1989,"Biography, Drama",7.9,66781,14743391.0,cerebral,palsy,excellent,christy,human
+526,Crimes and Misdemeanors,1989,"Comedy, Drama",7.9,53921,18254702.0,allen,cliff,always,judah,crimes
+527,The Untouchables,1987,"Crime, Drama, Thriller",7.9,274835,76270454.0,capone,mafia,shows,enforcement,arrest
+528,Hannah and Her Sisters,1986,"Comedy, Drama",7.9,66225,40084041.0,allen,hannah,best,sisters,drama
+529,Brazil,1985,Drama,7.9,185450,9929135.0,films,gilliam,brazil,dystopian,http
+530,This Is Spinal Tap,1984,"Comedy, Music",7.9,127320,4736202.0,satire,spinal,humor,first,time
+531,A Christmas Story,1983,"Comedy, Family",7.9,128005,20605209.0,story,christmas,ralphie,childhood,shepherd
+532,The Blues Brothers,1980,"Action, Adventure, Comedy",7.9,180143,57229890.0,musical,jake,comedy,action,fantasy
+533,Manhattan,1979,"Comedy, Drama, Romance",7.9,129923,39946780.0,allen,love,isaac,woody,manhattan
+534,All That Jazz,1979,"Drama, Music, Musical",7.9,27593,37823676.0,gideon,life,fosse,fate,musical
+535,Dawn of the Dead,1978,"Action, Adventure, Horror",7.9,110027,,romero,dawn,trilogy,dead,something
+536,The Holy Mountain,1973,"Adventure, Drama, Fantasy",7.9,35918,61001.0,holy,mountain,films,people,jodorowsky
+537,Amarcord,1973,"Comedy, Drama",7.9,39179,125493.0,life,like,filled,awesome,people
+538,The Discreet Charm of the Bourgeoisie,1972,Comedy,7.9,37777,,bunuel,frustrated,often,word,works
+539,"Aguirre, the Wrath of God",1972,"Action, Adventure, Biography",7.9,51410,,aguirre,kinski,historical,breathtaking,herzog
+540,Harold and Maude,1971,"Comedy, Drama, Romance",7.9,69911,,maude,show,harold,helpful,quite
+541,Patton,1970,"Biography, Drama, War",7.9,92850,61749765.0,patton,said,thought,looking,developed
+542,The Wild Bunch,1969,"Action, Adventure, Western",7.9,76499,638641.0,gang,general,pike,army,every
+543,Night of the Living Dead,1968,"Horror, Thriller",7.9,114574,236452.0,best,films,romero,ever,zombies
+544,The Lion in Winter,1968,"Biography, Drama, History",7.9,28600,18177.0,richard,john,henry,historical,script
+545,In the Heat of the Night,1967,"Crime, Drama, Mystery",7.9,66632,,oscar,films,great,heat,night
+546,Charade,1963,"Comedy, Mystery, Romance",7.9,67030,,best,ever,hepburn,grant,actors
+547,The Manchurian Candidate,1962,"Drama, Thriller",7.9,70455,2757256.0,time,well,favorites,helpful,ultimate
+548,Spartacus,1960,"Adventure, Biography, Drama",7.9,122736,1830650.0,kubrick,douglas,spartacus,director,would
+549,L'Avventura,1960,"Drama, Mystery",7.9,25938,,shot,going,anna,within,deep
+550,Hiroshima Mon Amour,1959,"Drama, Romance",7.9,27752,96439.0,hiroshima,story,affair,know,simple
+551,The Ten Commandments,1956,"Adventure, Drama",7.9,62693,65500000.0,look,moses,every,demille,charlton
+552,The Searchers,1956,"Adventure, Drama, Western",7.9,79079,,music,ethan,picture,steiner,ford
+553,East of Eden,1955,Drama,7.9,39685,,book,best,performance,trouble,finding
+554,High Noon,1952,"Drama, Thriller, Western",7.9,95986,,kane,noon,town,high,fight
+555,Strangers on a Train,1951,"Crime, Thriller",7.9,121811,,hitchcock,train,could,character,walker
+556,Harvey,1950,"Comedy, Drama, Fantasy",7.9,52140,,elwood,harvey,stewart,dowd,know
+557,Miracle on 34th Street,1947,"Comedy, Drama, Family",7.9,39239,2650000.0,like,ohara,audiences,santa,women
+558,Notorious,1946,"Drama, Romance",7.9,91055,,hitchcock,dark,favorite,seen,always
+559,The Big Sleep,1946,"Crime, Mystery",7.9,77895,,bogart,marlowe,sleep,maltese,falcon
+560,The Lost Weekend,1945,Drama,7.9,33030,,quite,charles,jackson,weekend,hotel
+561,The Philadelphia Story,1940,"Comedy, Romance",7.9,62498,404524.0,hepburn,story,made,tracy,could
+562,His Girl Friday,1940,"Comedy, Drama, Romance",7.9,52675,296000.0,grant,play,cary,russell,hildy
+563,Bringing Up Baby,1938,"Comedy, Family, Romance",7.9,54255,,grant,character,comedy,going,perfectly
+564,The Adventures of Robin Hood,1938,"Action, Adventure, Romance",7.9,46618,,flynn,years,erroll,robin,hood
+565,A Night at the Opera,1935,"Comedy, Music, Musical",7.9,30161,2537520.0,groucho,marx,brothers,opera,comedy
+566,King Kong,1933,"Adventure, Horror",7.9,77920,,kong,cooper,king,obrien,remake
+567,Freaks,1932,"Drama, Horror",7.9,41514,,freaks,deformed,people,quite,browning
+568,Nosferatu,1922,"Fantasy, Horror",7.9,87457,,schreck,murnau,stoker,nosferatu,character
+569,Tenet,2020,Action,7.8,137324,52500000.0,understand,first,blight,time,properly
+570,The Salesman,2016,"Drama, Thriller",7.8,49530,2402067.0,emad,iranian,american,death,rana
+571,Perfect Strangers,2016,"Comedy, Drama",7.8,55212,,friends,wonderful,good,vote,helpful
+572,Hidden Figures,2016,"Biography, Drama, History",7.8,195632,169607287.0,time,civil,separate,nasa,perspective
+573,Paddington 2,2017,"Adventure, Comedy, Family",7.8,58871,40891591.0,paddington,whole,superb,small,little
+574,Udta Punjab,2016,"Action, Crime, Drama",7.8,26580,,punjab,full,however,issue,udta
+575,Kubo and the Two Strings,2016,"Action, Adventure, Animation",7.8,115973,48023088.0,felt,story,truly,people,like
+576,Manchester by the Sea,2016,Drama,7.8,241072,47695371.0,people,without,lives,likely,ability
+577,Land of Mine,2015,"Drama, History, War",7.8,34414,435266.0,beautifully,helpful,unbearably,tense,danish
+578,Rogue One: A Star Wars Story,2016,"Action, Adventure",7.8,542796,532177324.0,helpful,felt,like,original,trilogy
+579,Captain America: Civil War,2016,"Action, Adventure",7.8,650063,408084349.0,captain,america,good,chris,civil
+580,The Hateful Eight,2015,"Crime, Drama, Mystery",7.8,503966,54117416.0,watch,hateful,tarantino,expect,films
+581,Little Women,2019,"Drama, Romance",7.8,128631,108101214.0,alcott,book,ending,gerwig,found
+582,Loving Vincent,2017,"Animation, Biography, Crime",7.8,49203,6735118.0,vincent,paintings,painted,animation,story
+583,Pride,2014,"Biography, Comedy, Drama",7.8,50970,1446634.0,protest,young,time,people,youth
+584,The Past,2013,"Drama, Mystery",7.8,44398,1331747.0,among,iranian,language,like,past
+585,The Great Beauty,2013,Drama,7.8,79469,2852400.0,beauty,rome,city,supporting,life
+586,The Lunchbox,2013,"Drama, Romance",7.8,49453,4235151.0,batra,love,memorable,kaur,lunchbox
+587,Vicky Donor,2012,"Comedy, Romance",7.8,39129,549001.0,vicky,donor,good,like,theme
+588,Big Hero 6,2014,"Action, Adventure, Animation",7.8,403830,222527828.0,please,reviews,watch,kids,listen
+589,About Time,2013,"Comedy, Drama, Fantasy",7.8,292542,15322921.0,hate,could,things,done,wish
+590,English Vinglish,2012,"Comedy, Drama, Family",7.8,33017,1862086.0,english,language,sridevi,made,role
+591,The Broken Circle Breakdown,2012,"Drama, Music, Romance",7.8,38863,175058.0,love,music,circle,perfect,elise
+592,The Wind Rises,2013,"Animation, Biography, Drama",7.8,71271,5209580.0,like,world,dreams,hard,live
+593,Toy Story 4,2019,"Adventure, Animation, Comedy",7.8,193306,434038008.0,story,toys,hard,andy,whether
+594,The Best Offer,2013,"Crime, Drama, Mystery",7.8,106104,100035.0,great,make,even,story,happens
+595,Moonrise Kingdom,2012,"Comedy, Drama, Romance",7.8,313849,45512466.0,anderson,never,picture,even,life
+596,How to Train Your Dragon 2,2014,"Action, Adventure, Animation",7.8,300529,177002924.0,original,favorite,films,http,wwwimdbcomlistls
+597,The Big Short,2015,"Biography, Comedy, Drama",7.8,352721,70259870.0,short,makes,drama,care,documentary
+598,Confessions,2010,"Drama, Thriller",7.8,35127,,confessions,confession,added,story,became
+599,I Saw the Devil,2010,"Action, Crime, Drama",7.8,107872,129210.0,choi,viewer,well,character,scenes
+600,The Girl with the Dragon Tattoo,2011,"Crime, Drama, Mystery",7.8,414628,102515793.0,dragon,tattoo,important,book,swedish
+601,Captain Phillips,2013,"Adventure, Biography, Crime",7.8,414875,107100855.0,hanks,abdi,pirates,captain,phillips
+602,The Man from Nowhere,2010,"Action, Crime, Drama",7.8,61552,528175.0,people,films,watching,action,helpful
+603,Straight Outta Compton,2015,"Biography, Drama, History",7.8,177088,161197785.0,black,criminals,reviews,young,white
+604,Mother,2009,"Crime, Drama, Thriller",7.8,50117,551509.0,bong,mother,going,every,memories
+605,The Chaser,2008,"Action, Crime, Thriller",7.8,56983,,serial,killer,korean,years,society
+606,The Hobbit: The Desolation of Smaug,2013,"Adventure, Fantasy",7.8,593555,258366855.0,scenes,dwarfs,smaug,like,scene
+607,The White Ribbon,2009,"Drama, History, Mystery",7.8,67783,2222862.0,haneke,society,evil,work,individual
+608,The Girl with the Dragon Tattoo,2009,"Crime, Drama, Mystery",7.8,206943,10095170.0,story,especially,helpful,awesome,swedish
+609,The Fighter,2010,"Biography, Drama, Sport",7.8,335967,93617009.0,story,micky,russell,bale,real
+610,Taken,2008,"Action, Thriller",7.8,560066,145000989.0,neeson,would,bourne,time,bond
+611,The Boy in the Striped Pajamas,2008,"Drama, War",7.8,187279,9046156.0,bruno,striped,pyjamas,story,boys
+612,Once,2007,"Drama, Music, Romance",7.8,109632,9439923.0,lead,extremely,amazing,fact,also
+613,The Hobbit: An Unexpected Journey,2012,"Adventure, Fantasy",7.8,748918,303003568.0,helpful,definitely,lotr,pretty,cool
+614,The Edge of Heaven,2007,Drama,7.8,30486,742349.0,father,characters,films,edge,story
+615,Atonement,2007,"Drama, Mystery, Romance",7.8,246547,50927067.0,novel,mcewan,liked,language,fall
+616,Drive,2011,"Crime, Drama",7.8,562305,35061555.0,driver,scorpion,frog,drive,irene
+617,American Gangster,2007,"Biography, Crime, Drama",7.8,385387,130164645.0,story,every,year,corruption,gangster
+618,Avatar,2009,"Action, Adventure, Fantasy",7.8,1106301,760507625.0,story,helpful,avatar,tells,familiar
+619,Mr. Nobody,2009,"Drama, Fantasy, Romance",7.8,213228,3622.0,love,nemo,back,yearold,life
+620,Apocalypto,2006,"Action, Adventure, Drama",7.8,287676,50866635.0,experience,best,survival,films,chase
+621,Little Miss Sunshine,2006,"Comedy, Drama",7.8,434289,59891098.0,sheryl,steve,even,family,carell
+622,Hot Fuzz,2007,"Action, Comedy, Mystery",7.8,457089,23637265.0,action,also,english,hollywood,american
+623,The Curious Case of Benjamin Button,2008,"Drama, Fantasy, Romance",7.8,579475,127509326.0,best,brad,watched,fincher,oscars
+624,Veer-Zaara,2004,"Drama, Family, Musical",7.8,48194,2938532.0,emotion,watching,hindi,different,indian
+625,Adam's Apples,2005,"Comedy, Crime, Drama",7.8,44792,1305.0,actor,find,places,helpful,went
+626,Pride & Prejudice,2005,"Drama, Romance",7.8,251757,38405088.0,darcy,elizabeth,read,moved,keira
+627,The World's Fastest Indian,2005,"Biography, Drama, Sport",7.8,51472,5128124.0,burt,hopkins,every,wonder,munro
+628,Tokyo Godfathers,2003,"Adventure, Animation, Comedy",7.8,30240,367131.0,christmas,learn,would,miracles,happen
+629,Serenity,2005,"Action, Adventure",7.8,280841,25514517.0,characters,firefly,serenity,excellent,reviews
+630,Walk the Line,2005,"Biography, Drama, Music",7.8,230888,119519402.0,like,never,felt,phoenix,cash
+631,Evil,2003,Drama,7.8,35282,15530.0,ondskan,boarding,evil,school,world
+632,The Notebook,2004,"Drama, Romance",7.8,511823,81001787.0,notebook,kept,crying,helpful,honesty
+633,The Motorcycle Diaries,2004,"Adventure, Biography, Drama",7.8,95775,16781387.0,political,around,south,guevara,serna
+634,Lilya 4-Ever,2002,"Crime, Drama",7.8,42153,184023.0,lilja,lukas,reality,best,maybe
+635,The Triplets of Belleville,2003,"Animation, Comedy, Drama",7.8,50127,7007149.0,details,sequence,animation,left,appeal
+636,Joint Security Area,2000,"Action, Drama, Thriller",7.8,25847,,people,korean,joint,security,area
+637,The Count of Monte Cristo,2002,"Action, Adventure, Drama",7.8,127557,54234062.0,viewing,watch,harris,caviezel,revenge
+638,Waking Life,2001,"Animation, Drama, Fantasy",7.8,60149,2901447.0,life,films,waking,much,certain
+639,Remember the Titans,2000,"Biography, Drama, Sport",7.8,195488,115654751.0,great,love,watch,boone,greater
+640,"Crouching Tiger, Hidden Dragon",2000,"Action, Adventure, Fantasy",7.8,250575,128078872.0,made,scenes,wuxia,novels,action
+641,All About My Mother,1999,Drama,7.8,87815,8344738.0,almodovar,though,manuela,esteban,spanish
+642,Cast Away,2000,"Adventure, Drama, Romance",7.8,514402,233632142.0,time,come,must,group,people
+643,The Boondock Saints,1999,"Action, Crime, Thriller",7.8,225450,30471.0,boondock,saints,terrific,brothers,story
+644,The Insider,1999,"Biography, Drama, Thriller",7.8,157766,29089912.0,character,insider,pacino,crowe,story
+645,October Sky,1999,"Biography, Drama, Family",7.8,81352,32570685.0,homer,first,father,miners,october
+646,Shrek,2001,"Adventure, Animation, Comedy",7.8,604205,267665011.0,gets,never,glitters,gold,shooting
+647,Titanic,1997,"Drama, Romance",7.8,1029353,659363944.0,time,watch,timeless,classic,helpful
+648,Fireworks,1997,"Crime, Drama, Romance",7.8,27219,500000.0,hanabi,takeshi,nishi,films,violence
+649,Gattaca,1997,"Drama, Thriller",7.8,277294,12532777.0,gattaca,future,piece,science,fiction
+650,The Game,1997,"Action, Drama, Mystery",7.8,339249,48323648.0,game,thriller,douglas,penn,gift
+651,Breaking the Waves,1996,Drama,7.8,61531,3803298.0,trier,please,bess,made,power
+652,Ed Wood,1994,"Biography, Comedy, Drama",7.8,163581,5887457.0,johnny,better,burton,depp,script
+653,What's Eating Gilbert Grape,1993,Drama,7.8,211565,10032765.0,gilbert,arnie,life,grape,little
+654,Tombstone,1993,"Action, Biography, Drama",7.8,124145,56505065.0,wyatt,story,even,better,guys
+655,The Sandlot,1993,"Comedy, Drama, Family",7.8,77823,32950136.0,kids,good,like,scene,playing
+656,The Remains of the Day,1993,"Drama, Romance",7.8,64627,23237911.0,hopkins,wonderful,tremendous,great,beautiful
+657,Naked,1993,"Comedy, Drama",7.8,33663,1769305.0,leigh,johnny,tale,girlfriend,louise
+658,The Fugitive,1993,"Action, Crime, Drama",7.8,263660,183875760.0,ford,jones,films,kimble,fugitive
+659,A Bronx Tale,1993,"Crime, Drama, Romance",7.8,125976,17287898.0,niro,scorsese,world,little,debut
+660,Batman: Mask of the Phantasm,1993,"Action, Animation, Crime",7.8,42938,5635204.0,cartoon,batman,interesting,series,great
+661,Hard Boiled,1992,"Action, Crime, Thriller",7.8,46171,,action,hard,favorite,hong,kong
+662,Night on Earth,1991,"Comedy, Drama",7.8,54394,2015810.0,story,different,helsinki,life,stories
+663,The Double Life of Véronique,1991,"Drama, Fantasy, Music",7.8,41138,1999955.0,christ,veronika,veronique,indeed,singing
+664,Boyz n the Hood,1991,"Crime, Drama",7.8,123052,57504069.0,problems,issues,value,life,cube
+665,Misery,1990,"Drama, Thriller",7.8,180957,61276872.0,misery,paul,genre,wilkes,best
+666,Awakenings,1990,"Biography, Drama",7.8,122077,52096475.0,awakenings,ever,williams,events,think
+667,Kiki's Delivery Service,1989,"Adventure, Animation, Drama",7.8,120000,1004057.0,kiki,miyazaki,delivery,service,life
+668,Glory,1989,"Biography, Drama, History",7.8,120333,26979166.0,glory,broderick,freeman,washington,shaw
+669,The Killer,1989,"Action, Crime, Drama",7.8,45191,,killer,hong,kong,though,tsui
+670,Back to the Future Part II,1989,"Adventure, Comedy",7.8,472604,119000002.0,much,marty,future,zemeckis,original
+671,Mississippi Burning,1988,"Crime, Drama, History",7.8,86639,34603943.0,hackman,mississippi,place,although,mcdormand
+672,Predator,1987,"Action, Adventure",7.8,366631,59735548.0,action,predator,best,scifi,time
+673,Evil Dead II,1987,"Action, Comedy, Fantasy",7.8,146030,5923044.0,first,liked,seems,helpful,wrong
+674,Ferris Bueller's Day Off,1986,Comedy,7.8,316097,70136369.0,ferris,someone,like,bueller,life
+675,Down by Law,1986,"Comedy, Crime, Drama",7.8,47177,1435668.0,http,wwwimdbcomlistls,cult,favorite,helpful
+676,The Goonies,1985,"Adventure, Comedy, Family",7.8,240186,63192596.0,goonies,like,favourite,kids,love
+677,The Color Purple,1985,Drama,7.8,77054,98467863.0,spielberg,make,tears,color,purple
+678,The Breakfast Club,1985,"Comedy, Drama",7.8,352056,45875171.0,understand,remember,high,breakfast,club
+679,The Killing Fields,1984,"Biography, Drama, History",7.8,50893,34700291.0,khmer,rouge,also,ngor,people
+680,Ghostbusters,1984,"Action, Comedy, Fantasy",7.8,349720,243187079.0,ghostbusters,harold,ramis,aykroyd,love
+681,The Right Stuff,1983,"Adventure, Biography, Drama",7.8,55367,21192102.0,space,test,pilots,yeager,right
+682,The King of Comedy,1982,"Comedy, Crime, Drama",7.8,85629,2536242.0,hate,fact,celebrity,people,niro
+683,E.T. the Extra-Terrestrial,1982,Family,7.8,365658,435110554.0,years,seen,since,timeless,helpful
+684,Kramer vs. Kramer,1979,Drama,7.8,130975,106260000.0,family,american,began,kramer,best
+685,Halloween,1978,"Horror, Thriller",7.8,226039,47160000.0,halloween,horror,films,know,scared
+686,Days of Heaven,1978,"Drama, Romance",7.8,51661,3446749.0,could,almost,helpful,called,filmed
+687,The Outlaw Josey Wales,1976,Western,7.8,64589,31800000.0,eastwood,josey,wales,even,union
+688,The Man Who Would Be King,1975,"Adventure, History, War",7.8,43383,,like,kipling,perfect,story,superb
+689,The Conversation,1974,"Drama, Mystery, Thriller",7.8,96452,4420000.0,harry,surveillance,conversation,leaves,seems
+690,The Day of the Jackal,1973,"Crime, Drama, Thriller",7.8,36817,16056255.0,degaulle,would,zinneman,high,noon
+691,Badlands,1973,"Action, Crime, Drama",7.8,64582,,malick,story,fabulous,cinema,masterpiece
+692,Cabaret,1972,"Drama, Musical",7.8,47583,,cabaret,minelli,club,michael,york
+693,Willy Wonka & the Chocolate Factory,1971,"Family, Fantasy, Musical",7.8,175490,526633.0,wonka,willy,chocolate,golden,charlie
+694,Midnight Cowboy,1969,Drama,7.8,99414,44785053.0,times,square,area,right,time
+695,Wait Until Dark,1967,Thriller,7.8,27339,,hepburn,blind,danger,young,suspense
+696,Guess Who's Coming to Dinner,1967,"Comedy, Drama",7.8,38716,56666667.0,time,grandmother,tracy,spencer,dinner
+697,Bonnie and Clyde,1967,"Action, Biography, Crime",7.8,100841,,clyde,bonnie,violence,like,girl
+698,My Fair Lady,1964,"Drama, Family, Musical",7.8,85269,72560711.0,eliza,songs,audrey,nixon,role
+699,Mary Poppins,1964,"Comedy, Family, Fantasy",7.8,155358,102272727.0,banks,good,poppins,disney,story
+700,The Longest Day,1962,"Action, Drama, History",7.8,51606,,films,made,classic,care,commanders
+701,Jules and Jim,1962,"Drama, Romance",7.8,36861,509.0,characters,three,jules,story,love
+702,The Innocents,1961,Horror,7.8,26361,,children,miss,giddens,innocents,story
+703,Breathless,1960,"Crime, Drama",7.8,71752,363031.0,breathless,wave,godard,pictures,historical
+704,Red River,1948,"Action, Adventure, Drama",7.8,27664,,river,howard,wayne,john,relationship
+705,Key Largo,1948,"Action, Crime, Drama",7.8,36541,7017420.0,largo,mccloud,rocco,great,john
+706,To Have and Have Not,1944,"Adventure, Comedy",7.8,30522,,though,bogey,bogart,harry,morgan
+707,Shadow of a Doubt,1943,Thriller,7.8,58482,,hitchcock,hitch,camera,style,pictures
+708,Stagecoach,1939,"Adventure, Drama, Western",7.8,42708,,stagecoach,john,wayne,even,ford
+709,The Lady Vanishes,1938,"Mystery, Thriller",7.8,46575,,hitchcock,lady,witty,vanishes,cast
+710,Bride of Frankenstein,1935,"Drama, Horror",7.8,42716,,frankenstein,bride,much,monster,however
+711,Duck Soup,1933,"Comedy, Musical, War",7.8,55004,,lines,marx,brothers,groucho,funny
+712,Frankenstein,1931,"Drama, Horror, Romance",7.8,64152,,well,frankenstein,without,thrill,shock
+713,Roma,2018,Drama,7.7,136406,,things,people,first,drama,matter
+714,Deadpool 2,2018,"Action, Adventure, Comedy",7.7,466021,324591735.0,version,edition,theatrical,best,included
+715,Wind River,2017,"Crime, Drama, Mystery",7.7,197546,33800859.0,sheridan,renner,olsen,like,front
+716,Get Out,2017,"Horror, Mystery, Thriller",7.7,478564,176040665.0,white,peele,people,instead,characters
+717,Mission: Impossible - Fallout,2018,"Action, Adventure, Thriller",7.7,284307,220159104.0,action,better,helpful,thrilling,start
+718,A Man Called Ove,2015,"Comedy, Drama, Romance",7.7,45714,3479315.0,character,understand,even,appears,grumpy
+719,What We Do in the Shadows,2014,"Comedy, Horror",7.7,153113,3469224.0,comedy,plot,style,great,helpful
+720,When Marnie Was There,2014,"Animation, Drama, Family",7.7,31308,561085.0,like,ghibli,feeling,sparks,marnie
+721,The Theory of Everything,2014,"Biography, Drama, Romance",7.7,395610,35893537.0,hawking,performance,work,fame,could
+722,Kingsman: The Secret Service,2014,"Action, Adventure, Comedy",7.7,582899,128261724.0,films,bond,like,action,kingsman
+723,The Fault in Our Stars,2014,"Drama, Romance",7.7,339282,124872350.0,loved,ever,seen,found,helpful
+724,Me and Earl and the Dying Girl,2015,"Comedy, Drama",7.7,121423,6758416.0,beautiful,films,make,earl,girl
+725,Birdman or (The Unexpected Virtue of Ignorance),2014,"Comedy, Drama",7.7,570668,42340598.0,every,like,scene,truth,helpful
+726,Blue Is the Warmest Colour,2013,"Drama, Romance",7.7,136413,2199787.0,emotional,relationship,adele,love,like
+727,Kai Po Che,2013,"Drama, Sport",7.7,31255,1122527.0,friendship,hard,sniff,kite,watch
+728,Captain America: The Winter Soldier,2014,"Action, Adventure",7.7,724081,259766572.0,much,date,first,character,well
+729,Rockstar,2011,"Drama, Music, Musical",7.7,38652,986697.0,helpful,people,made,great,acting
+730,Nebraska,2013,"Adventure, Comedy, Drama",7.7,111174,17654912.0,themes,even,feel,time,like
+731,Wreck-It Ralph,2012,"Adventure, Animation, Comedy",7.7,373982,189422889.0,great,pretty,world,characters,time
+732,The Little Prince,2015,"Adventure, Animation, Drama",7.7,55609,1339152.0,read,book,know,story,prince
+733,Detachment,2011,Drama,7.7,75617,72689.0,life,story,real,feeling,teacher
+734,Midnight in Paris,2011,"Comedy, Fantasy, Romance",7.7,382647,56817045.0,paris,place,truly,might,time
+735,A Star Is Born,2018,"Drama, Music, Romance",7.7,323590,215288866.0,watch,great,helpful,took,wife
+736,The Lego Movie,2014,"Action, Adventure, Animation",7.7,320774,257760692.0,lego,kids,story,business,creative
+737,Gravity,2013,"Drama, Thriller",7.7,759726,274092705.0,ryan,space,suspense,every,nothing
+738,Star Trek Into Darkness,2013,"Action, Adventure",7.7,459837,228778661.0,star,trek,federation,deepness,future
+739,Beasts of No Nation,2015,"Drama, War",7.7,72369,90777.0,fukunaga,beasts,nation,commandant,like
+740,The Social Network,2010,"Biography, Drama",7.7,613788,96962694.0,fincher,future,deserves,best,amazing
+741,X: First Class,2011,"Action, Adventure",7.7,639526,146408305.0,helpful,matthew,vaughn,helm,xmen
+742,The Hangover,2009,Comedy,7.7,709364,277322503.0,helpful,comedies,time,enough,jokes
+743,Skyfall,2012,"Action, Adventure, Thriller",7.7,623351,304360277.0,craig,bond,best,james,helpful
+744,Silver Linings Playbook,2012,"Comedy, Drama, Romance",7.7,653934,132092958.0,bipolar,treatment,reality,illness,good
+745,Argo,2012,"Biography, Drama, Thriller",7.7,565797,136025503.0,taylor,affleck,canada,story,True
+746,500 Days of Summer,2009,"Comedy, Drama, Romance",7.7,466856,32391374.0,summer,love,days,person,girl
+747,Harry Potter and the Deathly Hallows: Part 1,2010,"Adventure, Family, Fantasy",7.7,467621,296347721.0,convinced,book,harry,make,left
+748,Ponyo,2008,"Adventure, Animation, Comedy",7.7,121802,15743471.0,ponyo,children,world,fish,miyazaki
+749,Frost/Nixon,2008,"Biography, Drama, History",7.7,101956,18622031.0,frostnixon,howard,colombia,would,look
+750,Paprika,2006,"Animation, Drama, Fantasy",7.7,69418,882267.0,paprika,best,scientists,others,find
+751,Changeling,2008,"Biography, Crime, Drama",7.7,235786,35739802.0,story,certainly,well,helpful,heartbreaking
+752,Flipped,2010,"Comedy, Drama, Romance",7.7,80354,1755212.0,flipped,bryce,juli,kids,love
+753,The Girl Who Leapt Through Time,2006,"Adventure, Animation, Comedy",7.7,59182,,time,travel,animated,story,makoto
+754,Death Note: Desu nôto,2006,"Crime, Drama, Fantasy",7.7,28347,,well,story,death,note,anime
+755,This Is England,2006,"Crime, Drama",7.7,114660,329379.0,england,meadows,films,romeo,brass
+756,Ex Machina,2014,"Drama, Thriller",7.7,466099,25442958.0,allegorical,people,think,rather,also
+757,After the Wedding,2006,Drama,7.7,31546,1534584.0,rather,interest,drama,jacob,jorgen
+758,The Last King of Scotland,2006,"Biography, Drama, History",7.7,173500,17606684.0,brutal,amin,helpful,gripping,powerful
+759,Zodiac,2007,"Crime, Drama, Mystery",7.7,451632,33080084.0,zodiac,fincher,killer,come,francisco
+760,Lucky Number Slevin,2006,"Crime, Drama, Thriller",7.7,297635,22495466.0,dialog,review,limiting,number,interesting
+761,Joyeux Noel,2005,"Drama, History, Music",7.7,27237,1054361.0,depicting,helpful,sceptical,watching,tears
+762,Control,2007,"Biography, Drama, Music",7.7,60943,872252.0,curtis,singer,band,division,corbijn
+763,Tangled,2010,"Adventure, Animation, Comedy",7.7,398923,200821936.0,disney,year,kinda,princess,classic
+764,Black Book,2006,"Drama, Thriller, War",7.7,71924,4398532.0,rachel,would,like,paul,verhoeven
+765,Brokeback Mountain,2005,"Drama, Romance",7.7,318952,83043761.0,feel,talking,watched,night,ever
+766,3:10 to Yuma,2007,"Action, Crime, Drama",7.7,285599,53606916.0,much,well,last,western,impressed
+767,Crash,2004,"Crime, Drama, Thriller",7.7,416429,54580300.0,crash,characters,drama,shifts,whose
+768,Kung Fu Hustle,2004,"Action, Comedy, Fantasy",7.7,125598,17108591.0,knife,scene,helpful,richly,imaginative
+769,The Bourne Supremacy,2004,"Action, Mystery, Thriller",7.7,429295,176241941.0,bourne,jason,cool,helpful,intelligent
+770,The Machinist,2004,"Drama, Thriller",7.7,353321,1082715.0,much,hitchcock,things,character,storyline
+771,Ray,2004,"Biography, Drama, Music",7.7,136762,75331600.0,foxx,charles,jamie,like,life
+772,Lost in Translation,2003,"Comedy, Drama",7.7,407113,44585453.0,life,identify,lost,time,hurt
+773,Harry Potter and the Goblet of Fire,2005,"Adventure, Family, Fantasy",7.7,535750,290417905.0,time,would,done,much,book
+774,Man on Fire,2004,"Action, Crime, Drama",7.7,325460,77911774.0,scott,make,good,think,quite
+775,Coraline,2009,"Animation, Drama, Family",7.7,193238,75286229.0,coraline,world,voice,actor,mother
+776,The Last Samurai,2003,"Action, Drama, War",7.7,394777,111127263.0,japan,emperor,allgren,honor,cruise
+777,The Magdalene Sisters,2002,Drama,7.7,25706,4890878.0,girls,asylum,magdalene,three,money
+778,21 Grams,2003,"Crime, Drama, Thriller",7.7,222271,16290476.0,characters,time,watts,people,grams
+779,Finding Neverland,2004,"Biography, Drama, Family",7.7,196897,51680613.0,moment,johnny,depp,mind,world
+780,Good Bye Lenin!,2003,"Comedy, Drama, Romance",7.7,136386,4064200.0,east,lies,would,months,change
+781,In America,2002,Drama,7.7,40180,15539656.0,sure,along,going,completely,helpful
+782,I Am Sam,2001,Drama,7.7,141672,40311852.0,excellent,truly,always,performance,actress
+783,Adaptation.,2002,"Comedy, Drama",7.7,175877,22498520.0,kaufman,make,script,hollywoodize,succeed
+784,Black Hawk Down,2001,"Drama, History, War",7.7,359985,108638745.0,helpful,action,packed,great,detailing
+785,Road to Perdition,2002,"Crime, Drama, Thriller",7.7,243543,104454762.0,hanks,hall,acting,newman,good
+786,The Experiment,2001,"Drama, Thriller",7.7,90234,144634.0,prisoners,real,experiment,reality,humiliation
+787,Billy Elliot,2000,"Drama, Music",7.7,124822,21995263.0,billie,father,community,without,dancing
+788,Hedwig and the Angry Inch,2001,"Comedy, Drama, Music",7.7,31645,3067312.0,hedwig,character,flashback,angry,inch
+789,Ocean's Eleven,2001,"Crime, Thriller",7.7,507531,183417150.0,well,shots,great,nothing,away
+790,Vampire Hunter D: Bloodlust,2000,"Action, Animation, Fantasy",7.7,28831,151086.0,piece,vampire,hunter,imdb,comes
+791,"O Brother, Where Art Thou?",2000,"Adventure, Comedy, Crime",7.7,281295,45512588.0,found,time,entire,whether,helpful
+792,Interstate 60: Episodes of the Road,2002,"Adventure, Comedy, Drama",7.7,29576,,interstate,rental,several,rent,could
+793,"South Park: Bigger, Longer & Uncut",1999,"Animation, Comedy, Fantasy",7.7,190621,52037603.0,south,park,world,musicals,great
+794,Office Space,1999,Comedy,7.7,238816,10827810.0,office,characters,life,must,peter
+795,Happiness,1998,"Comedy, Drama",7.7,65741,2982011.0,empathy,people,feel,precisely,human
+796,Training Day,2001,"Crime, Drama, Thriller",7.7,383992,76631907.0,guys,know,denzel,ethan,need
+797,Rushmore,1998,"Comedy, Drama, Romance",7.7,166941,17105219.0,anderson,rushmore,makes,scene,brilliant
+798,Open Your Eyes,1997,"Drama, Mystery",7.7,63288,370720.0,dream,cesar,reality,wants,sophia
+799,Being John Malkovich,1999,"Comedy, Drama, Fantasy",7.7,307984,22863596.0,original,simply,like,helpful,charlie
+800,As Good as It Gets,1997,"Comedy, Drama, Romance",7.7,271381,148478011.0,characters,fresh,nothing,much,good
+801,The Fifth Element,1997,"Action, Adventure",7.7,428298,63820180.0,like,star,wars,action,comic
+802,Le Dîner de Cons,1998,Comedy,7.7,36845,4071548.0,hilarious,slightly,brochant,pignon,helpful
+803,Donnie Brasco,1997,"Biography, Crime, Drama",7.7,274364,41909762.0,pistone,depp,donnie,brasco,pacino
+804,Shine,1996,"Biography, Drama, Music",7.7,50786,35892330.0,david,helfgott,peter,wife,rush
+805,Primal Fear,1996,"Crime, Drama, Mystery",7.7,184599,56116183.0,gere,primal,fear,richard,edward
+806,Hamlet,1996,Drama,7.7,35687,4708156.0,hamlet,branagh,production,play,well
+807,A Little Princess,1995,"Drama, Family, Fantasy",7.7,31722,10015449.0,first,helpful,seeing,expecting,much
+808,Fallen Angels,1995,"Comedy, Crime, Drama",7.7,25160,163145.0,people,nevertheless,dreams,happens,busy
+809,Il Postino,1994,"Biography, Comedy, Drama",7.7,33084,21848932.0,mario,pablo,neruda,island,poetry
+810,Clerks,1994,Comedy,7.7,209977,3151130.0,smith,kevin,clerks,first,best
+811,Short Cuts,1993,"Comedy, Drama",7.7,41813,6110979.0,short,cuts,like,butter,double
+812,Philadelphia,1993,Drama,7.7,220948,77446440.0,aids,hanks,lawyer,also,silence
+813,The Muppet Christmas Carol,1992,"Comedy, Drama, Family",7.7,46581,27281507.0,christmas,story,holiday,scrooge,carol
+814,Malcolm X,1992,"Biography, Drama, History",7.7,84145,48169910.0,performance,washington,stars,character,easily
+815,The Last of the Mohicans,1992,"Action, Adventure, Drama",7.7,146678,75505856.0,cora,alice,hawkeye,matter,scene
+816,Porco Rosso,1992,"Adventure, Animation, Comedy",7.7,75342,443059.0,porco,gina,character,good,would
+817,Glengarry Glen Ross,1992,"Crime, Drama, Mystery",7.7,94465,10725228.0,baldwin,glengarry,glen,ross,much
+818,A Few Good Men,1992,"Drama, Thriller",7.7,231431,141340178.0,nicholson,galloway,code,kaffee,jessup
+819,Fried Green Tomatoes,1991,Drama,7.7,65926,82418501.0,immensely,acting,mary,women,helpful
+820,Barton Fink,1991,"Comedy, Drama, Thriller",7.7,111599,6153939.0,barton,common,anything,writer,sees
+821,Miller's Crossing,1990,"Crime, Drama, Thriller",7.7,124406,5080409.0,history,miller,crossing,best,films
+822,Who Framed Roger Rabbit,1988,"Adventure, Animation, Comedy",7.7,179625,156452370.0,think,characters,absolutely,helpful,stop
+823,The Vanishing,1988,"Mystery, Thriller",7.7,33305,,rule,watch,first,helpful,stop
+824,Withnail & I,1987,"Comedy, Drama",7.7,39689,1544889.0,withnail,life,richard,following,marwood
+825,The Last Emperor,1987,"Biography, Drama, History",7.7,92657,43984230.0,emperor,life,last,largest,people
+826,Empire of the Sun,1987,"Action, Drama, History",7.7,113934,22238696.0,cried,pilots,emperor,first,time
+827,The Name of the Rose,1986,"Crime, Drama, Mystery",7.7,99893,7153487.0,novel,william,eighties,much,literary
+828,Blue Velvet,1986,"Drama, Mystery, Thriller",7.7,177971,8551228.0,blue,velvet,jeffrey,dorothy,lynch
+829,The Purple Rose of Cairo,1985,"Comedy, Fantasy, Romance",7.7,46465,10631333.0,woody,well,allen,real,world
+830,After Hours,1985,"Comedy, Crime, Drama",7.7,57624,10609321.0,scorsese,dunne,hours,goodfellas,character
+831,Zelig,1983,Comedy,7.7,39419,11798616.0,allen,zelig,story,leonard,eudora
+832,The Verdict,1982,Drama,7.7,35425,53977250.0,newman,paul,verdict,takes,life
+833,Star Trek II: The Wrath of Khan,1982,"Action, Adventure",7.7,111375,78912963.0,series,khan,kirk,always,special
+834,First Blood,1982,"Action, Adventure",7.7,222979,47212904.0,rambo,action,series,ridiculous,favorite
+835,Ordinary People,1980,Drama,7.7,46145,54766923.0,years,also,depressed,hutton,perfectly
+836,Airplane!,1980,Comedy,7.7,210684,83453539.0,airplane,spoof,ever,nielsen,films
+837,Lupin the 3rd: Castle of Cagliostro,1979,"Adventure, Animation, Family",7.7,26249,142425.0,would,believe,good,helpful,hilarious
+838,The Tenant,1976,"Drama, Thriller",7.7,38993,1924733.0,building,polanski,sense,hoffmann,gogol
+839,Love and Death,1975,"Comedy, War",7.7,35499,20123742.0,woody,films,truly,hall,thing
+840,The Taking of Pelham One Two Three,1974,"Action, Crime, Thriller",7.7,26038,,action,picture,along,pictures,motion
+841,Blazing Saddles,1974,"Comedy, Western",7.7,124334,119601481.0,racist,sheriff,outta,later,helpful
+842,Serpico,1973,"Biography, Crime, Drama",7.7,107678,29800000.0,pacino,serpico,scenes,good,great
+843,Enter the Dragon,1973,"Action, Crime, Drama",7.7,95037,,martial,arts,fight,bruce,become
+844,Deliverance,1972,"Adventure, Drama, Thriller",7.7,97467,,films,unpleasantness,deliverance,plausibility,leads
+845,The French Connection,1971,"Action, Crime, Drama",7.7,108233,51700000.0,action,hackman,drama,look,instead
+846,Dirty Harry,1971,"Action, Crime, Thriller",7.7,141434,35976000.0,best,harry,action,dirty,clint
+847,Where Eagles Dare,1968,"Action, Adventure, War",7.7,51080,7100000.0,great,year,time,always,like
+848,The Odd Couple,1968,Comedy,7.7,31114,44527234.0,oscar,felix,made,couple,like
+849,The Dirty Dozen,1967,"Action, Adventure, War",7.7,66244,,guys,ultimate,mission,screen,dirty
+850,Belle de Jour,1967,Drama,7.7,39484,4063348.0,husband,severine,young,fantasies,brothel
+851,A Man for All Seasons,1966,"Biography, Drama, History",7.7,30750,,time,scofield,wolsey,think,regarded
+852,Repulsion,1965,"Drama, Horror, Thriller",7.7,48139,,great,show,mind,helpful,amazing
+853,Zulu,1964,"Drama, History, War",7.7,35382,,british,zulu,moment,good,away
+854,Goldfinger,1964,"Action, Adventure, Thriller",7.7,169759,51081062.0,bond,james,goldfinger,sean,connery
+855,The Birds,1963,"Drama, Horror, Mystery",7.7,168778,,http,hitchcock,favorite,wwwimdbcomlistls,first
+856,Cape Fear,1962,"Drama, Thriller",7.7,25944,,cady,mitchum,like,know,even
+857,Peeping Tom,1960,"Drama, Horror, Thriller",7.7,30603,,peeping,time,powell,mark,fear
+858,The Magnificent Seven,1960,"Action, Adventure, Western",7.7,86481,,seven,samurai,good,westerns,kurosawa
+859,Les yeux sans visage,1960,"Drama, Horror",7.7,26779,58565.0,doctor,face,eyes,horror,masterpiece
+860,Invasion of the Body Snatchers,1956,"Drama, Horror",7.7,44250,,miles,becky,house,santa,mira
+861,Rebel Without a Cause,1955,Drama,7.7,82148,199963.0,teens,father,teen,parents,three
+862,The Ladykillers,1955,"Comedy, Crime",7.7,25827,,ealing,alec,guinness,without,deal
+863,Sabrina,1954,"Comedy, Drama, Romance",7.7,58209,,hepburn,picture,story,interesting,moments
+864,The Quiet Man,1952,"Comedy, Drama, Romance",7.7,34054,10550000.0,john,irish,ohara,wayne,maureen
+865,The Day the Earth Stood Still,1951,Drama,7.7,75658,,would,wise,earth,klaatu,even
+866,The African Queen,1951,"Adventure, Drama, Romance",7.7,70585,,african,hepburn,bogart,queen,face
+867,Gilda,1946,"Drama, Romance",7.7,27466,,male,beautiful,hayworth,helpful,produced
+868,Fantasia,1940,"Animation, Family, Fantasy",7.7,87338,76408097.0,ballet,disney,spirit,fantasia,segments
+869,The Invisible Man,1933,Horror,7.7,29833,,special,effects,helpful,definitely,best
+870,The Farewell,2019,"Comedy, Drama",7.6,46670,17695781.0,grandmother,chinese,family,cancer,relationships
+871,Searching,2018,"Drama, Mystery, Thriller",7.6,135650,26020957.0,story,made,heart,even,presented
+872,Once Upon a Time... In Hollywood,2019,"Comedy, Drama",7.6,522958,142502728.0,felt,like,tarantino,went,feel
+873,Loveless,2017,Drama,7.6,28894,566356.0,zhenya,alyosha,boris,disappears,society
+874,The Florida Project,2017,Drama,7.6,91602,5904366.0,disney,live,area,hotels,baker
+875,Gifted,2017,Drama,7.6,97011,24801212.0,acting,child,frank,watch,helpful
+876,The Peanut Butter Falcon,2019,"Comedy, Drama",7.6,57771,20457151.0,syndrome,people,watch,first,truly
+877,Victoria,2015,"Crime, Drama, Romance",7.6,51490,,victoria,german,years,best,part
+878,Mustang,2015,Drama,7.6,34972,845464.0,turkey,viewer,country,rate,five
+879,Guardians of the Galaxy Vol. 2,2017,"Action, Adventure, Comedy",7.6,556129,389813101.0,first,charm,marvel,great,guardians
+880,Baby Driver,2017,"Action, Crime, Music",7.6,427615,107825862.0,helpful,great,action,fabulous,acting
+881,Only the Brave,2017,"Action, Biography, Drama",7.6,56002,18343983.0,events,feel,half,lives,slow
+882,Bridge of Spies,2015,"Drama, History, Thriller",7.6,283051,72313754.0,spies,bridge,getting,like,drama
+883,Incredibles 2,2018,"Action, Adventure, Animation",7.6,242447,608581744.0,jack,liked,seemed,helpful,good
+884,Moana,2016,"Adventure, Animation, Comedy",7.6,264489,248757044.0,helpful,love,everything,colors,setting
+885,Sicario,2015,"Action, Crime, Drama",7.6,364154,46889293.0,sicario,first,minutes,villeneuve,fight
+886,Creed,2015,"Drama, Sport",7.6,243426,109767581.0,rocky,creed,start,finish,brilliant
+887,Leviathan,2014,"Crime, Drama",7.6,48462,1092800.0,leviathan,power,family,piece,land
+888,Hell or High Water,2016,"Action, Crime, Drama",7.6,200133,27007844.0,first,watched,would,story,hellbent
+889,Philomena,2013,"Biography, Comedy, Drama",7.6,93212,37709979.0,coogan,steve,several,critics,observed
+890,Dawn of the Planet of the Apes,2014,"Action, Adventure, Drama",7.6,408214,208545589.0,dawn,every,scenes,planet,apes
+891,The Body,2012,"Mystery, Thriller",7.6,55445,,helpful,spanish,mysterythrillernoir,oriol,paulo
+892,The Raid: Redemption,2011,"Action, Thriller",7.6,188253,4105187.0,action,films,raid,seeing,hand
+893,End of Watch,2012,"Action, Crime, Drama",7.6,225572,41003371.0,police,hard,ayer,streets,angeles
+894,The Secret World of Arrietty,2010,"Adventure, Animation, Family",7.6,78688,19587032.0,limited,anime,quite,beautiful,perfect
+895,True Grit,2010,"Drama, Western",7.6,307136,171243005.0,chaney,pepper,bridges,character,rooster
+896,In a Better World,2010,"Drama, Romance",7.6,38157,1008098.0,bier,hope,helpful,toronto,remained
+897,Despicable Me,2010,"Animation, Comedy, Family",7.6,493955,251513985.0,love,helpful,adorable,charming,writing
+898,50/50,2011,"Comedy, Drama, Romance",7.6,313076,35014192.0,cancer,gets,well,life,meaning
+899,Kick-Ass,2010,"Action, Comedy, Crime",7.6,519834,48071303.0,violent,question,helpful,great,adaptation
+900,Celda 211,2009,"Action, Adventure, Crime",7.6,63189,,prison,juan,show,later,riot
+901,Moneyball,2011,"Biography, Drama, Sport",7.6,359809,75605492.0,billy,beane,team,pitt,people
+902,The Skin I Live In,2011,"Drama, Horror, Thriller",7.6,136265,3185812.0,skin,like,films,live,talk
+903,Zombieland,2009,"Adventure, Comedy, Fantasy",7.6,513744,75590286.0,good,action,laughs,going,coming
+904,The Wave,2008,"Drama, Thriller",7.6,101369,,teacher,children,students,experiment,social
+905,Sherlock Holmes,2009,"Action, Adventure, Mystery",7.6,576908,209028679.0,holmes,watson,friend,little,times
+906,The Blind Side,2009,"Biography, Drama, Sport",7.6,288068,255959475.0,helpful,sandra,bullock,rapid,compelling
+907,The Visitor,2007,Drama,7.6,41299,9427089.0,story,mccarthy,whose,prior,notably
+908,Seven Pounds,2008,Drama,7.6,283540,69951824.0,pray,thankful,life,given,better
+909,Eastern Promises,2007,"Action, Crime, Drama",7.6,225032,17266000.0,mortensen,plays,viggo,eyes,cronemberg
+910,Stardust,2007,"Adventure, Family, Fantasy",7.6,251751,38634938.0,nothing,coming,seems,helpful,went
+911,The Secret of Kells,2009,"Adventure, Animation, Family",7.6,30687,676775.0,brendan,kells,animated,aiden,book
+912,Inside Man,2006,"Crime, Drama, Mystery",7.6,333463,88513495.0,heist,away,plot,would,without
+913,Gone Baby Gone,2007,"Crime, Drama, Mystery",7.6,247043,20292962.0,know,people,tell,affleck,done
+914,La Vie En Rose,2007,"Biography, Drama, Music",7.6,81782,10301706.0,piaf,life,excellent,found,astonishingly
+915,Fearless,2006,"Action, Biography, Drama",7.6,72298,24633730.0,like,spectacular,helpful,always,since
+916,The Illusionist,2006,"Drama, Fantasy, History",7.6,351861,39868642.0,norton,illusionist,director,burger,giamatti
+917,Thank You for Smoking,2005,"Comedy, Drama",7.6,211597,24793509.0,nick,naylor,industry,satire,aaron
+918,Dead Man's Shoes,2004,"Crime, Drama, Thriller",7.6,48798,6408.0,dead,shoes,experience,character,helpful
+919,Harry Potter and the Half-Blood Prince,2009,"Action, Adventure, Family",7.6,462851,302305431.0,remember,books,book,important,bill
+920,300,2006,"Action, Drama",7.6,725425,210614939.0,every,like,people,plot,much
+921,Match Point,2005,"Drama, Romance, Thriller",7.6,203951,23151529.0,woody,point,match,allen,found
+922,Watchmen,2009,"Action, Drama, Mystery",7.6,494793,107509799.0,helpful,times,change,super,hero
+923,Lord of War,2005,"Action, Crime, Drama",7.6,291158,24149632.0,yuri,cage,lord,arms,niccol
+924,Saw,2004,"Horror, Mystery",7.6,374394,56000369.0,like,right,films,easily,plot
+925,"Synecdoche, New York",2008,Drama,7.6,81284,3083538.0,synecdoche,york,like,time,beliefs
+926,Mysterious Skin,2004,Drama,7.6,65326,713240.0,story,think,graphic,disturbing,neil
+927,Love Me If You Dare,2003,"Comedy, Drama, Romance",7.6,66720,553504.0,take,julien,sophie,play,played
+928,A Very Long Engagement,2004,"Drama, Mystery, Romance",7.6,70408,6524389.0,jeunet,french,manech,tatou,world
+929,The Station Agent,2003,"Comedy, Drama",7.6,66843,5739376.0,station,life,people,young,agent
+930,Love Actually,2003,"Comedy, Drama, Romance",7.6,417544,59696144.0,love,actually,romantic,comedy,different
+931,Sympathy for Mr. Vengeance,2002,"Crime, Drama, Thriller",7.6,61564,45289.0,like,vengeance,park,hollywood,going
+932,25th Hour,2002,Drama,7.6,168459,13084595.0,monty,sorry,feel,survive,prison
+933,The Butterfly Effect,2004,"Drama, Thriller",7.6,446431,57938693.0,butterfly,effect,changes,another,evan
+934,28 Days Later...,2002,"Drama, Horror",7.6,371693,45064915.0,days,later,like,people,makes
+935,Battle Royale,2000,"Action, Adventure, Drama",7.6,167273,,japanese,culture,japan,childish,westerners
+936,The Royal Tenenbaums,2001,"Comedy, Drama",7.6,262732,52364010.0,anderson,characters,multiple,hackman,father
+937,Y Tu Mamá También,2001,Drama,7.6,114325,13839658.0,characters,cuaron,take,three,moment
+938,Harry Potter and the Sorcerer's Stone,2001,"Adventure, Family, Fantasy",7.6,636196,318087620.0,first,harry,potter,family,familiar
+939,The Others,2001,"Horror, Mystery, Thriller",7.6,332729,96522687.0,story,helpful,best,seen,year
+940,Blow,2001,"Biography, Crime, Drama",7.6,237848,52990775.0,george,jung,drug,blow,cocaine
+941,Enemy at the Gates,2001,"Drama, History, War",7.6,240026,51401758.0,actors,officer,helpful,bursting,five
+942,Traffic,2000,"Crime, Drama, Thriller",7.6,193951,124115725.0,drug,drugs,traffic,mexico,soderbergh
+943,Minority Report,2002,"Action, Crime, Mystery",7.6,501776,132072926.0,amazing,worth,helpful,read,previous
+944,The Hurricane,1999,"Biography, Drama, Sport",7.6,90520,50699241.0,rubin,denzel,boxing,love,hate
+945,American Psycho,2000,"Comedy, Crime, Drama",7.6,478986,15070285.0,bale,things,weirdest,seen,video
+946,Run Lola Run,1998,"Crime, Drama, Thriller",7.6,186748,7267585.0,lola,manni,mobster,money,minutes
+947,The Thin Red Line,1998,"Drama, War",7.6,170307,36400491.0,ryan,saving,private,nature,thin
+948,Mulan,1998,"Adventure, Animation, Family",7.6,251101,120620254.0,like,disney,mulan,female,life
+949,Fear and Loathing in Las Vegas,1998,"Adventure, Comedy, Drama",7.6,256602,10680275.0,drugs,vegas,story,True,helpful
+950,Funny Games,1997,"Crime, Drama, Thriller",7.6,63529,,http,wwwimdbcomlistls,films,favorite,watch
+951,Dark City,1998,"Mystery, Thriller",7.6,186069,14378331.0,dark,city,people,like,john
+952,Sleepers,1996,"Crime, Drama, Thriller",7.6,184615,53315285.0,great,parts,correction,center,jason
+953,Lost Highway,1997,"Mystery, Thriller",7.6,128732,3675201.0,fred,fantasy,lynch,life,peter
+954,Sense and Sensibility,1995,"Drama, Romance",7.6,100444,43182776.0,thompson,much,seen,austen,difficult
+955,Die Hard with a Vengeance,1995,"Action, Adventure, Thriller",7.6,359092,100012499.0,hard,action,mcclane,vengeance,love
+956,Dead Man,1995,"Adventure, Drama, Fantasy",7.6,89175,1037847.0,blake,nobody,train,good,machine
+957,The Bridges of Madison County,1995,"Drama, Romance",7.6,71780,71516617.0,clint,look,meryl,italian,note
+958,Apollo 13,1995,"Adventure, Drama, History",7.6,263718,173837933.0,even,space,great,performances,True
+959,Three Colors: White,1994,"Comedy, Drama, Romance",7.6,62626,1237219.0,karol,white,dominique,freedom,even
+960,Falling Down,1993,"Action, Crime, Drama",7.6,167873,40903593.0,look,people,things,underrated,story
+961,Dazed and Confused,1993,Comedy,7.6,162756,7993039.0,great,high,school,knew,time
+962,My Cousin Vinny,1992,"Comedy, Crime",7.6,104977,52929168.0,comic,well,performances,tomei,much
+963,Only Yesterday,1991,"Animation, Drama, Romance",7.6,25974,453243.0,character,much,films,year,somewhat
+964,Delicatessen,1991,"Comedy, Crime",7.6,79557,1794187.0,delicatessen,films,butcher,love,like
+965,The Hunt for Red October,1990,"Action, Adventure, Thriller",7.6,176445,122012643.0,submarine,actually,blueback,time,helpful
+966,Home Alone,1990,"Comedy, Family",7.6,454920,285761243.0,comedy,family,could,funny,home
+967,The Godfather: Part III,1990,"Crime, Drama",7.6,352794,66666062.0,definitely,helpful,favorite,hard,first
+968,When Harry Met Sally...,1989,"Comedy, Drama, Romance",7.6,192187,93075866.0,lines,feel,well,acting,helpful
+969,National Lampoon's Christmas Vacation,1989,Comedy,7.6,148869,72705146.0,christmas,festive,clark,ritual,part
+970,The Little Mermaid,1989,"Animation, Family, Fantasy",7.6,233657,111543479.0,great,mermaid,helpful,disney,animated
+971,The Naked Gun: From the Files of Police Squad!,1988,"Comedy, Crime",7.6,149969,78756177.0,films,naked,even,humor,much
+972,Dangerous Liaisons,1988,"Drama, Romance",7.6,63741,34670720.0,story,valmont,known,laclos,liaisons
+973,"Planes, Trains and Automobiles",1987,"Comedy, Drama",7.6,120182,49530280.0,together,john,must,helpful,sure
+974,Lethal Weapon,1987,"Action, Crime, Thriller",7.6,233505,65207127.0,riggs,roger,murtaugh,together,like
+975,The Fly,1986,"Drama, Horror",7.6,157051,40456565.0,makeup,love,jeff,goldblum,horror
+976,Indiana Jones and the Temple of Doom,1984,"Action, Adventure",7.6,441450,179870271.0,good,first,helpful,huge,shoes
+977,Blood Simple,1984,"Crime, Drama, Thriller",7.6,86162,3851855.0,characters,films,think,slasher,completely
+978,The Secret of NIMH,1982,"Adventure, Animation, Drama",7.6,35717,14665733.0,animation,bluth,greatest,brisby,story
+979,On Golden Pond,1981,Drama,7.6,27205,119285432.0,norman,fonda,pond,hollywood,actors
+980,The Road Warrior,1981,"Action, Adventure",7.6,164448,23667907.0,road,warrior,action,best,love
+981,The Warriors,1979,"Action, Crime, Thriller",7.6,92466,22490039.0,flick,theater,spartan,warriors,first
+982,The Muppet Movie,1979,"Adventure, Comedy, Family",7.6,32163,65810475.0,ending,perfect,journey,tale,usually
+983,Escape from Alcatraz,1979,"Action, Biography, Crime",7.6,118707,43000000.0,siegel,eastwood,alcatraz,morris,yard
+984,Watership Down,1978,"Adventure, Animation, Drama",7.6,33231,,rabbits,searching,little,kids,excellent
+985,Midnight Express,1978,"Biography, Crime, Drama",7.6,72628,35000000.0,turkish,people,billy,like,helpful
+986,Close Encounters of the Third Kind,1977,Drama,7.6,181937,135189114.0,sense,life,something,wonder,ordinary
+987,Robin Hood,1973,"Adventure, Animation, Comedy",7.6,113671,,robin,john,prince,hood,little
+988,The Long Goodbye,1973,"Comedy, Crime, Drama",7.6,25570,,altman,marlowe,chandler,hollywood,gould
+989,Duck You Sucker,1971,"Drama, War, Western",7.6,29593,,real,lots,time,story,helpful
+990,Kelly's Heroes,1970,"Adventure, Comedy, War",7.6,44624,5200000.0,kelly,heroes,german,time,part
+991,The Jungle Book,1967,"Adventure, Animation, Family",7.6,163621,141843612.0,http,every,favorite,wwwimdbcomlistls,disney
+992,Blow-Up,1966,"Drama, Mystery, Thriller",7.6,55487,,thomas,antonioni,blowup,fashion,reality
+993,A Hard Day's Night,1964,"Comedy, Music, Musical",7.6,39724,1480356.0,beatles,must,lack,achieved,criticize
+994,Contempt,1963,"Drama, Romance",7.6,28300,903986.0,paul,prokosh,wife,camille,picoli
+995,Breakfast at Tiffany's,1961,"Comedy, Drama, Romance",7.6,164155,,audrey,love,hepburn,capote,helpful
+996,Giant,1956,"Drama, Western",7.6,33502,32855818.0,texas,giant,remembered,james,dean
+997,From Here to Eternity,1953,"Drama, Romance, War",7.6,42691,36416.0,eternity,lancaster,kerr,clift,example
+998,Lifeboat,1944,"Drama, War",7.6,26077,,lifeboat,nazi,characters,boat,people
+999,Snow White and the Seven Dwarfs,1937,"Animation, Family, Fantasy",7.6,178551,184925486.0,snow,white,disney,great,would
+1000,The 39 Steps,1935,"Mystery, Thriller",7.6,50948,,poetry,matters,donat,carroll,helpful
